@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AAE3E46D1CBA208600AE23C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E46C1CBA208600AE23C0 /* main.m */; };
-		AAE3E4701CBA208600AE23C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E46F1CBA208600AE23C0 /* AppDelegate.m */; };
-		AAE3E4731CBA208600AE23C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4721CBA208600AE23C0 /* ViewController.m */; };
 		AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4741CBA208600AE23C0 /* Main.storyboard */; };
-		AAE3E4781CBA208600AE23C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4771CBA208600AE23C0 /* Assets.xcassets */; };
 		AAE3E47B1CBA208600AE23C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4791CBA208600AE23C0 /* LaunchScreen.storyboard */; };
 		AAE3E4861CBA208600AE23C0 /* MySinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4851CBA208600AE23C0 /* MySinaTests.m */; };
 		AAE3E4911CBA208600AE23C0 /* MySinaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4901CBA208600AE23C0 /* MySinaUITests.m */; };
+		AAE3E4CA1CBA211700AE23C0 /* PTDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4A21CBA211700AE23C0 /* PTDiscoverViewController.m */; };
+		AAE3E4CC1CBA211700AE23C0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4AE1CBA211700AE23C0 /* UIBarButtonItem+Extension.m */; };
+		AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4B01CBA211700AE23C0 /* UIImage+Extension.m */; };
+		AAE3E4CE1CBA211700AE23C0 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4B21CBA211700AE23C0 /* UIView+Extension.m */; };
+		AAE3E4CF1CBA211700AE23C0 /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4B51CBA211700AE23C0 /* PTNavigationController.m */; };
+		AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4B71CBA211700AE23C0 /* PTTabBarController.m */; };
+		AAE3E4D11CBA211700AE23C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4BA1CBA211700AE23C0 /* main.m */; };
+		AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4BC1CBA211700AE23C0 /* PTAppDelegate.m */; };
+		AAE3E4D31CBA211700AE23C0 /* PTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4C11CBA211700AE23C0 /* PTMessageViewController.m */; };
+		AAE3E4D41CBA211700AE23C0 /* PTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4C71CBA211700AE23C0 /* PTProfileViewController.m */; };
+		AAE3E4D61CBA216600AE23C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4D51CBA216600AE23C0 /* Images.xcassets */; };
+		AAE3E4DE1CBA293A00AE23C0 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DA1CBA293A00AE23C0 /* Contents.json */; };
+		AAE3E4DF1CBA293A00AE23C0 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DB1CBA293A00AE23C0 /* icon.png */; };
+		AAE3E4E01CBA293A00AE23C0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DC1CBA293A00AE23C0 /* icon@2x.png */; };
+		AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */; };
+		AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +48,7 @@
 
 /* Begin PBXFileReference section */
 		AAE3E4681CBA208600AE23C0 /* MySina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySina.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAE3E46C1CBA208600AE23C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AAE3E46E1CBA208600AE23C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AAE3E46F1CBA208600AE23C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAE3E4711CBA208600AE23C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAE3E4721CBA208600AE23C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AAE3E4751CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AAE3E4771CBA208600AE23C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE3E47A1CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAE3E47C1CBA208600AE23C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE3E4811CBA208600AE23C0 /* MySinaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySinaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +57,33 @@
 		AAE3E48C1CBA208600AE23C0 /* MySinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE3E4901CBA208600AE23C0 /* MySinaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySinaUITests.m; sourceTree = "<group>"; };
 		AAE3E4921CBA208600AE23C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE3E4A11CBA211700AE23C0 /* PTDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTDiscoverViewController.h; sourceTree = "<group>"; };
+		AAE3E4A21CBA211700AE23C0 /* PTDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTDiscoverViewController.m; sourceTree = "<group>"; };
+		AAE3E4AD1CBA211700AE23C0 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		AAE3E4AE1CBA211700AE23C0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		AAE3E4AF1CBA211700AE23C0 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		AAE3E4B01CBA211700AE23C0 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		AAE3E4B11CBA211700AE23C0 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		AAE3E4B21CBA211700AE23C0 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		AAE3E4B41CBA211700AE23C0 /* PTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTNavigationController.h; sourceTree = "<group>"; };
+		AAE3E4B51CBA211700AE23C0 /* PTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTNavigationController.m; sourceTree = "<group>"; };
+		AAE3E4B61CBA211700AE23C0 /* PTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBarController.h; sourceTree = "<group>"; };
+		AAE3E4B71CBA211700AE23C0 /* PTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBarController.m; sourceTree = "<group>"; };
+		AAE3E4BA1CBA211700AE23C0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAE3E4BB1CBA211700AE23C0 /* PTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTAppDelegate.h; sourceTree = "<group>"; };
+		AAE3E4BC1CBA211700AE23C0 /* PTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTAppDelegate.m; sourceTree = "<group>"; };
+		AAE3E4C01CBA211700AE23C0 /* PTMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMessageViewController.h; sourceTree = "<group>"; };
+		AAE3E4C11CBA211700AE23C0 /* PTMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMessageViewController.m; sourceTree = "<group>"; };
+		AAE3E4C61CBA211700AE23C0 /* PTProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTProfileViewController.h; sourceTree = "<group>"; };
+		AAE3E4C71CBA211700AE23C0 /* PTProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTProfileViewController.m; sourceTree = "<group>"; };
+		AAE3E4D51CBA216600AE23C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAE3E4D81CBA227C00AE23C0 /* MySinaPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySinaPrefixHeader.pch; sourceTree = "<group>"; };
+		AAE3E4DA1CBA293A00AE23C0 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		AAE3E4DB1CBA293A00AE23C0 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AAE3E4DC1CBA293A00AE23C0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_os7@2x.png"; sourceTree = "<group>"; };
+		AAE3E4E21CBA2EB800AE23C0 /* PTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHomeViewController.h; sourceTree = "<group>"; };
+		AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +134,9 @@
 		AAE3E46A1CBA208600AE23C0 /* MySina */ = {
 			isa = PBXGroup;
 			children = (
-				AAE3E46E1CBA208600AE23C0 /* AppDelegate.h */,
-				AAE3E46F1CBA208600AE23C0 /* AppDelegate.m */,
-				AAE3E4711CBA208600AE23C0 /* ViewController.h */,
-				AAE3E4721CBA208600AE23C0 /* ViewController.m */,
-				AAE3E4741CBA208600AE23C0 /* Main.storyboard */,
-				AAE3E4771CBA208600AE23C0 /* Assets.xcassets */,
-				AAE3E4791CBA208600AE23C0 /* LaunchScreen.storyboard */,
+				AAE3E49E1CBA211700AE23C0 /* classes */,
 				AAE3E47C1CBA208600AE23C0 /* Info.plist */,
+				AAE3E4D81CBA227C00AE23C0 /* MySinaPrefixHeader.pch */,
 				AAE3E46B1CBA208600AE23C0 /* Supporting Files */,
 			);
 			path = MySina;
@@ -117,7 +145,10 @@
 		AAE3E46B1CBA208600AE23C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AAE3E46C1CBA208600AE23C0 /* main.m */,
+				AAE3E4D91CBA293A00AE23C0 /* AppIcon.appiconset */,
+				AAE3E4D51CBA216600AE23C0 /* Images.xcassets */,
+				AAE3E4741CBA208600AE23C0 /* Main.storyboard */,
+				AAE3E4791CBA208600AE23C0 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +169,232 @@
 				AAE3E4921CBA208600AE23C0 /* Info.plist */,
 			);
 			path = MySinaUITests;
+			sourceTree = "<group>";
+		};
+		AAE3E49E1CBA211700AE23C0 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E49F1CBA211700AE23C0 /* Discover(发现) */,
+				AAE3E4A51CBA211700AE23C0 /* Home(首页) */,
+				AAE3E4AB1CBA211700AE23C0 /* Main */,
+				AAE3E4BE1CBA211700AE23C0 /* Message(消息) */,
+				AAE3E4C41CBA211700AE23C0 /* Profile(我) */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		AAE3E49F1CBA211700AE23C0 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4A01CBA211700AE23C0 /* Controller */,
+				AAE3E4A31CBA211700AE23C0 /* Model */,
+				AAE3E4A41CBA211700AE23C0 /* View */,
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		AAE3E4A01CBA211700AE23C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4A11CBA211700AE23C0 /* PTDiscoverViewController.h */,
+				AAE3E4A21CBA211700AE23C0 /* PTDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE3E4A31CBA211700AE23C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		AAE3E4A41CBA211700AE23C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		AAE3E4A51CBA211700AE23C0 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4A61CBA211700AE23C0 /* Controller */,
+				AAE3E4A91CBA211700AE23C0 /* Model */,
+				AAE3E4AA1CBA211700AE23C0 /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		AAE3E4A61CBA211700AE23C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4E21CBA2EB800AE23C0 /* PTHomeViewController.h */,
+				AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE3E4A91CBA211700AE23C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		AAE3E4AA1CBA211700AE23C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		AAE3E4AB1CBA211700AE23C0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4AC1CBA211700AE23C0 /* Category */,
+				AAE3E4B31CBA211700AE23C0 /* Controller */,
+				AAE3E4B81CBA211700AE23C0 /* Model */,
+				AAE3E4B91CBA211700AE23C0 /* Other */,
+				AAE3E4BD1CBA211700AE23C0 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AAE3E4AC1CBA211700AE23C0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4AD1CBA211700AE23C0 /* UIBarButtonItem+Extension.h */,
+				AAE3E4AE1CBA211700AE23C0 /* UIBarButtonItem+Extension.m */,
+				AAE3E4AF1CBA211700AE23C0 /* UIImage+Extension.h */,
+				AAE3E4B01CBA211700AE23C0 /* UIImage+Extension.m */,
+				AAE3E4B11CBA211700AE23C0 /* UIView+Extension.h */,
+				AAE3E4B21CBA211700AE23C0 /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AAE3E4B31CBA211700AE23C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4B41CBA211700AE23C0 /* PTNavigationController.h */,
+				AAE3E4B51CBA211700AE23C0 /* PTNavigationController.m */,
+				AAE3E4B61CBA211700AE23C0 /* PTTabBarController.h */,
+				AAE3E4B71CBA211700AE23C0 /* PTTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE3E4B81CBA211700AE23C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		AAE3E4B91CBA211700AE23C0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4BA1CBA211700AE23C0 /* main.m */,
+				AAE3E4BB1CBA211700AE23C0 /* PTAppDelegate.h */,
+				AAE3E4BC1CBA211700AE23C0 /* PTAppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		AAE3E4BD1CBA211700AE23C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		AAE3E4BE1CBA211700AE23C0 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4BF1CBA211700AE23C0 /* Controller */,
+				AAE3E4C21CBA211700AE23C0 /* Model */,
+				AAE3E4C31CBA211700AE23C0 /* View */,
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		AAE3E4BF1CBA211700AE23C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4C01CBA211700AE23C0 /* PTMessageViewController.h */,
+				AAE3E4C11CBA211700AE23C0 /* PTMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE3E4C21CBA211700AE23C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		AAE3E4C31CBA211700AE23C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		AAE3E4C41CBA211700AE23C0 /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4C51CBA211700AE23C0 /* Controller */,
+				AAE3E4C81CBA211700AE23C0 /* Model */,
+				AAE3E4C91CBA211700AE23C0 /* View */,
+			);
+			path = "Profile(我)";
+			sourceTree = "<group>";
+		};
+		AAE3E4C51CBA211700AE23C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4C61CBA211700AE23C0 /* PTProfileViewController.h */,
+				AAE3E4C71CBA211700AE23C0 /* PTProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE3E4C81CBA211700AE23C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		AAE3E4C91CBA211700AE23C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		AAE3E4D91CBA293A00AE23C0 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3E4DA1CBA293A00AE23C0 /* Contents.json */,
+				AAE3E4DB1CBA293A00AE23C0 /* icon.png */,
+				AAE3E4DC1CBA293A00AE23C0 /* icon@2x.png */,
+				AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */,
+			);
+			name = AppIcon.appiconset;
+			path = Assets.xcassets/AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +501,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE3E47B1CBA208600AE23C0 /* LaunchScreen.storyboard in Resources */,
-				AAE3E4781CBA208600AE23C0 /* Assets.xcassets in Resources */,
+				AAE3E4DF1CBA293A00AE23C0 /* icon.png in Resources */,
+				AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */,
+				AAE3E4D61CBA216600AE23C0 /* Images.xcassets in Resources */,
 				AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */,
+				AAE3E4DE1CBA293A00AE23C0 /* Contents.json in Resources */,
+				AAE3E4E01CBA293A00AE23C0 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +531,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE3E4731CBA208600AE23C0 /* ViewController.m in Sources */,
-				AAE3E4701CBA208600AE23C0 /* AppDelegate.m in Sources */,
-				AAE3E46D1CBA208600AE23C0 /* main.m in Sources */,
+				AAE3E4CE1CBA211700AE23C0 /* UIView+Extension.m in Sources */,
+				AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */,
+				AAE3E4CF1CBA211700AE23C0 /* PTNavigationController.m in Sources */,
+				AAE3E4D31CBA211700AE23C0 /* PTMessageViewController.m in Sources */,
+				AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */,
+				AAE3E4CC1CBA211700AE23C0 /* UIBarButtonItem+Extension.m in Sources */,
+				AAE3E4CA1CBA211700AE23C0 /* PTDiscoverViewController.m in Sources */,
+				AAE3E4D41CBA211700AE23C0 /* PTProfileViewController.m in Sources */,
+				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
+				AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */,
+				AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +622,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -394,6 +664,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -411,7 +682,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySina/MySinaPrefixHeader.pch;
 				INFOPLIST_FILE = MySina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.MySina;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +697,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySina/MySinaPrefixHeader.pch;
 				INFOPLIST_FILE = MySina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.MySina;
 				PRODUCT_NAME = "$(TARGET_NAME)";

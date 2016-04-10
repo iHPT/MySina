@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PTHomeViewController.h
 //  MySina
 //
 //  Created by hpt on 16/4/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PTHomeViewController : UITableViewController
 
 @end
-

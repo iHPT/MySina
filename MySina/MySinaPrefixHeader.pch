@@ -1,0 +1,49 @@
+//
+//  PrefixHeader.pch
+//  SinaBlog
+//
+//  Created by hpt on 16/4/10.
+//  Copyright © 2016年 PT. All rights reserved.
+//
+
+// 预编译文件需build Setting：Apple LLVM7.0-language->PreCompile Prefix Header = YES，如果该文件项目不在主路径，还需设置Prefix Header相对项目的路径，即：MySina/MySinaPrefixHeader.pch
+#ifndef MySinaPrefixHeader_pch
+#define MySinaPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIImage+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
+
+
+#define PTRANDOM_COLOR [UIColor colorWithRed:arc4random()%256 / 255.0 green:arc4random()%256 / 255.0 blue:arc4random()%256 / 255.0 alpha:1.0]
+
+#define iOS7 [[UIDevice currentDevice].systemVersion floatValue] > 7.0
+
+#define PTNavigationTitleFont [UIFont boldSystemFontOfSize: 20]
+
+#endif
+
+
+//#ifdef DEBUG
+//	#define HMLog(...) NSLog(__AV_ARGS__)
+//#else
+//	#define HMLog(...)
+//@endif
+
+
+#ifdef DEBUG
+#define PTLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#define ELog(err) {if(err) DLog(@"%@", err)}
+#else
+#define PTLog(...)
+#define ELog(err)
+#endif
+
+#endif /* PrefixHeader_pch */
