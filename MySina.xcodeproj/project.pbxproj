@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */; };
+		AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */; };
+		AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15591CBBE7050042D1CE /* PTComposeViewController.m */; };
+		AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC155E1CBBE71E0042D1CE /* PTTabBar.m */; };
 		AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4741CBA208600AE23C0 /* Main.storyboard */; };
 		AAE3E47B1CBA208600AE23C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4791CBA208600AE23C0 /* LaunchScreen.storyboard */; };
 		AAE3E4861CBA208600AE23C0 /* MySinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4851CBA208600AE23C0 /* MySinaTests.m */; };
@@ -47,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPopMenu.h; sourceTree = "<group>"; };
+		AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPopMenu.m; sourceTree = "<group>"; };
+		AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTitleButton.h; sourceTree = "<group>"; };
+		AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTitleButton.m; sourceTree = "<group>"; };
+		AACC15581CBBE7050042D1CE /* PTComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTComposeViewController.h; sourceTree = "<group>"; };
+		AACC15591CBBE7050042D1CE /* PTComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTComposeViewController.m; sourceTree = "<group>"; };
+		AACC155D1CBBE71E0042D1CE /* PTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBar.h; sourceTree = "<group>"; };
+		AACC155E1CBBE71E0042D1CE /* PTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBar.m; sourceTree = "<group>"; };
 		AAE3E4681CBA208600AE23C0 /* MySina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE3E4751CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE3E47A1CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,6 +123,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AACC15561CBBE7050042D1CE /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				AACC15571CBBE7050042D1CE /* Controller */,
+				AACC155A1CBBE7050042D1CE /* model */,
+				AACC155B1CBBE7050042D1CE /* view */,
+			);
+			path = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		AACC15571CBBE7050042D1CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AACC15581CBBE7050042D1CE /* PTComposeViewController.h */,
+				AACC15591CBBE7050042D1CE /* PTComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AACC155A1CBBE7050042D1CE /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AACC155B1CBBE7050042D1CE /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		AAE3E45F1CBA208500AE23C0 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +222,7 @@
 				AAE3E49F1CBA211700AE23C0 /* Discover(发现) */,
 				AAE3E4A51CBA211700AE23C0 /* Home(首页) */,
 				AAE3E4AB1CBA211700AE23C0 /* Main */,
+				AACC15561CBBE7050042D1CE /* Compose(发微博) */,
 				AAE3E4BE1CBA211700AE23C0 /* Message(消息) */,
 				AAE3E4C41CBA211700AE23C0 /* Profile(我) */,
 			);
@@ -248,6 +294,10 @@
 		AAE3E4AA1CBA211700AE23C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */,
+				AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */,
+				AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */,
+				AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */,
 			);
 			name = View;
 			path = view;
@@ -256,11 +306,11 @@
 		AAE3E4AB1CBA211700AE23C0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AAE3E4AC1CBA211700AE23C0 /* Category */,
 				AAE3E4B31CBA211700AE23C0 /* Controller */,
-				AAE3E4B81CBA211700AE23C0 /* Model */,
-				AAE3E4B91CBA211700AE23C0 /* Other */,
 				AAE3E4BD1CBA211700AE23C0 /* View */,
+				AAE3E4B81CBA211700AE23C0 /* Model */,
+				AAE3E4AC1CBA211700AE23C0 /* Category */,
+				AAE3E4B91CBA211700AE23C0 /* Other */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -310,6 +360,8 @@
 		AAE3E4BD1CBA211700AE23C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AACC155D1CBBE71E0042D1CE /* PTTabBar.h */,
+				AACC155E1CBBE71E0042D1CE /* PTTabBar.m */,
 			);
 			name = View;
 			path = view;
@@ -532,7 +584,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE3E4CE1CBA211700AE23C0 /* UIView+Extension.m in Sources */,
+				AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */,
 				AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */,
+				AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */,
 				AAE3E4CF1CBA211700AE23C0 /* PTNavigationController.m in Sources */,
 				AAE3E4D31CBA211700AE23C0 /* PTMessageViewController.m in Sources */,
 				AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */,
@@ -541,7 +595,9 @@
 				AAE3E4D41CBA211700AE23C0 /* PTProfileViewController.m in Sources */,
 				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
 				AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */,
+				AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */,
 				AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */,
+				AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +831,7 @@
 				AAE3E4971CBA208600AE23C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAE3E4981CBA208600AE23C0 /* Build configuration list for PBXNativeTarget "MySinaTests" */ = {
 			isa = XCConfigurationList;
@@ -783,6 +840,7 @@
 				AAE3E49A1CBA208600AE23C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAE3E49B1CBA208600AE23C0 /* Build configuration list for PBXNativeTarget "MySinaUITests" */ = {
 			isa = XCConfigurationList;
@@ -791,6 +849,7 @@
 				AAE3E49D1CBA208600AE23C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

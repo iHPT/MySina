@@ -7,21 +7,66 @@
 //
 
 #import "PTHomeViewController.h"
+#import "PTTitleButton.h"
+#import "PTPopMenu.h"
 
-@interface PTHomeViewController ()
+static NSString *cellId = @"HomeViewCell";
+
+@interface PTHomeViewController () <PTPopMenuDelegate>
 
 @end
 
 @implementation PTHomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
+
+	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+	// 添加左右导航按钮
+	self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highlightImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(searchFriend)];
+	self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_pop" highlightImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+
+	// 设置中间titleButton
+	PTTitleButton *titleButton = [[PTTitleButton alloc] init];
+	[titleButton setTitle:@"金桔柠檬" forState:UIControlStateNormal];
+    titleButton.width = 120;
+    titleButton.height = 35;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+	[titleButton setBackgroundImage:[UIImage imageWithName:@"navigationbar_filter_background_highlighted"] forState:UIControlStateHighlighted];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	[titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+	self.navigationItem.titleView = titleButton;
+}
+
+- (void)titleClick:(PTTitleButton *)titleButton
+{
+	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+	
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+	//button.backgroundColor = [UIColor yellowColor];
+	
+	PTPopMenu *menu = [[PTPopMenu alloc] initWithContentView:button];
+	menu.arrowPosition = PTPopMenuArrowPositionCenter;
+	menu.delegate = self;
+	[menu showInRect:CGRectMake(120, 64, 80, 200)];
+}
+
+#pragma -mark PTPopMenuDelegate
+- (void)popMenuDidDismissed:(PTPopMenu *)popMenu
+{
+	PTTitleButton *titleButton = (PTTitleButton *)self.navigationItem.titleView;
+	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+}
+
+- (void)searchFriend
+{
+	PTLog(@"searchFriend---");
+}
+
+- (void)pop
+{
+    PTLog(@"pop---");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,19 +77,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"HomeViewCell";
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    
+
     // Configure the cell...
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
@@ -59,6 +102,8 @@
     newVc.view.backgroundColor = [UIColor redColor];
     newVc.title = @"新控制器";
     [self.navigationController pushViewController:newVc animated:YES];
+
+    PTLog(@"%d", self.navigationController.viewControllers.count);
 }
 
 /*
@@ -77,7 +122,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
