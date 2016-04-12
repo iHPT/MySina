@@ -3,14 +3,18 @@
 @class PTTabBar;
 
 @protocol PTTabBarDelegate <NSObject>
-
 @optional
-- (void)tabBarDidClickedPlusButton:(PTTabBar *)tabBar;
-
+// 将选中按钮的index传回PTTabBarController，以便完成跳转
+- (void)tabBar:(PTTabBar *)tabBar didSelectButtonAtIndex:(NSInteger)index;
+// 选中plusButton回到PTTabBarController进行弹出发微博控制器
+- (void)tabBarDidClickPlusButton:(PTTabBar *)tabBar;
 @end
 
 
-@interface PTTabBar : UITabBar
+@interface PTTabBar : UIView
 
-@property (nonatomic, weak) id<PTTabBarDelegate> tabBarDelegate; // 本身继承自UITabBar，拥有delegate属性，另命名
+@property (nonatomic, weak) id<PTTabBarDelegate> delegate;
+
+- (void)addTabBarButtonWithItem:(UITabBarItem *)item;
+
 @end

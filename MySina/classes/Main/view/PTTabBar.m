@@ -1,146 +1,167 @@
 #import "PTTabBar.h"
+#import "PTTabBarButton.h"
 
-@interface PTTabBar()
+@interface PTTabBar ()
 
+// 记录选中tabBarButton的index
+@property (nonatomic, assign) NSInteger selectedIndex;
+
+// 中间加号按钮
 @property (nonatomic, weak) UIButton *plusButton;
+
+// 用于存储tabBarButton的数组
+@property (nonatomic, strong) NSMutableArray *tabBarButtons;
+
 @end
 
 
 @implementation PTTabBar
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
+	self = [super initWithFrame:frame];
 	if (self) {
-		if (!iOS7) { // iOS6设置背景为白色图片，但iOS7需保留穿透效果，不设置图片(即透明)
-			self.backgroundImage = [UIImage imageWithName:@"tabbar_background"];
-		}
-		/** 
-		 *选中图片效果和其他有差异，可通过设置selectionIndicatorImage属性来改变，但若设置为空，默认会被覆盖(即为实际看到效果)，所以给他一种透明图片背景
-		*/
-		self.selectionIndicatorImage = [UIImage imageWithName:@"navigationbar_button_background"];
-		// 添加加号按钮
-		[self setupPlusButton];
-		
+		// 设置背景
+		[self setupBg];
 	}
 	return self;
 }
 
 /**
- *  添加加号按钮
+ *  加号按钮的懒加载
  */
-- (void)setupPlusButton
+- (UIButton *)plusButton
 {
-	UIButton *plusButton = [[UIButton alloc] init];
-	// 设置背景
-	[plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button"] forState:UIControlStateNormal];
-	[plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
-	// 设置图标
-	[plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
-	[plusButton setImage:[UIImage imageWithName:@"tarbbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
-	// 添加
-	[plusButton addTarget:self action:@selector(plusButtonClick) forControlEvents:UIControlEventTouchUpInside];
-	[self addSubview:plusButton];
-	self.plusButton = plusButton;
+	if (!_plusButton) {
+		UIButton *plusButton = [[UIButton alloc] init];
+		// 设置背景
+		[plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button"] forState:UIControlStateNormal];
+		[plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
+		// 设置图标
+		[plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
+		[plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
+		
+		// 添加按钮点击事件
+		[plusButton addTarget:self action:@selector(plusButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+		// 添加
+		[self addSubview:plusButton];
+		_plusButton = plusButton;
+	}
+	return _plusButton;
 }
 
-- (void)plusButtonClick
+/**
+ *  数组的懒加载
+ */
+- (NSMutableArray *)tabBarButtons
 {
-    // 通知代理
-    if ([self.tabBarDelegate respondsToSelector:@selector(tabBarDidClickedPlusButton:)]) {
-        [self.tabBarDelegate tabBarDidClickedPlusButton:self];
-    }
+	if (!_tabBarButtons) {
+		_tabBarButtons = [NSMutableArray array];
+	}
+	return _tabBarButtons;
 }
 
+/**
+ *  添加一个选项卡按钮
+ *
+ *  @param item 选项卡按钮对应的模型数据(标题\图标\选中的图标)
+ */
+- (void)addTabBarButtonWithItem:(UITabBarItem *)item
+{
+	PTTabBarButton *tabBarBtn = [[PTTabBarButton alloc] init];
+	tabBarBtn.item = item;
+	[tabBarBtn addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self addSubview:tabBarBtn];
+	
+	// 添加到数组
+	[self.tabBarButtons addObject:tabBarBtn];
+	
+	// 默认选中第一个按钮
+	if (self.tabBarButtons.count == 1) {
+		[self tabBarButtonClick:tabBarBtn];
+	}
+}
+
+- (void)plusButtonClick:(UIButton *)plusButton
+{	// 通知代理
+	if ([self.delegate respondsToSelector:@selector(tabBarDidClickPlusButton:)]) {
+		[self.delegate tabBarDidClickPlusButton:self];
+	}
+}
+
+/**
+ *  点击选项卡按钮
+ */
+- (void)tabBarButtonClick:(PTTabBarButton *)tabBarButton
+{
+	 // 原来选中按钮取消选中，当前选中按钮
+    PTTabBarButton *selectedButton = self.tabBarButtons[_selectedIndex];
+	selectedButton.selected = NO; // 原来选中按钮取消选中
+	tabBarButton.selected = YES;
+	_selectedIndex = [self.subviews indexOfObject:tabBarButton];
+	
+	// 调用代理方法
+	if ([self.delegate respondsToSelector:@selector(tabBar:didSelectButtonAtIndex:)]) {
+		[self.delegate tabBar:self didSelectButtonAtIndex:self.selectedIndex];
+	}
+}
+
+/**
+ *  布局子控件
+ */
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
 	
-	// 设置plusButton的frame
+	// 1.计算加号按钮的位置和尺寸
 	[self setupPlusButtonFrame];
 	
-	// 设置所有tabbarButton的frame
-	[self setupAllTabBarButtonFrame];
-	
+	// 2.设置选项卡按钮的位置和尺寸
+	[self setupTabBarButtonsFrame];
 }
 
 /**
- *  设置所有tabbarButton的frame
+ *  计算加号按钮的位置和尺寸
  */
 - (void)setupPlusButtonFrame
 {
 	self.plusButton.size = self.plusButton.currentBackgroundImage.size;
-	self.plusButton.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+	self.plusButton.center = self.center;
 }
 
 /**
- *  设置所有tabbarButton的frame
+ *  设置选项卡按钮的位置和尺寸
  */
-- (void)setupAllTabBarButtonFrame
+- (void)setupTabBarButtonsFrame
 {
 	int index = 0;
 	
-	for (UIView *tabBarButton in self.subviews) {
-		// 如果不是UITabBarButton(即plusButton)， 直接跳过
-		if (![tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) continue;
-			
-		// 根据索引调整位置
-		[self setupTabBarButtonFrame:tabBarButton atIndex:index];
+	CGFloat buttonY = 0;
+	CGFloat buttonW = self.width / (self.tabBarButtons.count + 1);
+	CGFloat buttonH = self.height;
+	
+	for (PTTabBarButton *tabBarButton in self.tabBarButtons) {
+		CGFloat buttonX;
+		if (index >= 2) { // 4个，6个...按钮都适用
+			buttonX = buttonW * (index + 1);
+		} else {
+			buttonX = buttonW * index;
+		}
+		tabBarButton.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
 		
-//		// 遍历UITabBarButton中的所有子控件
-//		[self setupTabBarButtonTextColor:tabBarButton atIndex:index];
-		
-		// 索引增加
 		index++;
 	}
 }
 
 /**
- *  设置某个按钮的frame
- *
- *  @param tabBarButton 需要设置的按钮
- *  @param index        按钮所在的索引
+ *  设置背景
  */
-- (void)setupTabBarButtonFrame:(UIView *)tabBarButton atIndex:(int)index
+- (void)setupBg
 {
-	// 计算button的尺寸)
-	CGFloat buttonW = self.width / (self.items.count + 1);
-	CGFloat buttonH = self.height;
-	
-	tabBarButton.width = buttonW;
-	tabBarButton.height = buttonH;
-	if (index >= 2) {
-			tabBarButton.x = buttonW * (index + 1);
-		} else {
-        tabBarButton.x = buttonW * index;
+    if (!iOS7) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithName:@"tabbar_background"]];
     }
-    tabBarButton.y = 0;
 }
-
-/**
- *  设置某个按钮的文字颜色
- *
- *  @param tabBarButton 需要设置的按钮
- *  @param index        按钮所在的索引
- */
-//- (void)setupTabBarButtonTextColor:(UIView *)tabBarButton atIndex:(int)index
-//{
-//	// 获取选中按钮的索引
-//	int selectedIndex = [self.items indexOfObject:self.selectedItem];
-//	
-//	for (UILabel *childView in tabBarButton.subviews) {
-//		// 说明不是个Label
-//		if (![childView isKindOfClass:[UILable class]]) continue;
-//		
-//		// 设置字体
-//		label.font = [UIFont systemFontOfSize:10];
-//		if (selectedIndex == index) { // 说明这个Button选中, 设置label颜色为橙色
-//			childView.textColor = [UIColor orangeColor];
-//		} else { // 说明这个Button没有选中, 设置label颜色为黑色
-//			childView.textColor = [UIColor balckColor];
-//		}
-//	}
-//}
 
 @end

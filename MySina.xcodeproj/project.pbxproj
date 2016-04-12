@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8E54BB1CBD13E2005B04F0 /* PTBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */; };
+		AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */; };
 		AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */; };
 		AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */; };
 		AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15591CBBE7050042D1CE /* PTComposeViewController.m */; };
@@ -51,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA8E54B51CBD13E2005B04F0 /* PTBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBadgeButton.h; sourceTree = "<group>"; };
+		AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBadgeButton.m; sourceTree = "<group>"; };
+		AA8E54B91CBD13E2005B04F0 /* PTTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBarButton.h; sourceTree = "<group>"; };
+		AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBarButton.m; sourceTree = "<group>"; };
 		AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPopMenu.h; sourceTree = "<group>"; };
 		AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPopMenu.m; sourceTree = "<group>"; };
 		AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTitleButton.h; sourceTree = "<group>"; };
@@ -294,10 +300,10 @@
 		AAE3E4AA1CBA211700AE23C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */,
-				AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */,
 				AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */,
 				AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */,
+				AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */,
+				AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */,
 			);
 			name = View;
 			path = view;
@@ -362,6 +368,10 @@
 			children = (
 				AACC155D1CBBE71E0042D1CE /* PTTabBar.h */,
 				AACC155E1CBBE71E0042D1CE /* PTTabBar.m */,
+				AA8E54B91CBD13E2005B04F0 /* PTTabBarButton.h */,
+				AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */,
+				AA8E54B51CBD13E2005B04F0 /* PTBadgeButton.h */,
+				AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */,
 			);
 			name = View;
 			path = view;
@@ -595,7 +605,9 @@
 				AAE3E4D41CBA211700AE23C0 /* PTProfileViewController.m in Sources */,
 				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
 				AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */,
+				AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */,
 				AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */,
+				AA8E54BB1CBD13E2005B04F0 /* PTBadgeButton.m in Sources */,
 				AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */,
 				AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */,
 			);
