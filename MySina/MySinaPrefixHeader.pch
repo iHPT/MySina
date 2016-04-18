@@ -20,15 +20,45 @@
 #import "UIImage+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD+MJ.h"
+#import "UIImageView+WebCache.h"
+#import "MJExtension.h"
+#import "SDImageCache.h"
+#import "UIImageView+WebCache.h"
 
 
 #define PTRANDOM_COLOR [UIColor colorWithRed:arc4random()%256 / 255.0 green:arc4random()%256 / 255.0 blue:arc4random()%256 / 255.0 alpha:1.0]
+#define PTColor(r, g, b) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:1.0]
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] > 7.0)
+
 
 #define PTNavigationTitleFont [UIFont boldSystemFontOfSize: 20]
 #define PTBarButtonTitleFont [UIFont systemFontOfSize:15]
 #define PTTabBarButtonTitleFont [UIFont systemFontOfSize:12]
+
+#define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define FourInch (ScreenWidth == 320)
+
+#define PTAppDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+#define PTAccountFilePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
+
+
+/**
+ *  OAuth授权接口信息
+ */
+#define OAuthClientID @"3500106581"
+#define OAuthClientSecret @"ef2366837342d414de2d9e0761540f91"
+#define OAuthGrantType @"authorization_code"
+#define OAuthRedirectURI @"http://www.baidu.com"
+#define OAuthGetAccessTokenURL @"https://api.weibo.com/oauth2/access_token"
+
+/**
+ *  授权接口信息
+ */
+#define SinaGetStatusesURL @"https://api.weibo.com/2/statuses/home_timeline.json"
 
 #endif
 

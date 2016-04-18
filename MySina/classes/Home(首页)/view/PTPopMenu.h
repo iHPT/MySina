@@ -9,11 +9,11 @@
 @end
 
 
-typedef enum {
+typedef NS_OPTIONS(NSInteger, PTPopMenuArrowPosition) {
 	PTPopMenuArrowPositionCenter = 0,
 	PTPopMenuArrowPositionLeft = 1,
 	PTPopMenuArrowPositionRight = 2
-} PTPopMenuArrowPosition;
+};
 
 
 @interface PTPopMenu : UIView
