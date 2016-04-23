@@ -93,6 +93,13 @@
 	[self setNeedsLayout];
 }
 
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    
+    [self textDidChange];
+}
+
 - (void)setPlaceholderColor:(UIColor *)color
 {
 	self.placeholderLabel.textColor = color;

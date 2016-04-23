@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "PTAccount.h"
 #import "PTAccountTool.h"
+#import "PTAccessTokenParam.h"
 
 @interface PTOAuthViewController () <UIWebViewDelegate>
 
@@ -81,35 +82,28 @@
 
 - (void)accessTokenWithCode:(NSString *)code
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    // 1.封装请求参数
+    PTAccessTokenParam *param = [PTAccessTokenParam param];
+    param.client_id = OAuthClientID;
+    param.client_secret = OAuthClientSecret;
+    param.grant_type = OAuthGrantType;
+    param.code = code;
+    param.redirect_uri = OAuthRedirectURI;
     
-    // 2.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"client_id"] = OAuthClientID;
-    params[@"client_secret"] = OAuthClientSecret;
-    params[@"grant_type"] = OAuthGrantType;
-    params[@"code"] = code;
-    params[@"redirect_uri"] = OAuthRedirectURI;
-    
-    // 3.发送POST请求
-    [mgr POST:OAuthGetAccessTokenURL parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *accountDictionary) {
-        // 隐藏HUD
+    // 2.获取授权的账号模型
+    [PTAccountTool accessTokenWithParam:param success:^(PTAccount *account) {
+    	// 隐藏HUD
         [MBProgressHUD hideHUD];
-        
-        PTAccount *account = [PTAccount accountWithDict:accountDictionary];
         
         [PTAccountTool save:account];
         
         // 切换控制器(可能去新特性/tabbar)
         [PTControllerTool chooseRootViewController];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // 隐藏HUD
+    } failure:^(NSError *error) {
+    	// 隐藏HUD
         [MBProgressHUD hideHUD];
-        PTLog(@"请求失败---");
+        PTLog(@"请求失败---%@", error);
     }];
-    
 }
 
 @end

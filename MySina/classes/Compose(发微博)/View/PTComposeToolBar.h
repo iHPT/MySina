@@ -10,7 +10,7 @@ typedef NS_OPTIONS(NSUInteger, PTComposeToolBarButtonType)
 {
     PTComposeToolBarButtonTypeCamera = 0,
     PTComposeToolBarButtonTypePicture,
-    PTComposeToolBarButtonTypeTredn,
+    PTComposeToolBarButtonTypeTrend,
     PTComposeToolBarButtonTypeMention,
     PTComposeToolBarButtonTypeEmotion
 };

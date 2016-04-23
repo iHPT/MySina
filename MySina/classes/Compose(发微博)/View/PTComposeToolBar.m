@@ -17,10 +17,10 @@
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithName:@"compose_toolbar_background"]];
         
         [self addButtonWithImageName:@"compose_camerabutton_background" highlightedImageName:@"compose_camerabutton_background_highlighted" tag:PTComposeToolBarButtonTypeCamera];
-        [self addButtonWithImageName:@"compose_toolbar_picture" highlightedImageName:@"compose_toolbar_picture_highlighted" tag:PTComposeToolBarButtonTypeCamera];
-        [self addButtonWithImageName:@"compose_trendbutton_background" highlightedImageName:@"compose_trendbutton_background_highlighted" tag:PTComposeToolBarButtonTypeCamera];
-        [self addButtonWithImageName:@"compose_mentionbutton_background" highlightedImageName:@"compose_mentionbutton_background_highlighted" tag:PTComposeToolBarButtonTypeCamera];
-        [self addButtonWithImageName:@"compose_emoticonbutton_background" highlightedImageName:@"compose_emoticonbutton_background_highlighted" tag:PTComposeToolBarButtonTypeCamera];
+        [self addButtonWithImageName:@"compose_toolbar_picture" highlightedImageName:@"compose_toolbar_picture_highlighted" tag:PTComposeToolBarButtonTypePicture];
+        [self addButtonWithImageName:@"compose_trendbutton_background" highlightedImageName:@"compose_trendbutton_background_highlighted" tag:PTComposeToolBarButtonTypeTrend];
+        [self addButtonWithImageName:@"compose_mentionbutton_background" highlightedImageName:@"compose_mentionbutton_background_highlighted" tag:PTComposeToolBarButtonTypeMention];
+        [self addButtonWithImageName:@"compose_emoticonbutton_background" highlightedImageName:@"compose_emoticonbutton_background_highlighted" tag:PTComposeToolBarButtonTypeEmotion];
     }
     return self;
 }
@@ -52,13 +52,12 @@
     [self addSubview:button];
 }
 
-- (void)buttonClick:(PTComposeToolBarButtonType)buttonType
+- (void)buttonClick:(UIButton *)button
 {
     if ([self.delegate respondsToSelector:@selector(composeToolBar:didClickButton:)]) {
-        [self.delegate composeToolBar:self didClickButton:buttonType];
+        [self.delegate composeToolBar:self didClickButton:button.tag];
         
     }
-    
 }
 
 @end

@@ -22,7 +22,7 @@
 	self = [super initWithFrame:frame];
 	if (self) {
 		// 设置背景
-		[self setupBg];
+		[self setupBackground];
 	}
 	return self;
 }
@@ -157,7 +157,7 @@
 /**
  *  设置背景
  */
-- (void)setupBg
+- (void)setupBackground
 {
     if (!iOS7) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithName:@"tabbar_background"]];

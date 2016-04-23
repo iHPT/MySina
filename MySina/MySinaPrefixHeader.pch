@@ -20,7 +20,6 @@
 #import "UIImage+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
-#import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
 #import "UIImageView+WebCache.h"
 #import "MJExtension.h"
@@ -55,10 +54,31 @@
 #define OAuthRedirectURI @"http://www.baidu.com"
 #define OAuthGetAccessTokenURL @"https://api.weibo.com/oauth2/access_token"
 
+///**
+// *  新浪接口信息
+// */
+///** 获取微博数据 */
+//#define SinaURLGetStatuses @"https://api.weibo.com/2/statuses/home_timeline.json"
+///** 发布一条微博信息 */
+//#define SinaURLSendStatus @"https://api.weibo.com/2/statuses/update.json"
+///** 上传图片并发布一条微博 */
+//#define SinaURLSendStatusWithImage @"https://upload.api.weibo.com/2/statuses/upload.json"
+///** 获取用户信息 */
+//#defint SinaURLGetUserInfo @"https://api.weibo.com/2/users/show.json parameters:params"
+
+
 /**
- *  授权接口信息
+ *  HomeStatusCell计算
+ *
  */
-#define SinaGetStatusesURL @"https://api.weibo.com/2/statuses/home_timeline.json"
+#define PTHomeStatusCellMaring 10
+
+
+
+
+
+
+
 
 #endif
 

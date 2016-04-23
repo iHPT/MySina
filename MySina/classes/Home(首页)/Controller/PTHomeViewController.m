@@ -16,6 +16,12 @@
 #import "PTPhoto.h"
 #import "PTLoadMoreFooter.h"
 #import "UIImageView+WebCache.h"
+#import "PTStatusTool.h"
+#import "PTHomeStatusesParam.h"
+#import "PTHomeStatusesResult.h"
+#import "PTUserInfoParam.h"
+#import "PTUserInfoResult.h"
+#import "PTUserTool.h"
 
 static NSString *cellId = @"HomeViewCell";
 
@@ -25,9 +31,14 @@ static NSString *cellId = @"HomeViewCell";
  */
 @property (nonatomic, copy) NSMutableArray *statuses;
 
-@property (nonatomic, strong) PTLoadMoreFooter *loadMoreFooter;
+@property (nonatomic, weak) PTTitleButton *titleButton;
+
+@property (nonatomic, weak) UIRefreshControl *refreshControl;
+
+@property (nonatomic, weak) PTLoadMoreFooter *loadMoreFooter;
 
 @end
+
 
 @implementation PTHomeViewController
 
@@ -48,6 +59,30 @@ static NSString *cellId = @"HomeViewCell";
 	
 	// 集成刷新控件
 	[self setupRefreshControl];
+	
+	// 获得用户信息，设置title
+	[self setupUserInfo];
+}
+
+- (void)setupUserInfo
+{
+	// 1.封装请求参数
+	PTUserInfoParam *param = [PTUserInfoParam param];
+	param.uid = @([PTAccountTool account].uid.intValue);
+	
+	// 2.获取用户信息
+    [PTUserTool userInfoWithParam:param success:^(PTUserInfoResult *result) {
+        PTLog(@"请求成功---");
+        // 设置用户名为titile
+        [self.titleButton setTitle:result.name forState:UIControlStateNormal];
+        
+        // 保存，用于程序重启显示使用
+        PTAccount *account = [PTAccountTool account];
+        account.name = result.name;
+        [PTAccountTool save:account];
+    } failure:^(NSError *error) {
+        PTLog(@"请求失败---%@", error);
+    }];
 }
 
 - (void)setupNavBar
@@ -58,15 +93,20 @@ static NSString *cellId = @"HomeViewCell";
 
 	// 设置中间titleButton
 	PTTitleButton *titleButton = [[PTTitleButton alloc] init];
-	[titleButton setTitle:@"金桔柠檬" forState:UIControlStateNormal];
-    titleButton.width = 120;
-    titleButton.height = 35;
-    
+    self.navigationItem.titleView = titleButton;
+    self.titleButton = titleButton;
+	// 设置尺寸
+	titleButton.height = 35;
+	// 设置文字，如果有账号缓存，使用用户名，没有就显示“首页”
+	NSString *name = [PTAccountTool account].name;
+	[titleButton setTitle:name?:@"首页" forState:UIControlStateNormal];
+	// 设置图标
 	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+	// 设置背景
 	[titleButton setBackgroundImage:[UIImage imageWithName:@"navigationbar_filter_background_highlighted"] forState:UIControlStateHighlighted];
-    
+  // 监听按钮点击
 	[titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
-	self.navigationItem.titleView = titleButton;
+	
 }
 
 - (void)setupRefreshControl
@@ -74,13 +114,14 @@ static NSString *cellId = @"HomeViewCell";
 	// 1.添加下拉刷新控件
 	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 	[self.tableView addSubview:refreshControl];
+	self.refreshControl = refreshControl;
 	
 	// 2.监听状态
 	[refreshControl addTarget:self action:@selector(refreshControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 	
 	// 3.让刷新控件自动进入刷新状态
 	[refreshControl beginRefreshing];
-	
+
 	// 4.加载数据
 	[self refreshControlValueChanged:refreshControl];
 	
@@ -98,56 +139,64 @@ static NSString *cellId = @"HomeViewCell";
     [self loadNewStatuses:refreshControl];
 }
 
+
+/** PTTabBarController调用：
+ *  第一次选中的是首页，第二次选中首页，有数据-刷新，没数据-回顶部
+ *  第一次选中其他控制器，第二次选中首页，首页有新数据-刷新，没数据-保持以前首页tableView位置
+ */
+- (void)refresh:(BOOL)fromSelf
+{
+    PTLog(@"%@", self.tabBarItem.badgeValue);
+	if (self.tabBarItem.badgeValue) { // 首页只有有数据，就刷新
+		// 刷新数据
+		[self loadNewStatuses:self.refreshControl];
+		
+	} else if (fromSelf) { // 首页没有数据，第二次点击仍然是首页，回顶部
+		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+		[self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+	}
+}
+
 #pragma mark - 加载微博数据
 /**
  *  下拉加载最新的微博数据
  */
 - (void)loadNewStatuses:(UIRefreshControl *)refreshControl
 {
-	// 1.获得请求管理者
-	AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-	
-	// 2.封装请求参数
-	NSMutableDictionary *params = [NSMutableDictionary dictionary];
-	params[@"access_token"] = [PTAccountTool account].access_token;
-	//params[@"count"] = @10; //默认值20
-	
-	// 取出已加载的微博数据第一条的since_id
+	// 1.封装请求参数
+	PTHomeStatusesParam *param = [PTHomeStatusesParam param];
+	//param.count = @10; //默认值20
 	PTStatus *firstStatus = [self.statuses firstObject];
 	if (firstStatus) {
-		params[@"since_id"] = @([firstStatus.idstr longLongValue]);
+		param.since_id = @([firstStatus.idstr longLongValue]);
 	}
 	
-	// 3.发送POST请求
-	[mgr GET:SinaGetStatusesURL parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDictionary) {
-			//PTLog(@"%@", resultDictionary);
-	    
-	    // 取出微博字典数组
-	    NSArray *statusesArray = resultDictionary[@"statuses"];
-	    // 微博字典数组 --> 微博模型数组
-	    NSArray *newStatuses = [PTStatus objectArrayWithKeyValuesArray:statusesArray];
-	    
-	    // 将新数据插入到旧数据的最前面
-	    NSRange range = NSMakeRange(0, newStatuses.count);
-        PTLog(@"%dcount----", newStatuses.count);
-        
-	    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-	    [self.statuses insertObjects:newStatuses atIndexes:indexSet];
-	    
-	    // 重新刷新表格
-	    [self.tableView reloadData];
-	    
-	    // 让刷新控件停止刷新（恢复默认的状态）
-	    [refreshControl endRefreshing];
-	    
-	    // 提示用户最新的微博数量
-	    [self showNewStatusesCount:newStatuses.count];
-	    
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-			
-	    PTLog(@"请求失败---");
-	    // 让刷新控件停止刷新（恢复默认的状态）
-	    [refreshControl endRefreshing];
+	// 获取当前用户最新微博数据
+	[PTStatusTool homeStatusesWithParam:param success:^(PTHomeStatusesResult *result) {
+		// 微博模型数组
+		NSArray *newStatuses = result.statuses;
+		
+		// 将新数据插入到旧数据的最前面
+		NSRange range = NSMakeRange(0, newStatuses.count);
+		
+		NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+		[self.statuses insertObjects:newStatuses atIndexes:indexSet];
+		
+		// 重新刷新表格
+		[self.tableView reloadData];
+		
+		// 让刷新控件停止刷新（恢复默认的状态）
+		[refreshControl endRefreshing];
+		
+		// 提示用户最新的微博数量
+		[self showNewStatusesCount:newStatuses.count];
+		
+		
+	} failure:^(NSError *error) {
+		PTLog(@"请求失败---%@", error);
+	  // 让刷新控件停止刷新（恢复默认的状态）
+	  [refreshControl endRefreshing];
+		
 	}];
 }
 
@@ -156,50 +205,41 @@ static NSString *cellId = @"HomeViewCell";
  */
 - (void)loadMoreStatuses
 {
-	// 1.获得请求管理者
-	AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+	// 1.封装请求参数
+	PTHomeStatusesParam *param = [PTHomeStatusesParam param];
 	
-	// 2.封装请求参数
-	NSMutableDictionary *params = [NSMutableDictionary dictionary];
-	params[@"access_token"] = [PTAccountTool account].access_token;
-	//params[@"count"] = 10; 默认值20
-	
-	// 取出已加载的微博数据第一条的since_id
+	// 取出已加载的微博数据最后一条的since_id
 	PTStatus *lastStatus = [self.statuses lastObject];
-	if (lastStatus) {
-		params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
-	}
+	param.max_id = @([lastStatus.idstr longLongValue] - 1);
 	
-	// 3.发送POST请求
-	[mgr GET:SinaGetStatusesURL parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDictionary) {
-			PTLog(@"%@count--------", resultDictionary);
-	    
-	    // 取出微博字典数组
-	    NSArray *statusesArray = resultDictionary[@"statuses"];
-	    // 微博字典数组 --> 微博模型数组
-	    NSArray *moreStatuses = [PTStatus objectArrayWithKeyValuesArray:statusesArray];
-	    
-	    // 将新数据插入到旧数据的最后面
-	    [self.statuses addObjectsFromArray:moreStatuses];
-	    
-	    // 重新刷新表格
-	    [self.tableView reloadData];
-	    
-	    // 让刷新控件停止刷新（恢复默认的状态）
-	    [self.loadMoreFooter endRefreshing];
-	    
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-			
-	    PTLog(@"请求失败---");
-	    // 让刷新控件停止刷新（恢复默认的状态）
-	    [self.loadMoreFooter endRefreshing];
+	// 2.获取更多微博数据
+	[PTStatusTool homeStatusesWithParam:param success:^(PTHomeStatusesResult *result) {
+		// 微博模型数组
+		NSArray *newStatuses = result.statuses;
+		// 将新数据插入到旧数据的最后面
+		[self.statuses addObjectsFromArray:newStatuses];
+		
+		// 重新刷新表格
+		[self.tableView reloadData];
+		
+		// 让刷新控件停止刷新（恢复默认的状态）
+		[self.loadMoreFooter endRefreshing];
+	} failure:^(NSError *error) {
+		PTLog(@"请求失败---%@", error);
+		// 让刷新控件停止刷新（恢复默认的状态）
+		[self.loadMoreFooter endRefreshing];
 	}];
-	
-	
 }
 
+/**
+ *  显示更新微博数量
+ */
 - (void)showNewStatusesCount:(int)count
 {
+	// 刷新后未读消息数清零
+	[UIApplication sharedApplication].applicationIconBadgeNumber -= self.tabBarItem.badgeValue.intValue;
+	self.tabBarItem.badgeValue = nil;
+	
 	// 1.创建一个UILabel
 	UILabel *label = [[UILabel alloc] init];
 	
@@ -300,9 +340,8 @@ static NSString *cellId = @"HomeViewCell";
     PTUser *user = status.user;
     
     // 设置Cell
-    cell.textLabel.text = status.text;
-    //cell.detailTextLabel.text = status.text;
-    cell.detailTextLabel.text = user.name;
+    cell.textLabel.text = user.name;
+    cell.detailTextLabel.text = status.text;
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageWithName:@"avatar_default_small"]];
     
     return cell;
@@ -315,8 +354,6 @@ static NSString *cellId = @"HomeViewCell";
     newVc.view.backgroundColor = [UIColor redColor];
     newVc.title = @"新控制器";
     [self.navigationController pushViewController:newVc animated:YES];
-
-    PTLog(@"%u", self.navigationController.viewControllers.count);
 }
 
 
@@ -324,16 +361,16 @@ static NSString *cellId = @"HomeViewCell";
 {
     if (self.statuses.count <= 0 || self.loadMoreFooter.refreshing)
     {
-        NSLog(@"跳出盘帝国");
+        NSLog(@"DoNothing");
         return;
     }
-    // 1.差距
+    // 1.tableView剩余显示在window中的高度 = tabtableView的高度 - 移出window上方的高度
     CGFloat delta = scrollView.contentSize.height - scrollView.contentOffset.y;
     // 刚好能完整看到footer的高度
     CGFloat sawFooterH = self.view.height - self.tabBarController.tabBar.height;
     
     // 2.如果能看见整个footer
-    if (delta <= (sawFooterH - 0)) {
+    if (delta <= (sawFooterH - 0)) { // 等于0时footer刚过在tabBar上
         NSLog(@"看全了footer");
         // 进入上拉刷新状态
         [self.loadMoreFooter beginRefreshing];

@@ -7,7 +7,8 @@
 //
 
 #import "PTAccountTool.h"
-#import "PTAccount.h"
+#import "PTHttpTool.h"
+#import "MJExtension.h"
 
 @implementation PTAccountTool
 
@@ -28,6 +29,20 @@
 {
     // 归档
     [NSKeyedArchiver archiveRootObject:account toFile:PTAccountFilePath];
+}
+
++ (void)accessTokenWithParam:(PTAccessTokenParam *)param success:(void(^)(PTAccount *))success failure:(void(^)(NSError *error))failure
+{
+	NSDictionary *params = param.keyValues;
+	[PTHttpTool post:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(id responseObj) {
+		PTAccount *result = [PTAccount objectWithKeyValues:responseObj];
+		success(result);
+		
+	} failure:^(NSError *error) {
+		if (failure) {
+			failure(error);
+		}
+	}];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface PTHomeViewController : UITableViewController
 
+- (void)refresh:(BOOL)fromSelf;
+
 @end
