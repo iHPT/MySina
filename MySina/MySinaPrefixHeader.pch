@@ -68,10 +68,21 @@
 
 
 /**
- *  HomeStatusCell计算
+ *  HomeStatusCell计算参数
  *
  */
-#define PTHomeStatusCellMaring 10
+/** cell之间的间距 */
+#define PTStatusCellMargin 10
+/** cell内边距 */
+#define PTStatusCellInset 10
+/** 微博昵称字体大小 */
+#define PTStatusCellNameFont [UIFont systemFontOfSize:14]
+/** 微博时间字体大小 */
+#define PTStatusCellTimeFont [UIFont systemFontOfSize:12]
+/** 微博来源字体大小 */
+#define PTStatusCellSourceFont PTStatusCellTimeFont
+/** 微博正文字体大小 */
+#define PTStatusCellTextFont [UIFont systemFontOfSize:16]
 
 
 

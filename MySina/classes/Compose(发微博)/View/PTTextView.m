@@ -67,9 +67,9 @@
     
 	// 根据文字计算label的高度
 	CGSize maxSize = CGSizeMake(self.placeholderLabel.width, MAXFLOAT);
-	CGSize placeholderLabelSize = [self.placeholderLabel.text sizeWithFont:self.placeholderLabel.font constrainedToSize:maxSize];
-//    CGSize placeholderLabelSize = [self.placeholderLabel.text boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) attributes:<#(nullable NSDictionary<NSString *,id> *)#> context:<#(nullable NSStringDrawingContext *)#>
-	self.placeholderLabel.height = placeholderLabelSize.height;
+//	CGSize placeholderLabelSize = [self.placeholderLabel.text sizeWithFont:self.placeholderLabel.font constrainedToSize:maxSize];
+    CGSize placeholderLabelSize = [self.placeholderLabel.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.placeholderLabel.font} context:nil].size;
+    self.placeholderLabel.height = placeholderLabelSize.height;
 }
 
 - (void)setPlaceholder:(NSString *)placeholder

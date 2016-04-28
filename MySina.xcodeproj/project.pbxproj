@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA013BF31CCE3815007D44A9 /* NSDate+TimeDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA013BF21CCE3815007D44A9 /* NSDate+TimeDisplay.m */; };
 		AA1689071CC64DDC0071C3FD /* PTComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */; };
 		AA4173561CC12FD0003340E2 /* PTNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4173551CC12FD0003340E2 /* PTNewfeatureViewController.m */; };
 		AA4CA7C71CCB1CDF00EE2B32 /* PTAccessTokenParam.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7B11CCB1CDF00EE2B32 /* PTAccessTokenParam.m */; };
@@ -23,6 +24,15 @@
 		AA4CA7D91CCB1CFC00EE2B32 /* PTUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7D61CCB1CFC00EE2B32 /* PTUserTool.m */; };
 		AA4CA7DD1CCB1E5A00EE2B32 /* PTSendStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7DC1CCB1E5A00EE2B32 /* PTSendStatusParam.m */; };
 		AA4CA7E01CCB1E8700EE2B32 /* PTSendStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7DF1CCB1E8700EE2B32 /* PTSendStatusResult.m */; };
+		AA8618351CCC819C002AF93D /* PTStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618341CCC819C002AF93D /* PTStatusCell.m */; };
+		AA8618381CCC81BD002AF93D /* PTStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */; };
+		AA86183B1CCC81D0002AF93D /* PTStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */; };
+		AA86183E1CCC8421002AF93D /* PTStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86183D1CCC8421002AF93D /* PTStatusFrame.m */; };
+		AA8618411CCC8630002AF93D /* PTStatusDetailViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618401CCC8630002AF93D /* PTStatusDetailViewFrame.m */; };
+		AA8618441CCC8832002AF93D /* PTStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618431CCC8832002AF93D /* PTStatusOriginalView.m */; };
+		AA8618471CCC8849002AF93D /* PTStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618461CCC8849002AF93D /* PTStatusRetweetedView.m */; };
+		AA86184A1CCC8866002AF93D /* PTStatusOriginalViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */; };
+		AA86184D1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */; };
 		AA8E54BB1CBD13E2005B04F0 /* PTBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */; };
 		AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */; };
 		AA8EE0251CC26CC7003D89AA /* PTOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0241CC26CC7003D89AA /* PTOAuthViewController.m */; };
@@ -44,6 +54,14 @@
 		AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */; };
 		AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15591CBBE7050042D1CE /* PTComposeViewController.m */; };
 		AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC155E1CBBE71E0042D1CE /* PTTabBar.m */; };
+		AADCB9E21CD22D7A00CACB8D /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9D41CD22D7A00CACB8D /* MJPhoto.m */; };
+		AADCB9E31CD22D7A00CACB8D /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AADCB9D51CD22D7A00CACB8D /* MJPhotoBrowser.bundle */; };
+		AADCB9E41CD22D7A00CACB8D /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9D71CD22D7A00CACB8D /* MJPhotoBrowser.m */; };
+		AADCB9E51CD22D7A00CACB8D /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9D91CD22D7A00CACB8D /* MJPhotoLoadingView.m */; };
+		AADCB9E61CD22D7A00CACB8D /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9DB1CD22D7A00CACB8D /* MJPhotoProgressView.m */; };
+		AADCB9E71CD22D7A00CACB8D /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9DD1CD22D7A00CACB8D /* MJPhotoToolbar.m */; };
+		AADCB9E81CD22D7A00CACB8D /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9DF1CD22D7A00CACB8D /* MJPhotoView.m */; };
+		AADCB9E91CD22D7A00CACB8D /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9E11CD22D7A00CACB8D /* SDWebImageManager+MJ.m */; };
 		AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4741CBA208600AE23C0 /* Main.storyboard */; };
 		AAE3E47B1CBA208600AE23C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4791CBA208600AE23C0 /* LaunchScreen.storyboard */; };
 		AAE3E4861CBA208600AE23C0 /* MySinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4851CBA208600AE23C0 /* MySinaTests.m */; };
@@ -64,6 +82,8 @@
 		AAE3E4E01CBA293A00AE23C0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DC1CBA293A00AE23C0 /* icon@2x.png */; };
 		AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */; };
 		AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */; };
+		AAED54591CD0D1B000EB30CE /* PTStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */; };
+		AAED545A1CD0D1B000EB30CE /* PTStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */; };
 		AAF74CD61CC50134003559BA /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC41CC50134003559BA /* MJArgument.m */; };
 		AAF74CD71CC50134003559BA /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC71CC50134003559BA /* MJIvar.m */; };
 		AAF74CD81CC50134003559BA /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC91CC50134003559BA /* MJMember.m */; };
@@ -116,6 +136,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA013BF11CCE3815007D44A9 /* NSDate+TimeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeDisplay.h"; sourceTree = "<group>"; };
+		AA013BF21CCE3815007D44A9 /* NSDate+TimeDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeDisplay.m"; sourceTree = "<group>"; };
+		AA013BF41CCE71A0007D44A9 /* temp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = temp.h; sourceTree = "<group>"; };
 		AA1689051CC64DDC0071C3FD /* PTComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTComposePhotosView.h; path = "MySina/classes/Compose(发微博)/View/PTComposePhotosView.h"; sourceTree = SOURCE_ROOT; };
 		AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTComposePhotosView.m; path = "MySina/classes/Compose(发微博)/View/PTComposePhotosView.m"; sourceTree = SOURCE_ROOT; };
 		AA4173541CC12FD0003340E2 /* PTNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTNewfeatureViewController.h; sourceTree = "<group>"; };
@@ -148,6 +171,24 @@
 		AA4CA7DC1CCB1E5A00EE2B32 /* PTSendStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSendStatusParam.m; sourceTree = "<group>"; };
 		AA4CA7DE1CCB1E8700EE2B32 /* PTSendStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSendStatusResult.h; sourceTree = "<group>"; };
 		AA4CA7DF1CCB1E8700EE2B32 /* PTSendStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSendStatusResult.m; sourceTree = "<group>"; };
+		AA8618331CCC819C002AF93D /* PTStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusCell.h; sourceTree = "<group>"; };
+		AA8618341CCC819C002AF93D /* PTStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusCell.m; sourceTree = "<group>"; };
+		AA8618361CCC81BD002AF93D /* PTStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailView.h; sourceTree = "<group>"; };
+		AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailView.m; sourceTree = "<group>"; };
+		AA8618391CCC81D0002AF93D /* PTStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusToolbar.h; sourceTree = "<group>"; };
+		AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusToolbar.m; sourceTree = "<group>"; };
+		AA86183C1CCC8421002AF93D /* PTStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusFrame.h; sourceTree = "<group>"; };
+		AA86183D1CCC8421002AF93D /* PTStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusFrame.m; sourceTree = "<group>"; };
+		AA86183F1CCC8630002AF93D /* PTStatusDetailViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailViewFrame.h; sourceTree = "<group>"; };
+		AA8618401CCC8630002AF93D /* PTStatusDetailViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailViewFrame.m; sourceTree = "<group>"; };
+		AA8618421CCC8832002AF93D /* PTStatusOriginalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusOriginalView.h; sourceTree = "<group>"; };
+		AA8618431CCC8832002AF93D /* PTStatusOriginalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusOriginalView.m; sourceTree = "<group>"; };
+		AA8618451CCC8849002AF93D /* PTStatusRetweetedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusRetweetedView.h; sourceTree = "<group>"; };
+		AA8618461CCC8849002AF93D /* PTStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusRetweetedView.m; sourceTree = "<group>"; };
+		AA8618481CCC8866002AF93D /* PTStatusOriginalViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusOriginalViewFrame.h; sourceTree = "<group>"; };
+		AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusOriginalViewFrame.m; sourceTree = "<group>"; };
+		AA86184B1CCC8877002AF93D /* PTStatusRetweetedViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusRetweetedViewFrame.h; sourceTree = "<group>"; };
+		AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusRetweetedViewFrame.m; sourceTree = "<group>"; };
 		AA8E54B51CBD13E2005B04F0 /* PTBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBadgeButton.h; sourceTree = "<group>"; };
 		AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBadgeButton.m; sourceTree = "<group>"; };
 		AA8E54B91CBD13E2005B04F0 /* PTTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBarButton.h; sourceTree = "<group>"; };
@@ -190,6 +231,21 @@
 		AACC15591CBBE7050042D1CE /* PTComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTComposeViewController.m; sourceTree = "<group>"; };
 		AACC155D1CBBE71E0042D1CE /* PTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBar.h; sourceTree = "<group>"; };
 		AACC155E1CBBE71E0042D1CE /* PTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBar.m; sourceTree = "<group>"; };
+		AADCB9D31CD22D7A00CACB8D /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		AADCB9D41CD22D7A00CACB8D /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		AADCB9D51CD22D7A00CACB8D /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		AADCB9D61CD22D7A00CACB8D /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		AADCB9D71CD22D7A00CACB8D /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		AADCB9D81CD22D7A00CACB8D /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		AADCB9D91CD22D7A00CACB8D /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		AADCB9DA1CD22D7A00CACB8D /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		AADCB9DB1CD22D7A00CACB8D /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		AADCB9DC1CD22D7A00CACB8D /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		AADCB9DD1CD22D7A00CACB8D /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		AADCB9DE1CD22D7A00CACB8D /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		AADCB9DF1CD22D7A00CACB8D /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
+		AADCB9E01CD22D7A00CACB8D /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
+		AADCB9E11CD22D7A00CACB8D /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
 		AAE3E4681CBA208600AE23C0 /* MySina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE3E4751CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE3E47A1CBA208600AE23C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -227,6 +283,10 @@
 		AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_os7@2x.png"; sourceTree = "<group>"; };
 		AAE3E4E21CBA2EB800AE23C0 /* PTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHomeViewController.h; sourceTree = "<group>"; };
 		AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
+		AAED54551CD0D1B000EB30CE /* PTStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusPhotosView.h; sourceTree = "<group>"; };
+		AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusPhotosView.m; sourceTree = "<group>"; };
+		AAED54571CD0D1B000EB30CE /* PTStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusPhotoView.h; sourceTree = "<group>"; };
+		AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusPhotoView.m; sourceTree = "<group>"; };
 		AAF74CC31CC50134003559BA /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		AAF74CC41CC50134003559BA /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		AAF74CC51CC50134003559BA /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
@@ -397,6 +457,44 @@
 			path = MySina/classes/Main/Model/SendStatus;
 			sourceTree = SOURCE_ROOT;
 		};
+		AA8618311CCC78A8002AF93D /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				AA86183C1CCC8421002AF93D /* PTStatusFrame.h */,
+				AA86183D1CCC8421002AF93D /* PTStatusFrame.m */,
+				AA86183F1CCC8630002AF93D /* PTStatusDetailViewFrame.h */,
+				AA8618401CCC8630002AF93D /* PTStatusDetailViewFrame.m */,
+				AA8618481CCC8866002AF93D /* PTStatusOriginalViewFrame.h */,
+				AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */,
+				AA86184B1CCC8877002AF93D /* PTStatusRetweetedViewFrame.h */,
+				AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */,
+			);
+			name = StatusCell;
+			path = "MySina/classes/Home(首页)/Model/StatusCell";
+			sourceTree = SOURCE_ROOT;
+		};
+		AA8618321CCC78B5002AF93D /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				AA8618331CCC819C002AF93D /* PTStatusCell.h */,
+				AA8618341CCC819C002AF93D /* PTStatusCell.m */,
+				AA8618361CCC81BD002AF93D /* PTStatusDetailView.h */,
+				AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */,
+				AA8618391CCC81D0002AF93D /* PTStatusToolbar.h */,
+				AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */,
+				AA8618421CCC8832002AF93D /* PTStatusOriginalView.h */,
+				AA8618431CCC8832002AF93D /* PTStatusOriginalView.m */,
+				AA8618451CCC8849002AF93D /* PTStatusRetweetedView.h */,
+				AA8618461CCC8849002AF93D /* PTStatusRetweetedView.m */,
+				AAED54551CD0D1B000EB30CE /* PTStatusPhotosView.h */,
+				AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */,
+				AAED54571CD0D1B000EB30CE /* PTStatusPhotoView.h */,
+				AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */,
+			);
+			name = StatusCell;
+			path = "MySina/classes/Home(首页)/View/StatusCell";
+			sourceTree = SOURCE_ROOT;
+		};
 		AA8EE0211CC26C98003D89AA /* OAuth(OAuth授权) */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +519,7 @@
 				AAF74CC21CC50134003559BA /* MJExtension */,
 				AAF74CEB1CC50702003559BA /* SDWebImage */,
 				AA8EE03B1CC26FAD003D89AA /* MBProgressHUD */,
+				AADCB9D21CD22D7A00CACB8D /* MJPhotoBrowser */,
 			);
 			name = Lib;
 			path = Category/Lib;
@@ -518,6 +617,28 @@
 				AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		AADCB9D21CD22D7A00CACB8D /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AADCB9D31CD22D7A00CACB8D /* MJPhoto.h */,
+				AADCB9D41CD22D7A00CACB8D /* MJPhoto.m */,
+				AADCB9D51CD22D7A00CACB8D /* MJPhotoBrowser.bundle */,
+				AADCB9D61CD22D7A00CACB8D /* MJPhotoBrowser.h */,
+				AADCB9D71CD22D7A00CACB8D /* MJPhotoBrowser.m */,
+				AADCB9D81CD22D7A00CACB8D /* MJPhotoLoadingView.h */,
+				AADCB9D91CD22D7A00CACB8D /* MJPhotoLoadingView.m */,
+				AADCB9DA1CD22D7A00CACB8D /* MJPhotoProgressView.h */,
+				AADCB9DB1CD22D7A00CACB8D /* MJPhotoProgressView.m */,
+				AADCB9DC1CD22D7A00CACB8D /* MJPhotoToolbar.h */,
+				AADCB9DD1CD22D7A00CACB8D /* MJPhotoToolbar.m */,
+				AADCB9DE1CD22D7A00CACB8D /* MJPhotoView.h */,
+				AADCB9DF1CD22D7A00CACB8D /* MJPhotoView.m */,
+				AADCB9E01CD22D7A00CACB8D /* SDWebImageManager+MJ.h */,
+				AADCB9E11CD22D7A00CACB8D /* SDWebImageManager+MJ.m */,
+			);
+			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		AAE3E45F1CBA208500AE23C0 = {
@@ -652,6 +773,7 @@
 		AAE3E4A91CBA211700AE23C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA8618311CCC78A8002AF93D /* StatusCell */,
 				AAF74CDF1CC50189003559BA /* PTPhoto.h */,
 				AAF74CE01CC50189003559BA /* PTPhoto.m */,
 				AAF74CE11CC50189003559BA /* PTStatus.h */,
@@ -666,6 +788,7 @@
 		AAE3E4AA1CBA211700AE23C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA8618321CCC78B5002AF93D /* StatusCell */,
 				AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */,
 				AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */,
 				AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */,
@@ -695,6 +818,8 @@
 			isa = PBXGroup;
 			children = (
 				AAF74D1D1CC50AEB003559BA /* Foundation+Log.m */,
+				AA013BF11CCE3815007D44A9 /* NSDate+TimeDisplay.h */,
+				AA013BF21CCE3815007D44A9 /* NSDate+TimeDisplay.m */,
 				AAE3E4AD1CBA211700AE23C0 /* UIBarButtonItem+Extension.h */,
 				AAE3E4AE1CBA211700AE23C0 /* UIBarButtonItem+Extension.m */,
 				AAE3E4AF1CBA211700AE23C0 /* UIImage+Extension.h */,
@@ -737,6 +862,7 @@
 				AAE3E4BA1CBA211700AE23C0 /* main.m */,
 				AAE3E4BB1CBA211700AE23C0 /* PTAppDelegate.h */,
 				AAE3E4BC1CBA211700AE23C0 /* PTAppDelegate.m */,
+				AA013BF41CCE71A0007D44A9 /* temp.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1009,6 +1135,7 @@
 				AAE3E47B1CBA208600AE23C0 /* LaunchScreen.storyboard in Resources */,
 				AA8EE07F1CC26FAD003D89AA /* MBProgressHUD.bundle in Resources */,
 				AAE3E4DF1CBA293A00AE23C0 /* icon.png in Resources */,
+				AADCB9E31CD22D7A00CACB8D /* MJPhotoBrowser.bundle in Resources */,
 				AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */,
 				AAE3E4D61CBA216600AE23C0 /* Images.xcassets in Resources */,
 				AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */,
@@ -1041,11 +1168,13 @@
 				AA8EE07E1CC26FAD003D89AA /* MBProgressHUD+MJ.m in Sources */,
 				AAE3E4CE1CBA211700AE23C0 /* UIView+Extension.m in Sources */,
 				AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */,
+				AADCB9E51CD22D7A00CACB8D /* MJPhotoLoadingView.m in Sources */,
 				AAF74CD61CC50134003559BA /* MJArgument.m in Sources */,
 				AA4CA7CD1CCB1CDF00EE2B32 /* PTUnreadCountParam.m in Sources */,
 				AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */,
 				AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */,
 				AAF74D181CC50702003559BA /* UIImage+MultiFormat.m in Sources */,
+				AA8618471CCC8849002AF93D /* PTStatusRetweetedView.m in Sources */,
 				AAF74CDE1CC50134003559BA /* NSObject+MJMember.m in Sources */,
 				AAF74D191CC50702003559BA /* UIImage+WebP.m in Sources */,
 				AAF74D111CC50702003559BA /* SDWebImageDecoder.m in Sources */,
@@ -1059,9 +1188,12 @@
 				AAF74CE51CC50189003559BA /* PTPhoto.m in Sources */,
 				AA8EE0801CC26FAD003D89AA /* MBProgressHUD.m in Sources */,
 				AA4CA7D81CCB1CFC00EE2B32 /* PTStatusTool.m in Sources */,
+				AA86184D1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m in Sources */,
 				AAF74D1A1CC50702003559BA /* UIImageView+HighlightedWebCache.m in Sources */,
+				AA013BF31CCE3815007D44A9 /* NSDate+TimeDisplay.m in Sources */,
 				AA4CA7D01CCB1CDF00EE2B32 /* PTUserInfoResult.m in Sources */,
 				AAF74CEA1CC501A5003559BA /* PTLoadMoreFooter.m in Sources */,
+				AADCB9E61CD22D7A00CACB8D /* MJPhotoProgressView.m in Sources */,
 				AAE3E4CF1CBA211700AE23C0 /* PTNavigationController.m in Sources */,
 				AA4CA7CB1CCB1CDF00EE2B32 /* PTBaseParam.m in Sources */,
 				AA4CA7C91CCB1CDF00EE2B32 /* PTHomeStatusesParam.m in Sources */,
@@ -1071,29 +1203,41 @@
 				AAF74D121CC50702003559BA /* SDWebImageDownloader.m in Sources */,
 				AAF74D161CC50702003559BA /* UIButton+WebCache.m in Sources */,
 				AAF74CDB1CC50134003559BA /* MJTypeEncoding.m in Sources */,
+				AA8618351CCC819C002AF93D /* PTStatusCell.m in Sources */,
+				AADCB9E21CD22D7A00CACB8D /* MJPhoto.m in Sources */,
 				AAF74CD81CC50134003559BA /* MJMember.m in Sources */,
 				AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */,
+				AADCB9E41CD22D7A00CACB8D /* MJPhotoBrowser.m in Sources */,
 				AAF74CDD1CC50134003559BA /* NSObject+MJKeyValue.m in Sources */,
 				AAE3E4CC1CBA211700AE23C0 /* UIBarButtonItem+Extension.m in Sources */,
 				AA8EE0251CC26CC7003D89AA /* PTOAuthViewController.m in Sources */,
+				AA8618381CCC81BD002AF93D /* PTStatusDetailView.m in Sources */,
 				AA4CA7D71CCB1CFC00EE2B32 /* PTHttpTool.m in Sources */,
 				AA4173561CC12FD0003340E2 /* PTNewfeatureViewController.m in Sources */,
 				AAE3E4CA1CBA211700AE23C0 /* PTDiscoverViewController.m in Sources */,
+				AA86184A1CCC8866002AF93D /* PTStatusOriginalViewFrame.m in Sources */,
 				AAF74D131CC50702003559BA /* SDWebImageDownloaderOperation.m in Sources */,
+				AA86183E1CCC8421002AF93D /* PTStatusFrame.m in Sources */,
 				AA8EE0761CC26FAD003D89AA /* AFHTTPRequestOperationManager.m in Sources */,
 				AAF74CE71CC50189003559BA /* PTUser.m in Sources */,
 				AA4CA7DD1CCB1E5A00EE2B32 /* PTSendStatusParam.m in Sources */,
 				AAE3E4D41CBA211700AE23C0 /* PTProfileViewController.m in Sources */,
+				AA8618411CCC8630002AF93D /* PTStatusDetailViewFrame.m in Sources */,
 				AA8EE0751CC26FAD003D89AA /* AFHTTPRequestOperation.m in Sources */,
 				AA9F9B541CC296A900A72F46 /* PTAccountTool.m in Sources */,
 				AA8EE07D1CC26FAD003D89AA /* AFURLSessionManager.m in Sources */,
 				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
 				AA4CA7CE1CCB1CDF00EE2B32 /* PTUnreadCountResult.m in Sources */,
+				AADCB9E71CD22D7A00CACB8D /* MJPhotoToolbar.m in Sources */,
 				AAF74CE61CC50189003559BA /* PTStatus.m in Sources */,
 				AAF74D1C1CC50702003559BA /* UIView+WebCacheOperation.m in Sources */,
+				AADCB9E81CD22D7A00CACB8D /* MJPhotoView.m in Sources */,
+				AAED54591CD0D1B000EB30CE /* PTStatusPhotosView.m in Sources */,
 				AAF74D0F1CC50702003559BA /* SDImageCache.m in Sources */,
+				AA8618441CCC8832002AF93D /* PTStatusOriginalView.m in Sources */,
 				AAF74D141CC50702003559BA /* SDWebImageManager.m in Sources */,
 				AAF74CD91CC50134003559BA /* MJMethod.m in Sources */,
+				AAED545A1CD0D1B000EB30CE /* PTStatusPhotoView.m in Sources */,
 				AAF74D151CC50702003559BA /* SDWebImagePrefetcher.m in Sources */,
 				AA1689071CC64DDC0071C3FD /* PTComposePhotosView.m in Sources */,
 				AAF74CDC1CC50134003559BA /* NSObject+MJCoding.m in Sources */,
@@ -1103,9 +1247,11 @@
 				AA8EE07C1CC26FAD003D89AA /* AFURLResponseSerialization.m in Sources */,
 				AA4CA7D91CCB1CFC00EE2B32 /* PTUserTool.m in Sources */,
 				AA4CA7CA1CCB1CDF00EE2B32 /* PTHomeStatusesResult.m in Sources */,
+				AA86183B1CCC81D0002AF93D /* PTStatusToolbar.m in Sources */,
 				AA8EE07B1CC26FAD003D89AA /* AFURLRequestSerialization.m in Sources */,
 				AAF74D241CC52FE4003559BA /* PTComposeToolBar.m in Sources */,
 				AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */,
+				AADCB9E91CD22D7A00CACB8D /* SDWebImageManager+MJ.m in Sources */,
 				AAF74D1B1CC50702003559BA /* UIImageView+WebCache.m in Sources */,
 				AA4CA7CF1CCB1CDF00EE2B32 /* PTUserInfoParam.m in Sources */,
 				AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */,

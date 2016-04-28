@@ -51,8 +51,8 @@
 	[super setTitle:title forState:state];
 	
 	// 1.计算文字的尺寸
-	CGSize size = [title sizeWithFont:self.titleLabel.font];
-	
+//	CGSize size = [title sizeWithFont:self.titleLabel.font];
+    CGSize size = [title sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}];
 	// 2.计算按钮的宽度
 	self.width = size.width + self.height + 10;
 }

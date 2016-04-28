@@ -22,14 +22,16 @@
 #import "PTUserInfoParam.h"
 #import "PTUserInfoResult.h"
 #import "PTUserTool.h"
+#import "PTStatusCell.h"
+#import "PTStatusFrame.h"
 
 static NSString *cellId = @"HomeViewCell";
 
 @interface PTHomeViewController () <PTPopMenuDelegate>
 /**
- *  微博数组(存放着所有的微博数据)
+ *  微博frame数组(存放着所有的微博frame模型)
  */
-@property (nonatomic, copy) NSMutableArray *statuses;
+@property (nonatomic, strong) NSMutableArray *statusFrames;
 
 @property (nonatomic, weak) PTTitleButton *titleButton;
 
@@ -43,16 +45,20 @@ static NSString *cellId = @"HomeViewCell";
 @implementation PTHomeViewController
 
 // 懒加载
-- (NSMutableArray *)statuses
+- (NSMutableArray *)statusFrames
 {
-	if (!_statuses) {
-		_statuses = [NSMutableArray array];
+	if (!_statusFrames) {
+		_statusFrames = [NSMutableArray array];
 	}
-	return _statuses;
+	return _statusFrames;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	// tableView属性设置
+	self.tableView.backgroundColor = PTColor(211, 211, 211);
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	// 设置导航栏的内容
 	[self setupNavBar];
@@ -99,7 +105,7 @@ static NSString *cellId = @"HomeViewCell";
 	titleButton.height = 35;
 	// 设置文字，如果有账号缓存，使用用户名，没有就显示“首页”
 	NSString *name = [PTAccountTool account].name;
-	[titleButton setTitle:name?:@"首页" forState:UIControlStateNormal];
+	[titleButton setTitle:(name ? name :@"首页") forState:UIControlStateNormal];
 	// 设置图标
 	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
 	// 设置背景
@@ -154,7 +160,26 @@ static NSString *cellId = @"HomeViewCell";
 	} else if (fromSelf) { // 首页没有数据，第二次点击仍然是首页，回顶部
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 		[self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-	}
+    }
+}
+
+/**
+ *  微博模型数组--转--微博frame模型数组
+ *
+ *  @param statuses 微博模型数组
+ *
+ *  @return 微博frame模型数组
+ */
+- (NSArray *)statusFramesWithStatuses:(NSArray *)statuses
+{
+    NSMutableArray *statusFrames = [NSMutableArray array];
+    for (PTStatus *status in statuses) {
+        PTStatusFrame *statusFrame = [[PTStatusFrame alloc] init];
+        // 传递微博模型数据，计算所有子控件的frame
+        statusFrame.status = status;
+        [statusFrames addObject:statusFrame];
+    }
+    return statusFrames;
 }
 
 #pragma mark - 加载微博数据
@@ -165,22 +190,28 @@ static NSString *cellId = @"HomeViewCell";
 {
 	// 1.封装请求参数
 	PTHomeStatusesParam *param = [PTHomeStatusesParam param];
-	//param.count = @10; //默认值20
-	PTStatus *firstStatus = [self.statuses firstObject];
+//	param.count = @10; //默认值20
+    PTStatusFrame *statusFrame = [self.statusFrames firstObject];
+    PTStatus *firstStatus = statusFrame.status;
 	if (firstStatus) {
 		param.since_id = @([firstStatus.idstr longLongValue]);
 	}
 	
 	// 获取当前用户最新微博数据
 	[PTStatusTool homeStatusesWithParam:param success:^(PTHomeStatusesResult *result) {
-		// 微博模型数组
-		NSArray *newStatuses = result.statuses;
-		
+        PTLog(@"加载微博数据请求成功---");
+		// 微博模型frame数组
+		NSArray *newStatusFrames = [self statusFramesWithStatuses:result.statuses];
+        for (PTStatusFrame *frame in newStatusFrames) {
+            PTStatus *status = frame.status;
+//            PTLog(@"%d -- %d", status.user.mbtype, status.user.mbrank);
+            PTLog(@"%d---", status.pic_urls.count);
+        }
 		// 将新数据插入到旧数据的最前面
-		NSRange range = NSMakeRange(0, newStatuses.count);
+		NSRange range = NSMakeRange(0, newStatusFrames.count);
 		
 		NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-		[self.statuses insertObjects:newStatuses atIndexes:indexSet];
+		[self.statusFrames insertObjects:newStatusFrames atIndexes:indexSet];
 		
 		// 重新刷新表格
 		[self.tableView reloadData];
@@ -189,11 +220,11 @@ static NSString *cellId = @"HomeViewCell";
 		[refreshControl endRefreshing];
 		
 		// 提示用户最新的微博数量
-		[self showNewStatusesCount:newStatuses.count];
+		[self showNewStatusesCount:newStatusFrames.count];
 		
 		
 	} failure:^(NSError *error) {
-		PTLog(@"请求失败---%@", error);
+		PTLog(@"加载微博数据请求失败---");
 	  // 让刷新控件停止刷新（恢复默认的状态）
 	  [refreshControl endRefreshing];
 		
@@ -209,15 +240,16 @@ static NSString *cellId = @"HomeViewCell";
 	PTHomeStatusesParam *param = [PTHomeStatusesParam param];
 	
 	// 取出已加载的微博数据最后一条的since_id
-	PTStatus *lastStatus = [self.statuses lastObject];
+    PTStatusFrame *statusFrame = [self.statusFrames lastObject];
+    PTStatus *lastStatus = statusFrame.status;
 	param.max_id = @([lastStatus.idstr longLongValue] - 1);
 	
 	// 2.获取更多微博数据
 	[PTStatusTool homeStatusesWithParam:param success:^(PTHomeStatusesResult *result) {
-		// 微博模型数组
-		NSArray *newStatuses = result.statuses;
+		// 微博frame模型数组
+		NSArray *newStatusFrames = [self statusFramesWithStatuses:result.statuses];
 		// 将新数据插入到旧数据的最后面
-		[self.statuses addObjectsFromArray:newStatuses];
+		[self.statusFrames addObjectsFromArray:newStatusFrames];
 		
 		// 重新刷新表格
 		[self.tableView reloadData];
@@ -320,31 +352,27 @@ static NSString *cellId = @"HomeViewCell";
 
 #pragma mark - Table view 数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    self.loadMoreFooter.hidden = self.statuses.count == 0;
+    self.loadMoreFooter.hidden = self.statusFrames.count == 0;
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.statuses.count;
-    PTLog(@"%d", self.statuses.count);
+    return self.statusFrames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+    PTStatusCell *cell = [PTStatusCell cellWithTableView:tableView];
     
-    // 取出字典模型
-    PTStatus *status = self.statuses[indexPath.row];
-    
-    // 取出用户模型
-    PTUser *user = status.user;
-    
-    // 设置Cell
-    cell.textLabel.text = user.name;
-    cell.detailTextLabel.text = status.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageWithName:@"avatar_default_small"]];
+    PTStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    cell.statusFrame = statusFrame;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PTStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    return statusFrame.cellHeight;
 }
 
 #pragma mark - tableView代理方法
@@ -359,7 +387,7 @@ static NSString *cellId = @"HomeViewCell";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.statuses.count <= 0 || self.loadMoreFooter.refreshing)
+    if (self.statusFrames.count <= 0 || self.loadMoreFooter.refreshing)
     {
         NSLog(@"DoNothing");
         return;

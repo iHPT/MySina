@@ -13,9 +13,9 @@
 /** 缩略图片地址 */
 @property (nonatomic, copy) NSString *thumbnail_pic;
 
-///** 中等尺寸图片地址 */
-//@property (nonatomic, copy) NSString *bmiddle_pic;
-//
+/** 中等尺寸图片地址 */
+@property (nonatomic, copy) NSString *bmiddle_pic;
+
 ///** 原始图片地址 */
 //@property (nonatomic, copy) NSString *original_pic;
 

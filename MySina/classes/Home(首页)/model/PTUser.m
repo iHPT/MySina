@@ -10,4 +10,9 @@
 
 @implementation PTUser
 
+- (BOOL)isVip
+{
+	return self.mbtype > 2;
+}
+
 @end
