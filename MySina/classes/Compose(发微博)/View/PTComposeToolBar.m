@@ -8,6 +8,14 @@
 
 #import "PTComposeToolBar.h"
 
+@interface PTComposeToolBar ()
+
+
+@property (nonatomic, weak) UIButton *emotionButton;
+
+@end
+
+
 @implementation PTComposeToolBar
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -20,9 +28,21 @@
         [self addButtonWithImageName:@"compose_toolbar_picture" highlightedImageName:@"compose_toolbar_picture_highlighted" tag:PTComposeToolBarButtonTypePicture];
         [self addButtonWithImageName:@"compose_trendbutton_background" highlightedImageName:@"compose_trendbutton_background_highlighted" tag:PTComposeToolBarButtonTypeTrend];
         [self addButtonWithImageName:@"compose_mentionbutton_background" highlightedImageName:@"compose_mentionbutton_background_highlighted" tag:PTComposeToolBarButtonTypeMention];
-        [self addButtonWithImageName:@"compose_emoticonbutton_background" highlightedImageName:@"compose_emoticonbutton_background_highlighted" tag:PTComposeToolBarButtonTypeEmotion];
+        self.emotionButton = [self addButtonWithImageName:@"compose_emoticonbutton_background" highlightedImageName:@"compose_emoticonbutton_background_highlighted" tag:PTComposeToolBarButtonTypeEmotion];
     }
     return self;
+}
+
+- (void)setShowEmotionButton:(BOOL)showEmotionButton
+{
+    _showEmotionButton = showEmotionButton;
+    if (showEmotionButton) { // 显示表情按钮
+        [self.emotionButton setImage:[UIImage imageWithName:@"compose_emoticonbutton_background"] forState:UIControlStateNormal];
+        [self.emotionButton setImage:[UIImage imageWithName:@"compose_emoticonbutton_background_highlighted"] forState:UIControlStateHighlighted];
+    } else { // 切换为键盘按钮
+        [self.emotionButton setImage:[UIImage imageWithName:@"compose_keyboardbutton_background"] forState:UIControlStateNormal];
+        [self.emotionButton setImage:[UIImage imageWithName:@"compose_keyboardbutton_background_highlighted"] forState:UIControlStateHighlighted];
+    }
 }
 
 - (void)layoutSubviews
@@ -41,7 +61,7 @@
     }
 }
 
-- (void)addButtonWithImageName:(NSString *)imageName highlightedImageName:(NSString *)highlightedImageName tag:(PTComposeToolBarButtonType)buttonType
+- (UIButton *)addButtonWithImageName:(NSString *)imageName highlightedImageName:(NSString *)highlightedImageName tag:(PTComposeToolBarButtonType)buttonType
 {
     UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageWithName:imageName] forState:UIControlStateNormal];
@@ -50,6 +70,8 @@
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:button];
+    
+    return button;
 }
 
 - (void)buttonClick:(UIButton *)button

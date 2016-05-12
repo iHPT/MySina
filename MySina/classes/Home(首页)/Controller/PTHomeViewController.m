@@ -24,6 +24,7 @@
 #import "PTUserTool.h"
 #import "PTStatusCell.h"
 #import "PTStatusFrame.h"
+#import "PTStatusLink.h"
 
 static NSString *cellId = @"HomeViewCell";
 
@@ -68,6 +69,26 @@ static NSString *cellId = @"HomeViewCell";
 	
 	// 获得用户信息，设置title
 	[self setupUserInfo];
+	
+	// 注册status链接点解通知
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusLinkDidSelected:) name:PTStatusLinkDidSelectedNotification object:nil];
+}
+
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)statusLinkDidSelected:(NSNotification *)note
+{
+    NSString *linkText = note.userInfo[PTStatusLinkText];
+	if ([linkText hasPrefix:@"http"]) { // 如果是链接
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkText]];
+		
+	} else { // 非链接
+		// 跳转控制器
+    PTLog(@"选中了非HTTP链接---%@", note.userInfo[linkText]);
+	}
 }
 
 - (void)setupUserInfo
@@ -152,7 +173,6 @@ static NSString *cellId = @"HomeViewCell";
  */
 - (void)refresh:(BOOL)fromSelf
 {
-    PTLog(@"%@", self.tabBarItem.badgeValue);
 	if (self.tabBarItem.badgeValue) { // 首页只有有数据，就刷新
 		// 刷新数据
 		[self loadNewStatuses:self.refreshControl];
@@ -202,11 +222,11 @@ static NSString *cellId = @"HomeViewCell";
         PTLog(@"加载微博数据请求成功---");
 		// 微博模型frame数组
 		NSArray *newStatusFrames = [self statusFramesWithStatuses:result.statuses];
-        for (PTStatusFrame *frame in newStatusFrames) {
-            PTStatus *status = frame.status;
-//            PTLog(@"%d -- %d", status.user.mbtype, status.user.mbrank);
-            PTLog(@"%d---", status.pic_urls.count);
-        }
+//        for (PTStatusFrame *frame in newStatusFrames) {
+//            PTStatus *status = frame.status;
+////            PTLog(@"%d -- %d", status.user.mbtype, status.user.mbrank);
+//            PTLog(@"%d---", status.pic_urls.count);
+//        }
 		// 将新数据插入到旧数据的最前面
 		NSRange range = NSMakeRange(0, newStatusFrames.count);
 		

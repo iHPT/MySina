@@ -10,6 +10,11 @@
 #import "PTPhoto.h"
 #import "MJExtension.h"
 #import "NSDate+TimeDisplay.h"
+#import "PTEmotionAttachment.h"
+#import "PTEmotionTool.h"
+#import "RegexKitLite.h"
+#import "PTRegexResult.h"
+#import "PTUser.h"
 
 @implementation PTStatus
 
@@ -88,6 +93,156 @@
     NSString *subsource = [source substringWithRange:range];
     
     _source = [NSString stringWithFormat:@"来自%@", subsource];
+}
+
+- (NSArray *)regexResultsWithText:(NSString *)text
+{
+	// 用来存放所有的匹配结果
+	NSMutableArray *regexResults = [NSMutableArray array];
+	
+	// 匹配表情
+    NSString *regex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
+	[text enumerateStringsMatchedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+		PTRegexResult *regexResult = [[PTRegexResult alloc] init];
+		regexResult.string = *capturedStrings;
+		regexResult.range = *capturedRanges;
+		regexResult.emotion = YES;
+		[regexResults addObject:regexResult];
+	}];
+	
+	// 匹配非表情
+	[text enumerateStringsSeparatedByRegex:regex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+		PTRegexResult *regexResult = [[PTRegexResult alloc] init];
+		regexResult.string = *capturedStrings;
+		regexResult.range = *capturedRanges;
+		regexResult.emotion = NO;
+		[regexResults addObject:regexResult];
+	}];
+	
+	// 排序
+	[regexResults sortUsingComparator:^NSComparisonResult(PTRegexResult *result1, PTRegexResult *result2) {
+		int loc1 = result1.range.location;
+		int loc2 = result2.range.location;
+		return [@(loc1) compare:@(loc2)];
+//			if (loc1 < loc2) {
+//			    return NSOrderedAscending; // 升序（右边越来越大）
+//			} else if (loc1 > loc2) {
+//			    return NSOrderedDescending; // 降序（右边越来越小）
+//			} else {
+//			    return NSOrderedSame;
+//			}
+	}];
+	
+	return regexResults;
+}
+
+- (void)setUser:(PTUser *)user
+{
+    _user = user;
+    
+    [self createAttributedText];
+}
+
+- (void)setText:(NSString *)text
+{
+	_text = [text copy];
+    
+    [self createAttributedText];
+}
+
+- (void)setRetweeted_status:(PTStatus *)retweeted_status
+{
+    _retweeted_status = retweeted_status;
+    
+    self.retweeted = NO;
+    
+    _retweeted_status.retweeted = YES;
+}
+
+- (void)setRetweeted:(BOOL)retweeted
+{
+    _retweeted = retweeted;
+    
+    [self createAttributedText];
+}
+
+/**
+ *  正文：有转发微博时，昵称和正文一起显示(不使用单独的Label)，没有转发微博时只显示正文
+ */
+- (void)createAttributedText
+{
+    if (self.user == nil && self.text == nil) return;
+    
+    if (self.retweeted) {
+        NSString *totalText = [NSString stringWithFormat:@"@%@ : %@", self.user.name, self.text];
+        
+        self.attributedText = [self attributedStringWithText:totalText];
+        
+    } else {
+        self.attributedText = [self attributedStringWithText:self.text];
+    }
+}
+
+/**
+ *	实际获取的微博表情数据为字符，需转换成图片表情，用属性attributeText属性表示
+ */
+- (NSAttributedString *)attributedStringWithText:(NSString *)text
+{
+    // 1.匹配字符串
+    NSArray *regexResults = [self regexResultsWithText:text];
+    
+    // 2.根据匹配结果，拼接对应的图片表情和普通文本
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
+    // 遍历
+    [regexResults enumerateObjectsUsingBlock:^(PTRegexResult *regexResult, NSUInteger idx, BOOL *stop) {
+        PTEmotion *emotion = nil;
+        if (regexResult.isEmotion) { // 表情
+            emotion = [PTEmotionTool emotionWithDesc:regexResult.string];
+        }
+        
+        if (emotion) {
+            // 创建附件对象
+            PTEmotionAttachment *attach = [[PTEmotionAttachment alloc] init];
+            
+            // 获取表情
+            attach.emotion = [PTEmotionTool emotionWithDesc:regexResult.string];
+            attach.bounds = CGRectMake(0, -3, PTStatusCellTextFont.lineHeight, PTStatusCellTextFont.lineHeight);
+            
+            // 将附件包装成富文本
+            [attributedString appendAttributedString:[NSAttributedString attributedStringWithAttachment:attach]];
+            
+        } else { // 非表情（直接拼接普通文本）
+            NSMutableAttributedString *substring = [[NSMutableAttributedString alloc] initWithString:regexResult.string];
+            
+            // 匹配#话题#
+            NSString *trendRegex = @"#[a-zA-Z0-9\\u4e00-\\u9fa5]+#";
+            [regexResult.string enumerateStringsMatchedByRegex:trendRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [substring addAttribute:NSForegroundColorAttributeName value:PTStatusHighlightedTextColor range:*capturedRanges];
+                /** 添加link识别属性 */
+                [substring addAttribute:PTStatusLinkText value:*capturedStrings range:*capturedRanges];
+            }];
+            
+            // 匹配@提到
+            NSString *mentionRegex = @"@[a-zA-Z0-9\\u4e00-\\u9fa5\\-_]+ ?";
+            [regexResult.string enumerateStringsMatchedByRegex:mentionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [substring addAttribute:NSForegroundColorAttributeName value:PTStatusHighlightedTextColor range:*capturedRanges];
+                [substring addAttribute:PTStatusLinkText value:*capturedStrings range:*capturedRanges];
+            }];
+            
+            // 匹配超链接
+            NSString *linkReges = @"http(s)?://([a-zA-Z|\\d]+\\.)+[a-zA-Z|\\d]+(/[a-zA-Z|\\d|\\-|\\+|_./?%&=]*)?";
+            [regexResult.string enumerateStringsMatchedByRegex:linkReges usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+                [substring addAttribute:NSForegroundColorAttributeName value:PTStatusHighlightedTextColor range:*capturedRanges];
+                [substring addAttribute:PTStatusLinkText value:*capturedStrings range:*capturedRanges];
+            }];
+            
+            [attributedString appendAttributedString:substring];
+        }
+    }];
+    // 设置字体
+    [attributedString addAttribute:NSFontAttributeName value:PTStatusRichTextFont range:NSMakeRange(0, attributedString.length)];
+    
+    return attributedString;
 }
 
 @end

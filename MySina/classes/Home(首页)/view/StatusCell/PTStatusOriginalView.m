@@ -11,6 +11,7 @@
 #import "PTStatus.h"
 #import "PTUser.h"
 #import "PTStatusPhotosView.h"
+#import "PTStatusLabel.h"
 
 @interface PTStatusOriginalView ()
 
@@ -27,7 +28,7 @@
 @property (nonatomic, weak) UILabel *sourceLabel;
 
 /** 正文 */
-@property (nonatomic, weak) UILabel *textLabel;
+@property (nonatomic, weak) PTStatusLabel *textLabel;
 
 /** 会员图标 */
 @property (nonatomic, weak) UIImageView *vipView;
@@ -70,9 +71,7 @@
         self.sourceLabel = sourceLabel;
         
         // 正文
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = PTStatusCellTextFont;
-        textLabel.numberOfLines = 0;
+        PTStatusLabel *textLabel = [[PTStatusLabel alloc] init];
         [self addSubview:textLabel];
         self.textLabel = textLabel;
         
@@ -140,7 +139,8 @@
     self.sourceLabel.frame = (CGRect){{sourceX, sourceY}, sourceSize};
     
     // 正文
-    self.textLabel.text = status.text;
+//    self.textLabel.text = status.text;
+    self.textLabel.attributedText = status.attributedText;
     self.textLabel.frame = originalViewFrame.textFrame;
     
     // 相册

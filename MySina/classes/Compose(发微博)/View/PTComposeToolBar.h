@@ -27,6 +27,9 @@ typedef NS_OPTIONS(NSUInteger, PTComposeToolBarButtonType)
 
 @interface PTComposeToolBar : UIView
 
+/** 决定表情符按钮是像是笑脸图片还是键盘键盘图片 */
+@property (nonatomic, assign, getter = isShowEmotionButton) BOOL showEmotionButton;
+
 @property (nonatomic, weak) id<PTComposeToolBarDelegate> delegate;
 
 @end

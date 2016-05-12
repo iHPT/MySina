@@ -34,8 +34,7 @@
 
 - (void)textDidChange
 {
-    self.placeholderLabel.hidden = (self.text.length != 0);
-    
+    self.placeholderLabel.hidden = self.hasText;
 }
 
 - (void)dealloc
@@ -96,6 +95,12 @@
 - (void)setText:(NSString *)text
 {
     [super setText:text];
+    
+    [self textDidChange];
+}
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
     
     [self textDidChange];
 }

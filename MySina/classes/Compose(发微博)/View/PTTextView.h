@@ -14,4 +14,5 @@
 
 @property (nonatomic, strong) UIColor *placeholderColor;
 
+- (void)textDidChange;
 @end

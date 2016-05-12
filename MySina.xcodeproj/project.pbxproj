@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		AA013BF31CCE3815007D44A9 /* NSDate+TimeDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA013BF21CCE3815007D44A9 /* NSDate+TimeDisplay.m */; };
 		AA1689071CC64DDC0071C3FD /* PTComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */; };
+		AA2046211CD38F6D00F7F251 /* PTEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AA20461C1CD38F6D00F7F251 /* PTEmotionKeyboard.m */; };
+		AA2046221CD38F6D00F7F251 /* PTEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA20461E1CD38F6D00F7F251 /* PTEmotionListView.m */; };
+		AA2046231CD38F6D00F7F251 /* PTEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2046201CD38F6D00F7F251 /* PTEmotionToolbar.m */; };
+		AA2046261CD3A7DB00F7F251 /* PTEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2046251CD3A7DB00F7F251 /* PTEmotion.m */; };
+		AA2046291CD3A85600F7F251 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2046281CD3A85600F7F251 /* NSString+Emoji.m */; };
+		AA2047EF1CD3ABC800F7F251 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = AA2047EE1CD3ABC800F7F251 /* EmotionIcons */; };
+		AA2E26FB1CE170E10002914E /* PTEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E26FA1CE170E10002914E /* PTEmotionAttachment.m */; };
+		AA2E26FE1CE171140002914E /* PTEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E26FD1CE171140002914E /* PTEmotionTextView.m */; };
+		AA2E27011CE181530002914E /* PTRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27001CE181530002914E /* PTRegexResult.m */; };
+		AA2E27041CE181670002914E /* PTStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27031CE181670002914E /* PTStatus.m */; };
+		AA2E27091CE182C00002914E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27081CE182C00002914E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA2E270B1CE18A9B0002914E /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */; };
+		AA2E270D1CE18AB10002914E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E270C1CE18AB10002914E /* libicucore.tbd */; };
+		AA2E27101CE1D4CF0002914E /* PTStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E270F1CE1D4CF0002914E /* PTStatusLabel.m */; };
+		AA2E27131CE1E7100002914E /* PTStatusLink.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27121CE1E7100002914E /* PTStatusLink.m */; };
 		AA4173561CC12FD0003340E2 /* PTNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4173551CC12FD0003340E2 /* PTNewfeatureViewController.m */; };
 		AA4CA7C71CCB1CDF00EE2B32 /* PTAccessTokenParam.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7B11CCB1CDF00EE2B32 /* PTAccessTokenParam.m */; };
 		AA4CA7C81CCB1CDF00EE2B32 /* PTAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7B31CCB1CDF00EE2B32 /* PTAccount.m */; };
@@ -24,6 +39,8 @@
 		AA4CA7D91CCB1CFC00EE2B32 /* PTUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7D61CCB1CFC00EE2B32 /* PTUserTool.m */; };
 		AA4CA7DD1CCB1E5A00EE2B32 /* PTSendStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7DC1CCB1E5A00EE2B32 /* PTSendStatusParam.m */; };
 		AA4CA7E01CCB1E8700EE2B32 /* PTSendStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4CA7DF1CCB1E8700EE2B32 /* PTSendStatusResult.m */; };
+		AA79B1601CD8D540003808C6 /* PTEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79B15F1CD8D540003808C6 /* PTEmotionPopView.m */; };
+		AA79B1661CD8E23B003808C6 /* PTEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79B1651CD8E23B003808C6 /* PTEmotionTool.m */; };
 		AA8618351CCC819C002AF93D /* PTStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618341CCC819C002AF93D /* PTStatusCell.m */; };
 		AA8618381CCC81BD002AF93D /* PTStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */; };
 		AA86183B1CCC81D0002AF93D /* PTStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */; };
@@ -33,6 +50,7 @@
 		AA8618471CCC8849002AF93D /* PTStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618461CCC8849002AF93D /* PTStatusRetweetedView.m */; };
 		AA86184A1CCC8866002AF93D /* PTStatusOriginalViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */; };
 		AA86184D1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */; };
+		AA8ADA831CD447C400C7295D /* PTEmotionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8ADA821CD447C400C7295D /* PTEmotionGridView.m */; };
 		AA8E54BB1CBD13E2005B04F0 /* PTBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */; };
 		AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */; };
 		AA8EE0251CC26CC7003D89AA /* PTOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0241CC26CC7003D89AA /* PTOAuthViewController.m */; };
@@ -50,6 +68,7 @@
 		AA8EE0801CC26FAD003D89AA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0401CC26FAD003D89AA /* MBProgressHUD.m */; };
 		AA9F9B4E1CC28C5500A72F46 /* PTControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9F9B4D1CC28C5500A72F46 /* PTControllerTool.m */; };
 		AA9F9B541CC296A900A72F46 /* PTAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9F9B531CC296A900A72F46 /* PTAccountTool.m */; };
+		AAB5FAF41CD8D12B000C6B9E /* PTEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5FAF31CD8D12B000C6B9E /* PTEmotionView.m */; };
 		AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */; };
 		AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */; };
 		AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15591CBBE7050042D1CE /* PTComposeViewController.m */; };
@@ -94,7 +113,6 @@
 		AAF74CDD1CC50134003559BA /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CD31CC50134003559BA /* NSObject+MJKeyValue.m */; };
 		AAF74CDE1CC50134003559BA /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CD51CC50134003559BA /* NSObject+MJMember.m */; };
 		AAF74CE51CC50189003559BA /* PTPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CE01CC50189003559BA /* PTPhoto.m */; };
-		AAF74CE61CC50189003559BA /* PTStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CE21CC50189003559BA /* PTStatus.m */; };
 		AAF74CE71CC50189003559BA /* PTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CE41CC50189003559BA /* PTUser.m */; };
 		AAF74CEA1CC501A5003559BA /* PTLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CE91CC501A5003559BA /* PTLoadMoreFooter.m */; };
 		AAF74D0D1CC50702003559BA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CED1CC50702003559BA /* MKAnnotationView+WebCache.m */; };
@@ -141,6 +159,33 @@
 		AA013BF41CCE71A0007D44A9 /* temp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = temp.h; sourceTree = "<group>"; };
 		AA1689051CC64DDC0071C3FD /* PTComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTComposePhotosView.h; path = "MySina/classes/Compose(发微博)/View/PTComposePhotosView.h"; sourceTree = SOURCE_ROOT; };
 		AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTComposePhotosView.m; path = "MySina/classes/Compose(发微博)/View/PTComposePhotosView.m"; sourceTree = SOURCE_ROOT; };
+		AA20461B1CD38F6D00F7F251 /* PTEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionKeyboard.h; sourceTree = "<group>"; };
+		AA20461C1CD38F6D00F7F251 /* PTEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionKeyboard.m; sourceTree = "<group>"; };
+		AA20461D1CD38F6D00F7F251 /* PTEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionListView.h; sourceTree = "<group>"; };
+		AA20461E1CD38F6D00F7F251 /* PTEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionListView.m; sourceTree = "<group>"; };
+		AA20461F1CD38F6D00F7F251 /* PTEmotionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionToolbar.h; sourceTree = "<group>"; };
+		AA2046201CD38F6D00F7F251 /* PTEmotionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionToolbar.m; sourceTree = "<group>"; };
+		AA2046241CD3A7DB00F7F251 /* PTEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotion.h; sourceTree = "<group>"; };
+		AA2046251CD3A7DB00F7F251 /* PTEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotion.m; sourceTree = "<group>"; };
+		AA2046271CD3A85600F7F251 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		AA2046281CD3A85600F7F251 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		AA2047EE1CD3ABC800F7F251 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		AA2E26F91CE170E10002914E /* PTEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTEmotionAttachment.h; path = "MySina/classes/Compose(发微博)/Model/PTEmotionAttachment.h"; sourceTree = SOURCE_ROOT; };
+		AA2E26FA1CE170E10002914E /* PTEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTEmotionAttachment.m; path = "MySina/classes/Compose(发微博)/Model/PTEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
+		AA2E26FC1CE171140002914E /* PTEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionTextView.h; sourceTree = "<group>"; };
+		AA2E26FD1CE171140002914E /* PTEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionTextView.m; sourceTree = "<group>"; };
+		AA2E26FF1CE181530002914E /* PTRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRegexResult.h; sourceTree = "<group>"; };
+		AA2E27001CE181530002914E /* PTRegexResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRegexResult.m; sourceTree = "<group>"; };
+		AA2E27021CE181670002914E /* PTStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatus.h; sourceTree = "<group>"; };
+		AA2E27031CE181670002914E /* PTStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatus.m; sourceTree = "<group>"; };
+		AA2E27071CE182C00002914E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		AA2E27081CE182C00002914E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		AA2E270C1CE18AB10002914E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		AA2E270E1CE1D4CF0002914E /* PTStatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusLabel.h; sourceTree = "<group>"; };
+		AA2E270F1CE1D4CF0002914E /* PTStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusLabel.m; sourceTree = "<group>"; };
+		AA2E27111CE1E7100002914E /* PTStatusLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusLink.h; sourceTree = "<group>"; };
+		AA2E27121CE1E7100002914E /* PTStatusLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusLink.m; sourceTree = "<group>"; };
 		AA4173541CC12FD0003340E2 /* PTNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTNewfeatureViewController.h; sourceTree = "<group>"; };
 		AA4173551CC12FD0003340E2 /* PTNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTNewfeatureViewController.m; sourceTree = "<group>"; };
 		AA4CA7B01CCB1CDF00EE2B32 /* PTAccessTokenParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTAccessTokenParam.h; sourceTree = "<group>"; };
@@ -171,6 +216,10 @@
 		AA4CA7DC1CCB1E5A00EE2B32 /* PTSendStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSendStatusParam.m; sourceTree = "<group>"; };
 		AA4CA7DE1CCB1E8700EE2B32 /* PTSendStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSendStatusResult.h; sourceTree = "<group>"; };
 		AA4CA7DF1CCB1E8700EE2B32 /* PTSendStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSendStatusResult.m; sourceTree = "<group>"; };
+		AA79B15E1CD8D540003808C6 /* PTEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionPopView.h; sourceTree = "<group>"; };
+		AA79B15F1CD8D540003808C6 /* PTEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionPopView.m; sourceTree = "<group>"; };
+		AA79B1641CD8E23B003808C6 /* PTEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionTool.h; sourceTree = "<group>"; };
+		AA79B1651CD8E23B003808C6 /* PTEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionTool.m; sourceTree = "<group>"; };
 		AA8618331CCC819C002AF93D /* PTStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusCell.h; sourceTree = "<group>"; };
 		AA8618341CCC819C002AF93D /* PTStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusCell.m; sourceTree = "<group>"; };
 		AA8618361CCC81BD002AF93D /* PTStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailView.h; sourceTree = "<group>"; };
@@ -189,6 +238,8 @@
 		AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusOriginalViewFrame.m; sourceTree = "<group>"; };
 		AA86184B1CCC8877002AF93D /* PTStatusRetweetedViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusRetweetedViewFrame.h; sourceTree = "<group>"; };
 		AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusRetweetedViewFrame.m; sourceTree = "<group>"; };
+		AA8ADA811CD447C400C7295D /* PTEmotionGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionGridView.h; sourceTree = "<group>"; };
+		AA8ADA821CD447C400C7295D /* PTEmotionGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionGridView.m; sourceTree = "<group>"; };
 		AA8E54B51CBD13E2005B04F0 /* PTBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBadgeButton.h; sourceTree = "<group>"; };
 		AA8E54B61CBD13E2005B04F0 /* PTBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBadgeButton.m; sourceTree = "<group>"; };
 		AA8E54B91CBD13E2005B04F0 /* PTTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBarButton.h; sourceTree = "<group>"; };
@@ -223,6 +274,8 @@
 		AA9F9B4D1CC28C5500A72F46 /* PTControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTControllerTool.m; sourceTree = "<group>"; };
 		AA9F9B521CC296A900A72F46 /* PTAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTAccountTool.h; sourceTree = "<group>"; };
 		AA9F9B531CC296A900A72F46 /* PTAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTAccountTool.m; sourceTree = "<group>"; };
+		AAB5FAF21CD8D12B000C6B9E /* PTEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionView.h; sourceTree = "<group>"; };
+		AAB5FAF31CD8D12B000C6B9E /* PTEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionView.m; sourceTree = "<group>"; };
 		AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPopMenu.h; sourceTree = "<group>"; };
 		AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPopMenu.m; sourceTree = "<group>"; };
 		AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTitleButton.h; sourceTree = "<group>"; };
@@ -308,8 +361,6 @@
 		AAF74CD51CC50134003559BA /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
 		AAF74CDF1CC50189003559BA /* PTPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPhoto.h; sourceTree = "<group>"; };
 		AAF74CE01CC50189003559BA /* PTPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPhoto.m; sourceTree = "<group>"; };
-		AAF74CE11CC50189003559BA /* PTStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatus.h; sourceTree = "<group>"; };
-		AAF74CE21CC50189003559BA /* PTStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatus.m; sourceTree = "<group>"; };
 		AAF74CE31CC50189003559BA /* PTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUser.h; sourceTree = "<group>"; };
 		AAF74CE41CC50189003559BA /* PTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTUser.m; sourceTree = "<group>"; };
 		AAF74CE81CC501A5003559BA /* PTLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLoadMoreFooter.h; sourceTree = "<group>"; };
@@ -359,6 +410,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2E270D1CE18AB10002914E /* libicucore.tbd in Frameworks */,
+				AA2E270B1CE18A9B0002914E /* libicucore.A.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +432,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA20461A1CD38F6D00F7F251 /* EmotionsKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AA2E26FC1CE171140002914E /* PTEmotionTextView.h */,
+				AA2E26FD1CE171140002914E /* PTEmotionTextView.m */,
+				AA20461B1CD38F6D00F7F251 /* PTEmotionKeyboard.h */,
+				AA20461C1CD38F6D00F7F251 /* PTEmotionKeyboard.m */,
+				AA20461D1CD38F6D00F7F251 /* PTEmotionListView.h */,
+				AA20461E1CD38F6D00F7F251 /* PTEmotionListView.m */,
+				AA20461F1CD38F6D00F7F251 /* PTEmotionToolbar.h */,
+				AA2046201CD38F6D00F7F251 /* PTEmotionToolbar.m */,
+				AA8ADA811CD447C400C7295D /* PTEmotionGridView.h */,
+				AA8ADA821CD447C400C7295D /* PTEmotionGridView.m */,
+				AAB5FAF21CD8D12B000C6B9E /* PTEmotionView.h */,
+				AAB5FAF31CD8D12B000C6B9E /* PTEmotionView.m */,
+				AA79B15E1CD8D540003808C6 /* PTEmotionPopView.h */,
+				AA79B15F1CD8D540003808C6 /* PTEmotionPopView.m */,
+			);
+			name = EmotionsKeyboard;
+			path = "MySina/classes/Compose(发微博)/View/EmotionsKeyboard";
+			sourceTree = SOURCE_ROOT;
+		};
+		AA2E27061CE182C00002914E /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				AA2E27071CE182C00002914E /* RegexKitLite.h */,
+				AA2E27081CE182C00002914E /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
 		AA4173521CC12FD0003340E2 /* Newfeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +541,15 @@
 			path = MySina/classes/Main/Model/SendStatus;
 			sourceTree = SOURCE_ROOT;
 		};
+		AA79B1631CD8E221003808C6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AA79B1641CD8E23B003808C6 /* PTEmotionTool.h */,
+				AA79B1651CD8E23B003808C6 /* PTEmotionTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		AA8618311CCC78A8002AF93D /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +561,8 @@
 				AA8618491CCC8866002AF93D /* PTStatusOriginalViewFrame.m */,
 				AA86184B1CCC8877002AF93D /* PTStatusRetweetedViewFrame.h */,
 				AA86184C1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m */,
+				AA2E27111CE1E7100002914E /* PTStatusLink.h */,
+				AA2E27121CE1E7100002914E /* PTStatusLink.m */,
 			);
 			name = StatusCell;
 			path = "MySina/classes/Home(首页)/Model/StatusCell";
@@ -490,6 +585,8 @@
 				AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */,
 				AAED54571CD0D1B000EB30CE /* PTStatusPhotoView.h */,
 				AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */,
+				AA2E270E1CE1D4CF0002914E /* PTStatusLabel.h */,
+				AA2E270F1CE1D4CF0002914E /* PTStatusLabel.m */,
 			);
 			name = StatusCell;
 			path = "MySina/classes/Home(首页)/View/StatusCell";
@@ -520,6 +617,7 @@
 				AAF74CEB1CC50702003559BA /* SDWebImage */,
 				AA8EE03B1CC26FAD003D89AA /* MBProgressHUD */,
 				AADCB9D21CD22D7A00CACB8D /* MJPhotoBrowser */,
+				AA2E27061CE182C00002914E /* RegexKitLite */,
 			);
 			name = Lib;
 			path = Category/Lib;
@@ -583,6 +681,7 @@
 		AACC15561CBBE7050042D1CE /* Compose(发微博) */ = {
 			isa = PBXGroup;
 			children = (
+				AA79B1631CD8E221003808C6 /* Tool */,
 				AACC15571CBBE7050042D1CE /* Controller */,
 				AACC155A1CBBE7050042D1CE /* model */,
 				AACC155B1CBBE7050042D1CE /* view */,
@@ -602,6 +701,10 @@
 		AACC155A1CBBE7050042D1CE /* model */ = {
 			isa = PBXGroup;
 			children = (
+				AA2046241CD3A7DB00F7F251 /* PTEmotion.h */,
+				AA2046251CD3A7DB00F7F251 /* PTEmotion.m */,
+				AA2E26F91CE170E10002914E /* PTEmotionAttachment.h */,
+				AA2E26FA1CE170E10002914E /* PTEmotionAttachment.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -609,6 +712,7 @@
 		AACC155B1CBBE7050042D1CE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				AA20461A1CD38F6D00F7F251 /* EmotionsKeyboard */,
 				AAF74D201CC51A8E003559BA /* PTTextView.h */,
 				AAF74D1F1CC51A8E003559BA /* PTTextView.m */,
 				AAF74D221CC52FE4003559BA /* PTComposeToolBar.h */,
@@ -644,6 +748,8 @@
 		AAE3E45F1CBA208500AE23C0 = {
 			isa = PBXGroup;
 			children = (
+				AA2E270C1CE18AB10002914E /* libicucore.tbd */,
+				AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */,
 				AAE3E46A1CBA208600AE23C0 /* MySina */,
 				AAE3E4841CBA208600AE23C0 /* MySinaTests */,
 				AAE3E48F1CBA208600AE23C0 /* MySinaUITests */,
@@ -665,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE3E49E1CBA211700AE23C0 /* classes */,
+				AA2047EE1CD3ABC800F7F251 /* EmotionIcons */,
 				AAE3E47C1CBA208600AE23C0 /* Info.plist */,
 				AAE3E4D81CBA227C00AE23C0 /* MySinaPrefixHeader.pch */,
 				AAE3E46B1CBA208600AE23C0 /* Supporting Files */,
@@ -774,12 +881,14 @@
 			isa = PBXGroup;
 			children = (
 				AA8618311CCC78A8002AF93D /* StatusCell */,
-				AAF74CDF1CC50189003559BA /* PTPhoto.h */,
-				AAF74CE01CC50189003559BA /* PTPhoto.m */,
-				AAF74CE11CC50189003559BA /* PTStatus.h */,
-				AAF74CE21CC50189003559BA /* PTStatus.m */,
+				AA2E27021CE181670002914E /* PTStatus.h */,
+				AA2E27031CE181670002914E /* PTStatus.m */,
 				AAF74CE31CC50189003559BA /* PTUser.h */,
 				AAF74CE41CC50189003559BA /* PTUser.m */,
+				AAF74CDF1CC50189003559BA /* PTPhoto.h */,
+				AAF74CE01CC50189003559BA /* PTPhoto.m */,
+				AA2E26FF1CE181530002914E /* PTRegexResult.h */,
+				AA2E27001CE181530002914E /* PTRegexResult.m */,
 			);
 			name = Model;
 			path = model;
@@ -818,6 +927,8 @@
 			isa = PBXGroup;
 			children = (
 				AAF74D1D1CC50AEB003559BA /* Foundation+Log.m */,
+				AA2046271CD3A85600F7F251 /* NSString+Emoji.h */,
+				AA2046281CD3A85600F7F251 /* NSString+Emoji.m */,
 				AA013BF11CCE3815007D44A9 /* NSDate+TimeDisplay.h */,
 				AA013BF21CCE3815007D44A9 /* NSDate+TimeDisplay.m */,
 				AAE3E4AD1CBA211700AE23C0 /* UIBarButtonItem+Extension.h */,
@@ -1137,6 +1248,7 @@
 				AAE3E4DF1CBA293A00AE23C0 /* icon.png in Resources */,
 				AADCB9E31CD22D7A00CACB8D /* MJPhotoBrowser.bundle in Resources */,
 				AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */,
+				AA2047EF1CD3ABC800F7F251 /* EmotionIcons in Resources */,
 				AAE3E4D61CBA216600AE23C0 /* Images.xcassets in Resources */,
 				AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */,
 				AAE3E4DE1CBA293A00AE23C0 /* Contents.json in Resources */,
@@ -1167,14 +1279,18 @@
 			files = (
 				AA8EE07E1CC26FAD003D89AA /* MBProgressHUD+MJ.m in Sources */,
 				AAE3E4CE1CBA211700AE23C0 /* UIView+Extension.m in Sources */,
+				AA2E27101CE1D4CF0002914E /* PTStatusLabel.m in Sources */,
 				AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */,
 				AADCB9E51CD22D7A00CACB8D /* MJPhotoLoadingView.m in Sources */,
 				AAF74CD61CC50134003559BA /* MJArgument.m in Sources */,
+				AA2046291CD3A85600F7F251 /* NSString+Emoji.m in Sources */,
 				AA4CA7CD1CCB1CDF00EE2B32 /* PTUnreadCountParam.m in Sources */,
 				AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */,
 				AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */,
 				AAF74D181CC50702003559BA /* UIImage+MultiFormat.m in Sources */,
 				AA8618471CCC8849002AF93D /* PTStatusRetweetedView.m in Sources */,
+				AAB5FAF41CD8D12B000C6B9E /* PTEmotionView.m in Sources */,
+				AA2E26FB1CE170E10002914E /* PTEmotionAttachment.m in Sources */,
 				AAF74CDE1CC50134003559BA /* NSObject+MJMember.m in Sources */,
 				AAF74D191CC50702003559BA /* UIImage+WebP.m in Sources */,
 				AAF74D111CC50702003559BA /* SDWebImageDecoder.m in Sources */,
@@ -1192,6 +1308,7 @@
 				AAF74D1A1CC50702003559BA /* UIImageView+HighlightedWebCache.m in Sources */,
 				AA013BF31CCE3815007D44A9 /* NSDate+TimeDisplay.m in Sources */,
 				AA4CA7D01CCB1CDF00EE2B32 /* PTUserInfoResult.m in Sources */,
+				AA79B1661CD8E23B003808C6 /* PTEmotionTool.m in Sources */,
 				AAF74CEA1CC501A5003559BA /* PTLoadMoreFooter.m in Sources */,
 				AADCB9E61CD22D7A00CACB8D /* MJPhotoProgressView.m in Sources */,
 				AAE3E4CF1CBA211700AE23C0 /* PTNavigationController.m in Sources */,
@@ -1204,6 +1321,8 @@
 				AAF74D161CC50702003559BA /* UIButton+WebCache.m in Sources */,
 				AAF74CDB1CC50134003559BA /* MJTypeEncoding.m in Sources */,
 				AA8618351CCC819C002AF93D /* PTStatusCell.m in Sources */,
+				AA2E27131CE1E7100002914E /* PTStatusLink.m in Sources */,
+				AA2E26FE1CE171140002914E /* PTEmotionTextView.m in Sources */,
 				AADCB9E21CD22D7A00CACB8D /* MJPhoto.m in Sources */,
 				AAF74CD81CC50134003559BA /* MJMember.m in Sources */,
 				AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */,
@@ -1218,6 +1337,7 @@
 				AA86184A1CCC8866002AF93D /* PTStatusOriginalViewFrame.m in Sources */,
 				AAF74D131CC50702003559BA /* SDWebImageDownloaderOperation.m in Sources */,
 				AA86183E1CCC8421002AF93D /* PTStatusFrame.m in Sources */,
+				AA2046211CD38F6D00F7F251 /* PTEmotionKeyboard.m in Sources */,
 				AA8EE0761CC26FAD003D89AA /* AFHTTPRequestOperationManager.m in Sources */,
 				AAF74CE71CC50189003559BA /* PTUser.m in Sources */,
 				AA4CA7DD1CCB1E5A00EE2B32 /* PTSendStatusParam.m in Sources */,
@@ -1227,16 +1347,21 @@
 				AA9F9B541CC296A900A72F46 /* PTAccountTool.m in Sources */,
 				AA8EE07D1CC26FAD003D89AA /* AFURLSessionManager.m in Sources */,
 				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
+				AA2046261CD3A7DB00F7F251 /* PTEmotion.m in Sources */,
 				AA4CA7CE1CCB1CDF00EE2B32 /* PTUnreadCountResult.m in Sources */,
+				AA2046221CD38F6D00F7F251 /* PTEmotionListView.m in Sources */,
 				AADCB9E71CD22D7A00CACB8D /* MJPhotoToolbar.m in Sources */,
-				AAF74CE61CC50189003559BA /* PTStatus.m in Sources */,
+				AA2E27091CE182C00002914E /* RegexKitLite.m in Sources */,
 				AAF74D1C1CC50702003559BA /* UIView+WebCacheOperation.m in Sources */,
+				AA2E27041CE181670002914E /* PTStatus.m in Sources */,
+				AA8ADA831CD447C400C7295D /* PTEmotionGridView.m in Sources */,
 				AADCB9E81CD22D7A00CACB8D /* MJPhotoView.m in Sources */,
 				AAED54591CD0D1B000EB30CE /* PTStatusPhotosView.m in Sources */,
 				AAF74D0F1CC50702003559BA /* SDImageCache.m in Sources */,
 				AA8618441CCC8832002AF93D /* PTStatusOriginalView.m in Sources */,
 				AAF74D141CC50702003559BA /* SDWebImageManager.m in Sources */,
 				AAF74CD91CC50134003559BA /* MJMethod.m in Sources */,
+				AA2046231CD38F6D00F7F251 /* PTEmotionToolbar.m in Sources */,
 				AAED545A1CD0D1B000EB30CE /* PTStatusPhotoView.m in Sources */,
 				AAF74D151CC50702003559BA /* SDWebImagePrefetcher.m in Sources */,
 				AA1689071CC64DDC0071C3FD /* PTComposePhotosView.m in Sources */,
@@ -1244,6 +1369,8 @@
 				AA8EE0781CC26FAD003D89AA /* AFNetworkReachabilityManager.m in Sources */,
 				AAF74D1E1CC50AEB003559BA /* Foundation+Log.m in Sources */,
 				AA4CA7C81CCB1CDF00EE2B32 /* PTAccount.m in Sources */,
+				AA79B1601CD8D540003808C6 /* PTEmotionPopView.m in Sources */,
+				AA2E27011CE181530002914E /* PTRegexResult.m in Sources */,
 				AA8EE07C1CC26FAD003D89AA /* AFURLResponseSerialization.m in Sources */,
 				AA4CA7D91CCB1CFC00EE2B32 /* PTUserTool.m in Sources */,
 				AA4CA7CA1CCB1CDF00EE2B32 /* PTHomeStatusesResult.m in Sources */,

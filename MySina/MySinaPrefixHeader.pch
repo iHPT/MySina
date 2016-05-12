@@ -83,12 +83,41 @@
 #define PTStatusCellSourceFont PTStatusCellTimeFont
 /** 微博正文字体大小 */
 #define PTStatusCellTextFont [UIFont systemFontOfSize:16]
+/** 微博实际正文富文本字体大小 */
+#define PTStatusRichTextFont [UIFont systemFontOfSize:16]
+/** 微博正文高亮字体的颜色：话题丶@丶超链接 */
+#define PTStatusHighlightedTextColor PTColor(91, 198, 250)
+/** 微博正文中链接 */
+#define PTStatusLinkText @"PTStatusLinkText"
+/** 微博正文中链接选中颜色 */
+#define PTStatusLinkSelectedBackgroundColor PTColor(247, 207, 219)
+/** 微博正文中链接选中通知 */
+#define PTStatusLinkDidSelectedNotification @"PTStatusLinkDidSelectedNotification"
 
 
+/**
+ *  表情键盘计算参数
+ */
+/** 表情的最大行数 */
+#define PTEmotionMaxRows 3
+/** 表情的最大列数 */
+#define PTEmotionMaxColumns 7
+/** 每页最多显示表情个数 */
+#define PTEmotionMaxCountPerPage (PTEmotionMaxRows * PTEmotionMaxColumns - 1)
+/** 每个表情页的上边距 */
+#define PTEmotionGridViewInsetTop 8
+/** 每个表情页的左边距 */
+#define PTEmotionGridViewInsetLeft 8
 
 
-
-
+/** 表情键盘选中表情通知 */
+#define PTEmotionDidSelectedNotification @"PTEmotionDidSelectedEmotionNotification"
+/** 通知中选中表情的key */
+#define PTSelectedEmotion @"emotion"
+/** 表情键盘删除表情通知 */
+#define PTEmotionDidDeletedNotification @"PTEmotionDidDeletedNotification"
+/** 表情键盘最近表情沙盒目录 */
+#define PTRecentEmotionPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"recentEmotion.data"]
 
 
 #endif

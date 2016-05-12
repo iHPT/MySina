@@ -36,7 +36,8 @@
     CGFloat textX = PTStatusCellInset;
     CGFloat textY = CGRectGetMaxY(self.iconFrame) + PTStatusCellInset;
     CGSize maxSize = CGSizeMake(ScreenWidth - 2 * PTStatusCellInset, MAXFLOAT);
-    CGSize textSize = [status.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : PTStatusCellTextFont} context:nil].size;
+//    CGSize textSize = [status.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : PTStatusCellTextFont} context:nil].size;
+    CGSize textSize = [status.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
 //    // 会员图标
