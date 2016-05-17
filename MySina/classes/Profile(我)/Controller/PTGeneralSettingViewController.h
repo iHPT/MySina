@@ -1,5 +1,5 @@
 //
-//  PTDiscoverViewController.h
+//  PTGeneralSettingViewController
 //  SinaBlog
 //
 //  Created by hpt on 16/4/10.
@@ -8,7 +8,6 @@
 
 #import "PTCommonViewController.h"
 
-@interface PTDiscoverViewController : PTCommonViewController
-
+@interface PTGeneralSettingViewController : PTCommonViewController
 
 @end

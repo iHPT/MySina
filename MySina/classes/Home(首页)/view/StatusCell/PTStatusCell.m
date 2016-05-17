@@ -27,10 +27,10 @@ static NSString *statusCellId = @"StatusCellId";
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-    		// cell背景色设置
-    		self.backgroundColor = [UIColor clearColor];
-    		
-    		// 初始化子控件
+        // cell背景色设置
+        self.backgroundColor = [UIColor clearColor];
+        
+        // 初始化子控件
         // 微博数据视图
         PTStatusDetailView *detailView = [[PTStatusDetailView alloc] init];
         [self.contentView addSubview:detailView];
@@ -40,7 +40,7 @@ static NSString *statusCellId = @"StatusCellId";
         PTStatusToolbar *toolbar = [[PTStatusToolbar alloc] init];
         [self.contentView addSubview:toolbar];
         self.toolbar = toolbar;
-            }
+     }
     
     return self;
 }

@@ -27,6 +27,16 @@
 #import "UIImageView+WebCache.h"
 
 
+#define PTAppDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+#define PTAccountFilePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
+
+
+#define PTUserDefaults [NSUserDefaults standardUserDefaults]
+/** 图片质量设置：上传图片质量 */
+#define PTUploadPictureQualityKey @"PTUploadPictureQualityKey"
+/** 图片质量设置：下载图片质量 */
+#define PTDownloadPictureQualityKey @"PTDownloadPictureQualityKey"
+
 #define PTRANDOM_COLOR [UIColor colorWithRed:arc4random()%256 / 255.0 green:arc4random()%256 / 255.0 blue:arc4random()%256 / 255.0 alpha:1.0]
 #define PTColor(r, g, b) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:1.0]
 
@@ -41,8 +51,6 @@
 #define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define FourInch (ScreenWidth == 320)
 
-#define PTAppDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
-#define PTAccountFilePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
 
 
 /**
@@ -57,7 +65,7 @@
 ///**
 // *  新浪接口信息
 // */
-///** 获取微博数据 */
+/** 获取微博数据 */
 //#define SinaURLGetStatuses @"https://api.weibo.com/2/statuses/home_timeline.json"
 ///** 发布一条微博信息 */
 //#define SinaURLSendStatus @"https://api.weibo.com/2/statuses/update.json"
@@ -71,6 +79,8 @@
  *  HomeStatusCell计算参数
  *
  */
+/** 全局背景色 */
+#define PTGlobalBackgroundColor PTColor(211, 211, 211)
 /** cell之间的间距 */
 #define PTStatusCellMargin 10
 /** cell内边距 */
@@ -93,6 +103,16 @@
 #define PTStatusLinkSelectedBackgroundColor PTColor(247, 207, 219)
 /** 微博正文中链接选中通知 */
 #define PTStatusLinkDidSelectedNotification @"PTStatusLinkDidSelectedNotification"
+
+
+/**
+ *  发现丶我 PTCommonViewController参数
+ */
+/** tableView的section.footer高度 */
+#define PTCommonTableViewSectionFooterHeight 10
+/** tableView的section.header高度 */
+#define PTCommonTableViewSectionHeaderHeight 0
+
 
 
 /**

@@ -58,7 +58,7 @@ static NSString *cellId = @"HomeViewCell";
 	[super viewDidLoad];
 	
 	// tableView属性设置
-	self.tableView.backgroundColor = PTColor(211, 211, 211);
+	self.tableView.backgroundColor = PTGlobalBackgroundColor;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	// 设置导航栏的内容
@@ -399,7 +399,6 @@ static NSString *cellId = @"HomeViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *newVc = [[UIViewController alloc] init];
-    newVc.view.backgroundColor = [UIColor redColor];
     newVc.title = @"新控制器";
     [self.navigationController pushViewController:newVc animated:YES];
 }
