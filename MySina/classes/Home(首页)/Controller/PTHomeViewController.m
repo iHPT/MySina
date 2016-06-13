@@ -25,6 +25,7 @@
 #import "PTStatusCell.h"
 #import "PTStatusFrame.h"
 #import "PTStatusLink.h"
+#import "PTStatusDetailViewController.h"
 
 static NSString *cellId = @"HomeViewCell";
 
@@ -222,6 +223,7 @@ static NSString *cellId = @"HomeViewCell";
         PTLog(@"加载微博数据请求成功---");
 		// 微博模型frame数组
 		NSArray *newStatusFrames = [self statusFramesWithStatuses:result.statuses];
+        PTLog(@"newStatusFrames.count==%d", newStatusFrames.count);
 //        for (PTStatusFrame *frame in newStatusFrames) {
 //            PTStatus *status = frame.status;
 ////            PTLog(@"%d -- %d", status.user.mbtype, status.user.mbrank);
@@ -344,20 +346,26 @@ static NSString *cellId = @"HomeViewCell";
 {
 	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
 	
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-	//button.backgroundColor = [UIColor yellowColor];
-	
-	PTPopMenu *menu = [[PTPopMenu alloc] initWithContentView:button];
+    // 创建菜单栏视图
+    UIView *contentView = [[UIView alloc] init];
+    contentView.backgroundColor = [UIColor yellowColor];
+	PTPopMenu *menu = [[PTPopMenu alloc] initWithContentView:contentView];
 	menu.arrowPosition = PTPopMenuArrowPositionCenter;
 	menu.delegate = self;
-	[menu showInRect:CGRectMake(120, 64, 80, 200)];
+    
+    // 设置要显示contentView的frame
+    CGFloat contentViewY = CGRectGetMaxY(self.titleButton.frame) + 12;
+    CGFloat contentViewW = 150;
+    CGFloat contentViewH = 300;
+    CGFloat contentViewX = self.titleButton.centerX - 0.5 * contentViewW;
+	[menu showInRect:CGRectMake(contentViewX, contentViewY, contentViewW, contentViewH)];
 }
 
 #pragma -mark PTPopMenuDelegate
 - (void)popMenuDidDismissed:(PTPopMenu *)popMenu
 {
 	PTTitleButton *titleButton = (PTTitleButton *)self.navigationItem.titleView;
-	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+	[titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
 }
 
 - (void)searchFriend
@@ -398,9 +406,10 @@ static NSString *cellId = @"HomeViewCell";
 #pragma mark - tableView代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *newVc = [[UIViewController alloc] init];
-    newVc.title = @"新控制器";
-    [self.navigationController pushViewController:newVc animated:YES];
+    PTStatusDetailViewController *detailVc = [[PTStatusDetailViewController alloc] init];
+    PTStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    detailVc.status = statusFrame.status;
+    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 

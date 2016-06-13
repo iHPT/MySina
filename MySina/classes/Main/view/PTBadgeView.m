@@ -50,7 +50,7 @@
     if (titleSize.width <= backgroundWidth) {
         self.size = self.currentBackgroundImage.size;
     } else {
-        self.width = titleSize.width + 8;
+        self.width = titleSize.width + 10;
     }
 }
 

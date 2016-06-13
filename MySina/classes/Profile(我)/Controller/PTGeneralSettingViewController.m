@@ -6,12 +6,14 @@
 //  Copyright © 2016年 PT. All rights reserved.
 //
 
+#define PTSDImageCacheDirectory [NSString stringWithFormat:@"%@/default/com.hackemist.SDWebImageCache.default", [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]]
 #import "PTGeneralSettingViewController.h"
 #import "PTCommonGroup.h"
 #import "PTCommonArrowItem.h"
 #import "PTCommonSwitchItem.h"
 #import "PTCommonLabelItem.h"
 #import "PTPictureQualityViewController.h"
+#import "NSFileManager+Size.h"
 
 @interface PTGeneralSettingViewController ()
 
@@ -93,9 +95,48 @@
     PTCommonGroup *group = [self addGroup];
     
     PTCommonArrowItem *clearCache = [PTCommonArrowItem itemWithTitle:@"清除图片缓存"];
+    CGFloat imageCache = [self getImageCache];
+    NSString *fileSize = [NSString stringWithFormat:@"(%.1fM)", imageCache];
+//    PTLog(@"fileSize==%@", fileSize);
+    fileSize = [fileSize stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    clearCache.subtitle = fileSize;
+    
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(clearCache) weakClearCache = clearCache;
+    clearCache.operation = ^ {
+        PTLog(@"%@", PTSDImageCacheDirectory);
+        [MBProgressHUD showMessage:@"正在清除缓存..."];
+        
+        // 清除缓存
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm removeItemAtPath:PTSDImageCacheDirectory error:nil];
+        
+        // 设置subtitle
+        weakClearCache.subtitle = nil;
+        // 刷新表格
+        [weakSelf.tableView reloadData];
+        
+        [MBProgressHUD hideHUD];
+    };
     PTCommonArrowItem *clearHistory = [PTCommonArrowItem itemWithTitle:@"清空搜索历史"];
     
     group.items = @[clearCache, clearHistory];
+}
+
+- (void)dealloc
+{
+    PTLog(@"PTGeneralSettingViewController---dealloc");
+}
+
+/**
+ *  获取文件文件大小
+ */
+- (CGFloat)getImageCache
+{
+    // 创建文件管理者，计算文件大小
+    NSFileManager *fm = [NSFileManager defaultManager];
+    CGFloat fileSize = [fm fileMegaBytesAtPath:PTSDImageCacheDirectory];
+    return fileSize;
 }
 
 @end

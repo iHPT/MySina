@@ -12,6 +12,7 @@
 #import "PTUser.h"
 #import "PTStatusPhotosView.h"
 #import "PTStatusLabel.h"
+#import "PTStatusRetweetedToolbar.h"
 
 @interface PTStatusRetweetedView ()
 
@@ -20,6 +21,9 @@
 
 /** 相册 */
 @property (nonatomic, weak) PTStatusPhotosView *photosView;
+
+/** 右下角工具条 */
+@property (nonatomic, weak) PTStatusRetweetedToolbar *toolbar;
 
 @end
 
@@ -30,10 +34,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-            self.userInteractionEnabled = YES;
-    		self.image = [UIImage resizedImage:@"timeline_retweet_background"];
-    		self.highlightedImage = [UIImage resizedImage:@"timeline_retweet_background_highlighted"];
-    		
+        self.userInteractionEnabled = YES;
+        self.image = [UIImage resizedImage:@"timeline_retweet_background"];
+        self.highlightedImage = [UIImage resizedImage:@"timeline_retweet_background_highlighted"];
+    	
     	// 初始化子控件
         // 正文
         PTStatusLabel *textLabel = [[PTStatusLabel alloc] init];
@@ -44,6 +48,11 @@
         PTStatusPhotosView *photosView = [[PTStatusPhotosView alloc] init];
         [self addSubview:photosView];
         self.photosView = photosView;
+        
+        // 右下角工具条
+        PTStatusRetweetedToolbar *toolbar = [[PTStatusRetweetedToolbar alloc] init];
+        [self addSubview:toolbar];
+        self.toolbar = toolbar;
     }
     return self;
 }
@@ -67,6 +76,12 @@
         self.photosView.hidden = NO;
     } else {
         self.photosView.hidden = YES;
+    }
+    
+    // 右下角工具条
+    if (retweetedStatus.isDeatil) {
+        self.toolbar.frame = retweetedViewFrame.toolbarFrame;
+        self.toolbar.status = retweetedStatus;
     }
 }
 

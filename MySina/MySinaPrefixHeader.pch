@@ -32,10 +32,10 @@
 
 
 #define PTUserDefaults [NSUserDefaults standardUserDefaults]
-/** 图片质量设置：上传图片质量 */
-#define PTUploadPictureQualityKey @"PTUploadPictureQualityKey"
-/** 图片质量设置：下载图片质量 */
-#define PTDownloadPictureQualityKey @"PTDownloadPictureQualityKey"
+///** 图片质量设置：上传图片质量 */
+//#define PTUploadPictureQualityKey @"PTUploadPictureQualityKey"
+///** 图片质量设置：下载图片质量 */
+//#define PTDownloadPictureQualityKey @"PTDownloadPictureQualityKey"
 
 #define PTRANDOM_COLOR [UIColor colorWithRed:arc4random()%256 / 255.0 green:arc4random()%256 / 255.0 blue:arc4random()%256 / 255.0 alpha:1.0]
 #define PTColor(r, g, b) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:1.0]
@@ -77,7 +77,6 @@
 
 /**
  *  HomeStatusCell计算参数
- *
  */
 /** 全局背景色 */
 #define PTGlobalBackgroundColor PTColor(211, 211, 211)
@@ -85,6 +84,8 @@
 #define PTStatusCellMargin 10
 /** cell内边距 */
 #define PTStatusCellInset 10
+/** 微博cell工具条分割线宽度 */
+#define PTStatusToolDividerWidth 4
 /** 微博昵称字体大小 */
 #define PTStatusCellNameFont [UIFont systemFontOfSize:14]
 /** 微博时间字体大小 */
@@ -104,6 +105,15 @@
 /** 微博正文中链接选中通知 */
 #define PTStatusLinkDidSelectedNotification @"PTStatusLinkDidSelectedNotification"
 
+/**
+ *  HomeStatusDetail微博详情计算参数
+ */
+/** 微博详情转发微博右下角工具条宽度 */
+#define PTStatusDetailToolbarWidth 160
+/** 微博详情转发微博右下角工具条高度 */
+#define PTStatusDetailToolbarHeight 25
+/** 微博详情控制器底部工具条高度 */
+#define PTStatusDetailBottomToolbarHeight 40
 
 /**
  *  发现丶我 PTCommonViewController参数

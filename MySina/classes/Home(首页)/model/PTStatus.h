@@ -48,4 +48,7 @@
 /** 	bool 	是否为转发微博 */
 @property (nonatomic, assign, getter=isRetweeted) BOOL retweeted;
 
+/** 	bool 	微博cell是否是详情微博(详情微博转发微博右下角显示工具条，首页不显示) */
+@property (nonatomic, assign, getter=isDeatil) BOOL detail;
+
 @end

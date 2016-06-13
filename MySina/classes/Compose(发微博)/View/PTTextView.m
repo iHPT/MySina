@@ -73,7 +73,7 @@
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
-#warning 如果是copy策略，setter最好这么写
+#warning 如果是copy属性，setter最好这么写
 	_placeholder = [placeholder copy];
 	
 	self.placeholderLabel.text = placeholder;

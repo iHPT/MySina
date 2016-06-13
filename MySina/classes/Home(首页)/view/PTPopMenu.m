@@ -8,6 +8,14 @@
 // 容器 ：容纳具体要显示的内容contentView
 @property (nonatomic, weak) UIImageView *container;
 
+//
+//  PTPopMenu.m
+//  MySina
+//
+//  Created by hpt on 16/4/10.
+//  Copyright © 2016年 PT. All rights reserved.
+//
+
 // 具体显示内容
 @property (nonatomic, strong) UIView *contentView;
 
@@ -32,7 +40,6 @@
 		// 添加带箭头的菜单图片
 		UIImageView *container = [[UIImageView alloc] init];
 		container.userInteractionEnabled = YES;
-		container.image = [UIImage resizedImage:@"popover_background"];
 		[self addSubview:container];
 		self.container = container;
 	}
@@ -64,18 +71,24 @@
 	
 	// 设置容器的frame
 	self.container.frame = rect;
+/**
+ *  若在init方法中设置图片，则该方法被调用时container的frame发生改变，图片会被拉伸
+ */
+    self.container.image = [UIImage resizedImage:@"popover_background"];
+    
+    // contentView添加到容器中
 	[self.container addSubview:self.contentView];
 	
-	// 设置容器里面内容的frame
-	CGFloat topMargin = 12;
-	CGFloat leftMargin = 5;
-	CGFloat rightMargin = 5;
-	CGFloat bottomMargin = 8;
-	
-	self.contentView.x = leftMargin;
-	self.contentView.y = topMargin;
-	self.contentView.width = self.container.width - leftMargin - rightMargin;
-	self.contentView.height = self.container.height - topMargin - bottomMargin;
+	// 设置容器里面contentView的frame
+    CGFloat topMargin = 15;
+    CGFloat leftMargin = 7;
+    CGFloat rightMargin = 7;
+    CGFloat bottomMargin = 8;
+    
+    self.contentView.x = leftMargin;
+    self.contentView.y = topMargin;
+    self.contentView.width = self.container.width - leftMargin - rightMargin;
+    self.contentView.height = self.container.height - topMargin - bottomMargin;
 }
 
 - (void)setArrowPosition:(PTPopMenuArrowPosition)arrowPosition

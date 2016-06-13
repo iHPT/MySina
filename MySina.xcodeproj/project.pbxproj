@@ -12,6 +12,7 @@
 		AA05A22C1CEACC7900B1C9B6 /* PTPictureQualityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05A2261CEACC7900B1C9B6 /* PTPictureQualityViewController.m */; };
 		AA05A22D1CEACC7900B1C9B6 /* PTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05A2281CEACC7900B1C9B6 /* PTProfileViewController.m */; };
 		AA05A22E1CEACC7900B1C9B6 /* PTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05A22A1CEACC7900B1C9B6 /* PTSettingViewController.m */; };
+		AA15106D1D0818C5005EC152 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E270C1CE18AB10002914E /* libicucore.tbd */; };
 		AA1689071CC64DDC0071C3FD /* PTComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1689061CC64DDC0071C3FD /* PTComposePhotosView.m */; };
 		AA2046211CD38F6D00F7F251 /* PTEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AA20461C1CD38F6D00F7F251 /* PTEmotionKeyboard.m */; };
 		AA2046221CD38F6D00F7F251 /* PTEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA20461E1CD38F6D00F7F251 /* PTEmotionListView.m */; };
@@ -25,8 +26,6 @@
 		AA2E27011CE181530002914E /* PTRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27001CE181530002914E /* PTRegexResult.m */; };
 		AA2E27041CE181670002914E /* PTStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27031CE181670002914E /* PTStatus.m */; };
 		AA2E27091CE182C00002914E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27081CE182C00002914E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AA2E270B1CE18A9B0002914E /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */; };
-		AA2E270D1CE18AB10002914E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E270C1CE18AB10002914E /* libicucore.tbd */; };
 		AA2E27101CE1D4CF0002914E /* PTStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E270F1CE1D4CF0002914E /* PTStatusLabel.m */; };
 		AA2E27131CE1E7100002914E /* PTStatusLink.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E27121CE1E7100002914E /* PTStatusLink.m */; };
 		AA47F7DB1CEAE3BA004652F0 /* PTNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47F7DA1CEAE3BA004652F0 /* PTNewfeatureViewController.m */; };
@@ -49,7 +48,6 @@
 		AA79B1661CD8E23B003808C6 /* PTEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79B1651CD8E23B003808C6 /* PTEmotionTool.m */; };
 		AA8618351CCC819C002AF93D /* PTStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618341CCC819C002AF93D /* PTStatusCell.m */; };
 		AA8618381CCC81BD002AF93D /* PTStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */; };
-		AA86183B1CCC81D0002AF93D /* PTStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */; };
 		AA86183E1CCC8421002AF93D /* PTStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86183D1CCC8421002AF93D /* PTStatusFrame.m */; };
 		AA8618411CCC8630002AF93D /* PTStatusDetailViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618401CCC8630002AF93D /* PTStatusDetailViewFrame.m */; };
 		AA8618441CCC8832002AF93D /* PTStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8618431CCC8832002AF93D /* PTStatusOriginalView.m */; };
@@ -59,6 +57,9 @@
 		AA8ADA831CD447C400C7295D /* PTEmotionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8ADA821CD447C400C7295D /* PTEmotionGridView.m */; };
 		AA8E54BB1CBD13E2005B04F0 /* PTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54B61CBD13E2005B04F0 /* PTBadgeView.m */; };
 		AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */; };
+		AA8EA7ED1CEC57C400B92EBD /* PTStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EA7EC1CEC57C400B92EBD /* PTStatusDetailViewController.m */; };
+		AA8EA9BC1CEC708C00B92EBD /* PTBaseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EA9BB1CEC708C00B92EBD /* PTBaseToolbar.m */; };
+		AA8EA9BF1CEC70B700B92EBD /* PTStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EA9BE1CEC70B700B92EBD /* PTStatusToolbar.m */; };
 		AA8EE0251CC26CC7003D89AA /* PTOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0241CC26CC7003D89AA /* PTOAuthViewController.m */; };
 		AA8EE0751CC26FAD003D89AA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0291CC26FAD003D89AA /* AFHTTPRequestOperation.m */; };
 		AA8EE0761CC26FAD003D89AA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE02B1CC26FAD003D89AA /* AFHTTPRequestOperationManager.m */; };
@@ -72,6 +73,7 @@
 		AA8EE07E1CC26FAD003D89AA /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE03D1CC26FAD003D89AA /* MBProgressHUD+MJ.m */; };
 		AA8EE07F1CC26FAD003D89AA /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA8EE03E1CC26FAD003D89AA /* MBProgressHUD.bundle */; };
 		AA8EE0801CC26FAD003D89AA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EE0401CC26FAD003D89AA /* MBProgressHUD.m */; };
+		AA9884461D0EB348003B2A65 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9884451D0EB348003B2A65 /* libsqlite3.tbd */; };
 		AA9F9B4E1CC28C5500A72F46 /* PTControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9F9B4D1CC28C5500A72F46 /* PTControllerTool.m */; };
 		AA9F9B541CC296A900A72F46 /* PTAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9F9B531CC296A900A72F46 /* PTAccountTool.m */; };
 		AAA20E4A1CEAAA6D0006676D /* PTCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA20E3D1CEAAA6D0006676D /* PTCommonArrowItem.m */; };
@@ -83,11 +85,15 @@
 		AAA20E501CEAAA6D0006676D /* PTCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA20E491CEAAA6D0006676D /* PTCommonSwitchItem.m */; };
 		AAA20E531CEAAABB0006676D /* PTMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA20E521CEAAABB0006676D /* PTMoreViewController.m */; };
 		AAA20E561CEAAAC40006676D /* PTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA20E551CEAAAC40006676D /* PTSearchBar.m */; };
+		AAB261F71CF2E09D00890B57 /* PTCommentsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB261F61CF2E09D00890B57 /* PTCommentsParam.m */; };
+		AAB261FA1CF2E17700890B57 /* PTCommentsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB261F91CF2E17700890B57 /* PTCommentsResult.m */; };
+		AAB262001CF2F64900890B57 /* PTComment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB261FF1CF2F64900890B57 /* PTComment.m */; };
 		AAB5FAF41CD8D12B000C6B9E /* PTEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5FAF31CD8D12B000C6B9E /* PTEmotionView.m */; };
 		AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15511CBBDD1E0042D1CE /* PTPopMenu.m */; };
 		AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */; };
 		AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC15591CBBE7050042D1CE /* PTComposeViewController.m */; };
 		AACC155F1CBBE71E0042D1CE /* PTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AACC155E1CBBE71E0042D1CE /* PTTabBar.m */; };
+		AAD5AEA51CFFDFF200F1CE19 /* NSFileManager+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5AEA41CFFDFF200F1CE19 /* NSFileManager+Size.m */; };
 		AADCB9E21CD22D7A00CACB8D /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9D41CD22D7A00CACB8D /* MJPhoto.m */; };
 		AADCB9E31CD22D7A00CACB8D /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AADCB9D51CD22D7A00CACB8D /* MJPhotoBrowser.bundle */; };
 		AADCB9E41CD22D7A00CACB8D /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AADCB9D71CD22D7A00CACB8D /* MJPhotoBrowser.m */; };
@@ -115,8 +121,17 @@
 		AAE3E4E01CBA293A00AE23C0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DC1CBA293A00AE23C0 /* icon@2x.png */; };
 		AAE3E4E11CBA293A00AE23C0 /* icon_os7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */; };
 		AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */; };
+		AAE83E1C1D0E9AC000A1A4CD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE83E111D0E9AC000A1A4CD /* FMDatabase.m */; };
+		AAE83E1D1D0E9AC000A1A4CD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE83E131D0E9AC000A1A4CD /* FMDatabaseAdditions.m */; };
+		AAE83E1E1D0E9AC000A1A4CD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE83E151D0E9AC000A1A4CD /* FMDatabasePool.m */; };
+		AAE83E1F1D0E9AC000A1A4CD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE83E171D0E9AC000A1A4CD /* FMDatabaseQueue.m */; };
+		AAE83E201D0E9AC000A1A4CD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE83E1A1D0E9AC000A1A4CD /* FMResultSet.m */; };
+		AAE83E211D0E9AC000A1A4CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAE83E1B1D0E9AC000A1A4CD /* Info.plist */; };
 		AAED54591CD0D1B000EB30CE /* PTStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */; };
 		AAED545A1CD0D1B000EB30CE /* PTStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */; };
+		AAF4E4FB1CEDB887003C6238 /* PTStatusRetweetedToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF4E4FA1CEDB887003C6238 /* PTStatusRetweetedToolbar.m */; };
+		AAF4E4FE1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF4E4FD1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.m */; };
+		AAF4E5011CEDC261003C6238 /* PTStatusDetailTopToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF4E5001CEDC261003C6238 /* PTStatusDetailTopToolbar.m */; };
 		AAF74CD61CC50134003559BA /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC41CC50134003559BA /* MJArgument.m */; };
 		AAF74CD71CC50134003559BA /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC71CC50134003559BA /* MJIvar.m */; };
 		AAF74CD81CC50134003559BA /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF74CC91CC50134003559BA /* MJMember.m */; };
@@ -203,7 +218,6 @@
 		AA2E27031CE181670002914E /* PTStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatus.m; sourceTree = "<group>"; };
 		AA2E27071CE182C00002914E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		AA2E27081CE182C00002914E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
 		AA2E270C1CE18AB10002914E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		AA2E270E1CE1D4CF0002914E /* PTStatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusLabel.h; sourceTree = "<group>"; };
 		AA2E270F1CE1D4CF0002914E /* PTStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusLabel.m; sourceTree = "<group>"; };
@@ -250,8 +264,6 @@
 		AA8618341CCC819C002AF93D /* PTStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusCell.m; sourceTree = "<group>"; };
 		AA8618361CCC81BD002AF93D /* PTStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailView.h; sourceTree = "<group>"; };
 		AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailView.m; sourceTree = "<group>"; };
-		AA8618391CCC81D0002AF93D /* PTStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusToolbar.h; sourceTree = "<group>"; };
-		AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusToolbar.m; sourceTree = "<group>"; };
 		AA86183C1CCC8421002AF93D /* PTStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusFrame.h; sourceTree = "<group>"; };
 		AA86183D1CCC8421002AF93D /* PTStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusFrame.m; sourceTree = "<group>"; };
 		AA86183F1CCC8630002AF93D /* PTStatusDetailViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailViewFrame.h; sourceTree = "<group>"; };
@@ -270,6 +282,12 @@
 		AA8E54B61CBD13E2005B04F0 /* PTBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBadgeView.m; sourceTree = "<group>"; };
 		AA8E54B91CBD13E2005B04F0 /* PTTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBarButton.h; sourceTree = "<group>"; };
 		AA8E54BA1CBD13E2005B04F0 /* PTTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBarButton.m; sourceTree = "<group>"; };
+		AA8EA7EB1CEC57C400B92EBD /* PTStatusDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailViewController.h; sourceTree = "<group>"; };
+		AA8EA7EC1CEC57C400B92EBD /* PTStatusDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailViewController.m; sourceTree = "<group>"; };
+		AA8EA9BA1CEC708C00B92EBD /* PTBaseToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBaseToolbar.h; sourceTree = "<group>"; };
+		AA8EA9BB1CEC708C00B92EBD /* PTBaseToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBaseToolbar.m; sourceTree = "<group>"; };
+		AA8EA9BD1CEC70B700B92EBD /* PTStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusToolbar.h; sourceTree = "<group>"; };
+		AA8EA9BE1CEC70B700B92EBD /* PTStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusToolbar.m; sourceTree = "<group>"; };
 		AA8EE0231CC26CC7003D89AA /* PTOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTOAuthViewController.h; sourceTree = "<group>"; };
 		AA8EE0241CC26CC7003D89AA /* PTOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTOAuthViewController.m; sourceTree = "<group>"; };
 		AA8EE0281CC26FAD003D89AA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -296,6 +314,7 @@
 		AA8EE03E1CC26FAD003D89AA /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		AA8EE03F1CC26FAD003D89AA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AA8EE0401CC26FAD003D89AA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AA9884451D0EB348003B2A65 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AA9F9B4C1CC28C5500A72F46 /* PTControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTControllerTool.h; sourceTree = "<group>"; };
 		AA9F9B4D1CC28C5500A72F46 /* PTControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTControllerTool.m; sourceTree = "<group>"; };
 		AA9F9B521CC296A900A72F46 /* PTAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTAccountTool.h; sourceTree = "<group>"; };
@@ -318,6 +337,12 @@
 		AAA20E521CEAAABB0006676D /* PTMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMoreViewController.m; sourceTree = "<group>"; };
 		AAA20E541CEAAAC40006676D /* PTSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTSearchBar.h; path = "MySina/classes/Discover(发现)/View/PTSearchBar.h"; sourceTree = SOURCE_ROOT; };
 		AAA20E551CEAAAC40006676D /* PTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTSearchBar.m; path = "MySina/classes/Discover(发现)/View/PTSearchBar.m"; sourceTree = SOURCE_ROOT; };
+		AAB261F51CF2E09D00890B57 /* PTCommentsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTCommentsParam.h; sourceTree = "<group>"; };
+		AAB261F61CF2E09D00890B57 /* PTCommentsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTCommentsParam.m; sourceTree = "<group>"; };
+		AAB261F81CF2E17700890B57 /* PTCommentsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTCommentsResult.h; sourceTree = "<group>"; };
+		AAB261F91CF2E17700890B57 /* PTCommentsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTCommentsResult.m; sourceTree = "<group>"; };
+		AAB261FE1CF2F64900890B57 /* PTComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTComment.h; path = "MySina/classes/Home(首页)/Model/PTComment.h"; sourceTree = SOURCE_ROOT; };
+		AAB261FF1CF2F64900890B57 /* PTComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTComment.m; path = "MySina/classes/Home(首页)/Model/PTComment.m"; sourceTree = SOURCE_ROOT; };
 		AAB5FAF21CD8D12B000C6B9E /* PTEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEmotionView.h; sourceTree = "<group>"; };
 		AAB5FAF31CD8D12B000C6B9E /* PTEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEmotionView.m; sourceTree = "<group>"; };
 		AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPopMenu.h; sourceTree = "<group>"; };
@@ -328,6 +353,8 @@
 		AACC15591CBBE7050042D1CE /* PTComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTComposeViewController.m; sourceTree = "<group>"; };
 		AACC155D1CBBE71E0042D1CE /* PTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTabBar.h; sourceTree = "<group>"; };
 		AACC155E1CBBE71E0042D1CE /* PTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTabBar.m; sourceTree = "<group>"; };
+		AAD5AEA31CFFDFF200F1CE19 /* NSFileManager+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Size.h"; sourceTree = "<group>"; };
+		AAD5AEA41CFFDFF200F1CE19 /* NSFileManager+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Size.m"; sourceTree = "<group>"; };
 		AADCB9D31CD22D7A00CACB8D /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		AADCB9D41CD22D7A00CACB8D /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
 		AADCB9D51CD22D7A00CACB8D /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
@@ -378,10 +405,28 @@
 		AAE3E4DD1CBA293A00AE23C0 /* icon_os7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_os7@2x.png"; sourceTree = "<group>"; };
 		AAE3E4E21CBA2EB800AE23C0 /* PTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHomeViewController.h; sourceTree = "<group>"; };
 		AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
+		AAE83E101D0E9AC000A1A4CD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		AAE83E111D0E9AC000A1A4CD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		AAE83E121D0E9AC000A1A4CD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		AAE83E131D0E9AC000A1A4CD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		AAE83E141D0E9AC000A1A4CD /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		AAE83E151D0E9AC000A1A4CD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		AAE83E161D0E9AC000A1A4CD /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		AAE83E171D0E9AC000A1A4CD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		AAE83E181D0E9AC000A1A4CD /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		AAE83E191D0E9AC000A1A4CD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		AAE83E1A1D0E9AC000A1A4CD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		AAE83E1B1D0E9AC000A1A4CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAED54551CD0D1B000EB30CE /* PTStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusPhotosView.h; sourceTree = "<group>"; };
 		AAED54561CD0D1B000EB30CE /* PTStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusPhotosView.m; sourceTree = "<group>"; };
 		AAED54571CD0D1B000EB30CE /* PTStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusPhotoView.h; sourceTree = "<group>"; };
 		AAED54581CD0D1B000EB30CE /* PTStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusPhotoView.m; sourceTree = "<group>"; };
+		AAF4E4F91CEDB887003C6238 /* PTStatusRetweetedToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusRetweetedToolbar.h; sourceTree = "<group>"; };
+		AAF4E4FA1CEDB887003C6238 /* PTStatusRetweetedToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusRetweetedToolbar.m; sourceTree = "<group>"; };
+		AAF4E4FC1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailBottomToolbar.h; sourceTree = "<group>"; };
+		AAF4E4FD1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailBottomToolbar.m; sourceTree = "<group>"; };
+		AAF4E4FF1CEDC261003C6238 /* PTStatusDetailTopToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatusDetailTopToolbar.h; sourceTree = "<group>"; };
+		AAF4E5001CEDC261003C6238 /* PTStatusDetailTopToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatusDetailTopToolbar.m; sourceTree = "<group>"; };
 		AAF74CC31CC50134003559BA /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		AAF74CC41CC50134003559BA /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		AAF74CC51CC50134003559BA /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
@@ -452,8 +497,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA2E270D1CE18AB10002914E /* libicucore.tbd in Frameworks */,
-				AA2E270B1CE18A9B0002914E /* libicucore.A.tbd in Frameworks */,
+				AA9884461D0EB348003B2A65 /* libsqlite3.tbd in Frameworks */,
+				AA15106D1D0818C5005EC152 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,12 +681,11 @@
 		AA8618321CCC78B5002AF93D /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
+				AA8EA9B61CEC608000B92EBD /* Toolbar */,
 				AA8618331CCC819C002AF93D /* PTStatusCell.h */,
 				AA8618341CCC819C002AF93D /* PTStatusCell.m */,
 				AA8618361CCC81BD002AF93D /* PTStatusDetailView.h */,
 				AA8618371CCC81BD002AF93D /* PTStatusDetailView.m */,
-				AA8618391CCC81D0002AF93D /* PTStatusToolbar.h */,
-				AA86183A1CCC81D0002AF93D /* PTStatusToolbar.m */,
 				AA8618421CCC8832002AF93D /* PTStatusOriginalView.h */,
 				AA8618431CCC8832002AF93D /* PTStatusOriginalView.m */,
 				AA8618451CCC8849002AF93D /* PTStatusRetweetedView.h */,
@@ -656,6 +700,17 @@
 			name = StatusCell;
 			path = "MySina/classes/Home(首页)/View/StatusCell";
 			sourceTree = SOURCE_ROOT;
+		};
+		AA8EA9B61CEC608000B92EBD /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				AA8EA9BA1CEC708C00B92EBD /* PTBaseToolbar.h */,
+				AA8EA9BB1CEC708C00B92EBD /* PTBaseToolbar.m */,
+				AA8EA9BD1CEC70B700B92EBD /* PTStatusToolbar.h */,
+				AA8EA9BE1CEC70B700B92EBD /* PTStatusToolbar.m */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
 		};
 		AA8EE0211CC26C98003D89AA /* OAuth(OAuth授权) */ = {
 			isa = PBXGroup;
@@ -677,6 +732,7 @@
 		AA8EE0261CC26FAD003D89AA /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AAE83E0F1D0E9AC000A1A4CD /* fmdb */,
 				AA8EE0271CC26FAD003D89AA /* AFNetworking */,
 				AAF74CC21CC50134003559BA /* MJExtension */,
 				AAF74CEB1CC50702003559BA /* SDWebImage */,
@@ -726,6 +782,15 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		AA9364131D0ED16600AAF9CC /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				AA9884451D0EB348003B2A65 /* libsqlite3.tbd */,
+				AA2E270C1CE18AB10002914E /* libicucore.tbd */,
+			);
+			name = FrameWorks;
+			sourceTree = "<group>";
+		};
 		AA9F9B451CC28BF300A72F46 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +807,18 @@
 			);
 			path = Tool;
 			sourceTree = "<group>";
+		};
+		AAB261F41CF2E09D00890B57 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				AAB261F51CF2E09D00890B57 /* PTCommentsParam.h */,
+				AAB261F61CF2E09D00890B57 /* PTCommentsParam.m */,
+				AAB261F81CF2E17700890B57 /* PTCommentsResult.h */,
+				AAB261F91CF2E17700890B57 /* PTCommentsResult.m */,
+			);
+			name = Comments;
+			path = MySina/classes/Main/Model/Comments;
+			sourceTree = SOURCE_ROOT;
 		};
 		AACC15561CBBE7050042D1CE /* Compose(发微博) */ = {
 			isa = PBXGroup;
@@ -813,10 +890,9 @@
 		AAE3E45F1CBA208500AE23C0 = {
 			isa = PBXGroup;
 			children = (
-				AA2E270C1CE18AB10002914E /* libicucore.tbd */,
-				AA2E270A1CE18A9B0002914E /* libicucore.A.tbd */,
 				AAE3E46A1CBA208600AE23C0 /* MySina */,
 				AA47F7DC1CEAF5CD004652F0 /* temp.h */,
+				AA9364131D0ED16600AAF9CC /* FrameWorks */,
 				AAE3E4841CBA208600AE23C0 /* MySinaTests */,
 				AAE3E48F1CBA208600AE23C0 /* MySinaUITests */,
 				AAE3E4691CBA208600AE23C0 /* Products */,
@@ -943,6 +1019,8 @@
 			children = (
 				AAE3E4E21CBA2EB800AE23C0 /* PTHomeViewController.h */,
 				AAE3E4E31CBA2EB800AE23C0 /* PTHomeViewController.m */,
+				AA8EA7EB1CEC57C400B92EBD /* PTStatusDetailViewController.h */,
+				AA8EA7EC1CEC57C400B92EBD /* PTStatusDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -959,6 +1037,8 @@
 				AAF74CE01CC50189003559BA /* PTPhoto.m */,
 				AA2E26FF1CE181530002914E /* PTRegexResult.h */,
 				AA2E27001CE181530002914E /* PTRegexResult.m */,
+				AAB261FE1CF2F64900890B57 /* PTComment.h */,
+				AAB261FF1CF2F64900890B57 /* PTComment.m */,
 			);
 			name = Model;
 			path = model;
@@ -968,6 +1048,7 @@
 			isa = PBXGroup;
 			children = (
 				AA8618321CCC78B5002AF93D /* StatusCell */,
+				AAF4E4F81CEDB887003C6238 /* Detail */,
 				AACC15521CBBDD1E0042D1CE /* PTTitleButton.h */,
 				AACC15531CBBDD1E0042D1CE /* PTTitleButton.m */,
 				AACC15501CBBDD1E0042D1CE /* PTPopMenu.h */,
@@ -1007,6 +1088,8 @@
 				AAE3E4B01CBA211700AE23C0 /* UIImage+Extension.m */,
 				AAE3E4B11CBA211700AE23C0 /* UIView+Extension.h */,
 				AAE3E4B21CBA211700AE23C0 /* UIView+Extension.m */,
+				AAD5AEA31CFFDFF200F1CE19 /* NSFileManager+Size.h */,
+				AAD5AEA41CFFDFF200F1CE19 /* NSFileManager+Size.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1029,6 +1112,7 @@
 			children = (
 				AA4CA7B91CCB1CDF00EE2B32 /* PTBaseParam.h */,
 				AA4CA7BA1CCB1CDF00EE2B32 /* PTBaseParam.m */,
+				AAB261F41CF2E09D00890B57 /* Comments */,
 				AA252E511CE46D5800B8EB2E /* Common */,
 				AA4CA7AF1CCB1CDF00EE2B32 /* AccessToken */,
 				AA4CA7B41CCB1CDF00EE2B32 /* HomeStatuses */,
@@ -1153,6 +1237,39 @@
 			name = AppIcon.appiconset;
 			path = Assets.xcassets/AppIcon.appiconset;
 			sourceTree = "<group>";
+		};
+		AAE83E0F1D0E9AC000A1A4CD /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				AAE83E101D0E9AC000A1A4CD /* FMDatabase.h */,
+				AAE83E111D0E9AC000A1A4CD /* FMDatabase.m */,
+				AAE83E121D0E9AC000A1A4CD /* FMDatabaseAdditions.h */,
+				AAE83E131D0E9AC000A1A4CD /* FMDatabaseAdditions.m */,
+				AAE83E141D0E9AC000A1A4CD /* FMDatabasePool.h */,
+				AAE83E151D0E9AC000A1A4CD /* FMDatabasePool.m */,
+				AAE83E161D0E9AC000A1A4CD /* FMDatabaseQueue.h */,
+				AAE83E171D0E9AC000A1A4CD /* FMDatabaseQueue.m */,
+				AAE83E181D0E9AC000A1A4CD /* FMDB.h */,
+				AAE83E191D0E9AC000A1A4CD /* FMResultSet.h */,
+				AAE83E1A1D0E9AC000A1A4CD /* FMResultSet.m */,
+				AAE83E1B1D0E9AC000A1A4CD /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		AAF4E4F81CEDB887003C6238 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AAF4E4F91CEDB887003C6238 /* PTStatusRetweetedToolbar.h */,
+				AAF4E4FA1CEDB887003C6238 /* PTStatusRetweetedToolbar.m */,
+				AAF4E4FC1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.h */,
+				AAF4E4FD1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.m */,
+				AAF4E4FF1CEDC261003C6238 /* PTStatusDetailTopToolbar.h */,
+				AAF4E5001CEDC261003C6238 /* PTStatusDetailTopToolbar.m */,
+			);
+			name = Detail;
+			path = "MySina/classes/Home(首页)/View/Detail";
+			sourceTree = SOURCE_ROOT;
 		};
 		AAF74CC21CC50134003559BA /* MJExtension */ = {
 			isa = PBXGroup;
@@ -1331,6 +1448,7 @@
 				AA2047EF1CD3ABC800F7F251 /* EmotionIcons in Resources */,
 				AAE3E4D61CBA216600AE23C0 /* Images.xcassets in Resources */,
 				AAE3E4761CBA208600AE23C0 /* Main.storyboard in Resources */,
+				AAE83E211D0E9AC000A1A4CD /* Info.plist in Resources */,
 				AAE3E4DE1CBA293A00AE23C0 /* Contents.json in Resources */,
 				AAE3E4E01CBA293A00AE23C0 /* icon@2x.png in Resources */,
 			);
@@ -1363,7 +1481,9 @@
 				AACC15551CBBDD1E0042D1CE /* PTTitleButton.m in Sources */,
 				AADCB9E51CD22D7A00CACB8D /* MJPhotoLoadingView.m in Sources */,
 				AAF74CD61CC50134003559BA /* MJArgument.m in Sources */,
+				AAB262001CF2F64900890B57 /* PTComment.m in Sources */,
 				AAA20E4D1CEAAA6D0006676D /* PTCommonGroup.m in Sources */,
+				AA8EA9BF1CEC70B700B92EBD /* PTStatusToolbar.m in Sources */,
 				AA2046291CD3A85600F7F251 /* NSString+Emoji.m in Sources */,
 				AA4CA7CD1CCB1CDF00EE2B32 /* PTUnreadCountParam.m in Sources */,
 				AAE3E4CD1CBA211700AE23C0 /* UIImage+Extension.m in Sources */,
@@ -1389,8 +1509,10 @@
 				AA86184D1CCC8877002AF93D /* PTStatusRetweetedViewFrame.m in Sources */,
 				AAF74D1A1CC50702003559BA /* UIImageView+HighlightedWebCache.m in Sources */,
 				AA013BF31CCE3815007D44A9 /* NSDate+TimeDisplay.m in Sources */,
+				AAF4E4FE1CEDB8A0003C6238 /* PTStatusDetailBottomToolbar.m in Sources */,
 				AA4CA7D01CCB1CDF00EE2B32 /* PTUserInfoResult.m in Sources */,
 				AA79B1661CD8E23B003808C6 /* PTEmotionTool.m in Sources */,
+				AAE83E1E1D0E9AC000A1A4CD /* FMDatabasePool.m in Sources */,
 				AAF74CEA1CC501A5003559BA /* PTLoadMoreFooter.m in Sources */,
 				AA6481BD1CEAADD500F6C5C9 /* PTCommonViewController.m in Sources */,
 				AADCB9E61CD22D7A00CACB8D /* MJPhotoProgressView.m in Sources */,
@@ -1398,6 +1520,7 @@
 				AA4CA7CB1CCB1CDF00EE2B32 /* PTBaseParam.m in Sources */,
 				AA4CA7C91CCB1CDF00EE2B32 /* PTHomeStatusesParam.m in Sources */,
 				AA8EE0771CC26FAD003D89AA /* AFHTTPSessionManager.m in Sources */,
+				AAE83E1F1D0E9AC000A1A4CD /* FMDatabaseQueue.m in Sources */,
 				AA4CA7E01CCB1E8700EE2B32 /* PTSendStatusResult.m in Sources */,
 				AAE3E4D31CBA211700AE23C0 /* PTMessageViewController.m in Sources */,
 				AAF74D121CC50702003559BA /* SDWebImageDownloader.m in Sources */,
@@ -1409,9 +1532,11 @@
 				AA05A22C1CEACC7900B1C9B6 /* PTPictureQualityViewController.m in Sources */,
 				AAA20E501CEAAA6D0006676D /* PTCommonSwitchItem.m in Sources */,
 				AA2E27131CE1E7100002914E /* PTStatusLink.m in Sources */,
+				AAE83E201D0E9AC000A1A4CD /* FMResultSet.m in Sources */,
 				AA2E26FE1CE171140002914E /* PTEmotionTextView.m in Sources */,
 				AADCB9E21CD22D7A00CACB8D /* MJPhoto.m in Sources */,
 				AAF74CD81CC50134003559BA /* MJMember.m in Sources */,
+				AA8EA9BC1CEC708C00B92EBD /* PTBaseToolbar.m in Sources */,
 				AAE3E4D01CBA211700AE23C0 /* PTTabBarController.m in Sources */,
 				AADCB9E41CD22D7A00CACB8D /* MJPhotoBrowser.m in Sources */,
 				AAF74CDD1CC50134003559BA /* NSObject+MJKeyValue.m in Sources */,
@@ -1430,12 +1555,14 @@
 				AA8618411CCC8630002AF93D /* PTStatusDetailViewFrame.m in Sources */,
 				AA8EE0751CC26FAD003D89AA /* AFHTTPRequestOperation.m in Sources */,
 				AA9F9B541CC296A900A72F46 /* PTAccountTool.m in Sources */,
+				AAB261F71CF2E09D00890B57 /* PTCommentsParam.m in Sources */,
 				AA8EE07D1CC26FAD003D89AA /* AFURLSessionManager.m in Sources */,
 				AAA20E561CEAAAC40006676D /* PTSearchBar.m in Sources */,
 				AAE3E4D11CBA211700AE23C0 /* main.m in Sources */,
 				AA2046261CD3A7DB00F7F251 /* PTEmotion.m in Sources */,
 				AA4CA7CE1CCB1CDF00EE2B32 /* PTUnreadCountResult.m in Sources */,
 				AA2046221CD38F6D00F7F251 /* PTEmotionListView.m in Sources */,
+				AAF4E4FB1CEDB887003C6238 /* PTStatusRetweetedToolbar.m in Sources */,
 				AADCB9E71CD22D7A00CACB8D /* MJPhotoToolbar.m in Sources */,
 				AA2E27091CE182C00002914E /* RegexKitLite.m in Sources */,
 				AAF74D1C1CC50702003559BA /* UIView+WebCacheOperation.m in Sources */,
@@ -1462,26 +1589,31 @@
 				AA4CA7C81CCB1CDF00EE2B32 /* PTAccount.m in Sources */,
 				AA79B1601CD8D540003808C6 /* PTEmotionPopView.m in Sources */,
 				AA47F7DB1CEAE3BA004652F0 /* PTNewfeatureViewController.m in Sources */,
+				AAB261FA1CF2E17700890B57 /* PTCommentsResult.m in Sources */,
 				AA2E27011CE181530002914E /* PTRegexResult.m in Sources */,
 				AA8EE07C1CC26FAD003D89AA /* AFURLResponseSerialization.m in Sources */,
 				AA4CA7D91CCB1CFC00EE2B32 /* PTUserTool.m in Sources */,
 				AA4CA7CA1CCB1CDF00EE2B32 /* PTHomeStatusesResult.m in Sources */,
-				AA86183B1CCC81D0002AF93D /* PTStatusToolbar.m in Sources */,
 				AA8EE07B1CC26FAD003D89AA /* AFURLRequestSerialization.m in Sources */,
 				AAF74D241CC52FE4003559BA /* PTComposeToolBar.m in Sources */,
 				AAE3E4D21CBA211700AE23C0 /* PTAppDelegate.m in Sources */,
 				AAA20E4C1CEAAA6D0006676D /* PTCommonCheckItem.m in Sources */,
 				AADCB9E91CD22D7A00CACB8D /* SDWebImageManager+MJ.m in Sources */,
+				AA8EA7ED1CEC57C400B92EBD /* PTStatusDetailViewController.m in Sources */,
 				AAF74D1B1CC50702003559BA /* UIImageView+WebCache.m in Sources */,
 				AA4CA7CF1CCB1CDF00EE2B32 /* PTUserInfoParam.m in Sources */,
 				AA8E54BD1CBD13E2005B04F0 /* PTTabBarButton.m in Sources */,
+				AAE83E1D1D0E9AC000A1A4CD /* FMDatabaseAdditions.m in Sources */,
+				AAF4E5011CEDC261003C6238 /* PTStatusDetailTopToolbar.m in Sources */,
 				AACC155C1CBBE7050042D1CE /* PTComposeViewController.m in Sources */,
 				AAF74D0D1CC50702003559BA /* MKAnnotationView+WebCache.m in Sources */,
 				AA8E54BB1CBD13E2005B04F0 /* PTBadgeView.m in Sources */,
+				AAD5AEA51CFFDFF200F1CE19 /* NSFileManager+Size.m in Sources */,
 				AA4CA7C71CCB1CDF00EE2B32 /* PTAccessTokenParam.m in Sources */,
 				AAE3E4E41CBA2EB800AE23C0 /* PTHomeViewController.m in Sources */,
 				AAF74D171CC50702003559BA /* UIImage+GIF.m in Sources */,
 				AAF74CDA1CC50134003559BA /* MJType.m in Sources */,
+				AAE83E1C1D0E9AC000A1A4CD /* FMDatabase.m in Sources */,
 				AAA20E4E1CEAAA6D0006676D /* PTCommonItem.m in Sources */,
 				AACC15541CBBDD1E0042D1CE /* PTPopMenu.m in Sources */,
 			);
@@ -1627,6 +1759,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MySina/MySinaPrefixHeader.pch;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = MySina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1642,6 +1775,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MySina/MySinaPrefixHeader.pch;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = MySina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
