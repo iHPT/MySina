@@ -19,13 +19,14 @@
     // 去除用户模型
     PTUser *user = retweetedStatus.user;
     
-    // 昵称
-    CGFloat nameX = PTStatusCellInset;
-    CGFloat nameY = PTStatusCellInset;
-    NSString *displayStr = [NSString stringWithFormat:@"@%@", user.name];
-    CGSize nameSize = [displayStr sizeWithAttributes:@{NSFontAttributeName : PTStatusCellNameFont}];
-    self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
+//    // 昵称
+//    CGFloat nameX = PTStatusCellInset;
+//    CGFloat nameY = PTStatusCellInset;
+//    NSString *displayStr = [NSString stringWithFormat:@"@%@", user.name];
+//    CGSize nameSize = [displayStr sizeWithAttributes:@{NSFontAttributeName : PTStatusCellNameFont}];
+//    self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
+    CGFloat h = 0;
     // 正文
     CGFloat textX = PTStatusCellInset;
     CGFloat textY = PTStatusCellInset * 0.5;
@@ -33,8 +34,8 @@
 //    CGSize textSize = [retweetedStatus.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : PTStatusCellTextFont} context:nil].size;
     CGSize textSize = [retweetedStatus.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
+    h = CGRectGetMaxY(self.textFrame) + PTStatusCellInset * 0.5;
     
-    CGFloat h = 0;
     // 相册
     if (retweetedStatus.pic_urls.count) {
     	CGFloat photosX = PTStatusCellInset;
@@ -43,8 +44,17 @@
 	    self.photosFrame = (CGRect){{photosX, photosY}, photosSize};
 	    
     	h = CGRectGetMaxY(self.photosFrame) + PTStatusCellInset;
-    } else {
-    	h = CGRectGetMaxY(self.textFrame) + PTStatusCellInset;
+    }
+    
+    // toolbar
+    if (retweetedStatus.isDeatil) {
+        CGFloat toolbarY = h + PTStatusCellInset * 0.5;
+        CGFloat toolbarW = PTStatusDetailToolbarWidth;
+        CGFloat toolbarH = PTStatusDetailToolbarHeight;
+        CGFloat toolbarX = ScreenWidth - toolbarW - PTStatusCellInset;
+        self.toolbarFrame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
+        
+        h = CGRectGetMaxY(self.toolbarFrame) + PTStatusCellInset * 0.5;
     }
     
     // 自己的frame
@@ -52,6 +62,5 @@
     CGFloat y = 0;
     CGFloat w = ScreenWidth;
     self.frame = CGRectMake(x, y, w, h);
-    
 }
 @end

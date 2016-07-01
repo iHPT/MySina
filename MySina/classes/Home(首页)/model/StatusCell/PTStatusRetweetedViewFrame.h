@@ -11,14 +11,17 @@
 @class PTStatus;
 @interface PTStatusRetweetedViewFrame : NSObject
 
-/** 昵称 */
-@property (nonatomic, assign) CGRect nameFrame;
+///** 昵称 */
+//@property (nonatomic, assign) CGRect nameFrame;
 
 /** 正文 */
 @property (nonatomic, assign) CGRect textFrame;
 
 /** 配图相册  */
 @property (nonatomic, assign) CGRect photosFrame;
+
+/** 转发微博右下角工具条 */
+@property (nonatomic, assign) CGRect toolbarFrame;
 
 
 /** 自己的frame */

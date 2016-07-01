@@ -104,6 +104,10 @@
 #define PTStatusLinkSelectedBackgroundColor PTColor(247, 207, 219)
 /** 微博正文中链接选中通知 */
 #define PTStatusLinkDidSelectedNotification @"PTStatusLinkDidSelectedNotification"
+/** 微博正文中非链接选中通知，进行控制器跳转 */
+#define PTStatusNoneLinkDidSelectedNotification @"PTStatusNoneLinkDidSelectedNotification"
+
+
 
 /**
  *  HomeStatusDetail微博详情计算参数

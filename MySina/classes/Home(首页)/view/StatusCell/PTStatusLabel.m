@@ -129,17 +129,18 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-		UITouch *touch = [touches anyObject];
-		CGPoint point = [touch locationInView:touch.view];
-		
-		// 获取被点击的那个链接
-		PTStatusLink *touchingLink = [self touchingLinkWithPoint:point];
-		if (touchingLink == nil) return;
-		
-		// 链接被点击，发出通知
-	[[NSNotificationCenter defaultCenter] postNotificationName:PTStatusLinkDidSelectedNotification object:nil userInfo:@{PTStatusLinkText : touchingLink.text}];
-		
-		// 相当于触摸被取消
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:touch.view];
+    
+    // 获取被点击的那个链接
+    PTStatusLink *touchingLink = [self touchingLinkWithPoint:point];
+    
+//    if (touchingLink == nil) return;
+    
+    // 链接被点击，发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:PTStatusLinkDidSelectedNotification object:nil userInfo:@{PTStatusLinkText : touchingLink.text}];
+    
+    // 相当于触摸被取消
     [self touchesCancelled:touches withEvent:event];
 }
 
@@ -149,6 +150,20 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self removeLinkBackground];
     });
+}
+
+/**
+ *  如果点击的是非链接，将点击事件传递给父视图
+ */
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    // 得出被点击的那个链接
+    PTStatusLink *touchingLink = [self touchingLinkWithPoint:point];
+    
+    // 如果点击的是非链接，将点击事件传递给父视图
+    if (touchingLink == nil) return self.superview;
+    
+    return self;
 }
 
 /**

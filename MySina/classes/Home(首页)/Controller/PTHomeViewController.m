@@ -71,7 +71,7 @@ static NSString *cellId = @"HomeViewCell";
 	// 获得用户信息，设置title
 	[self setupUserInfo];
 	
-	// 注册status链接点解通知
+	// 注册status链接点击通知
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusLinkDidSelected:) name:PTStatusLinkDidSelectedNotification object:nil];
 }
 
@@ -80,6 +80,9 @@ static NSString *cellId = @"HomeViewCell";
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+/**
+ *  status链接点击通知
+ */
 - (void)statusLinkDidSelected:(NSNotification *)note
 {
     NSString *linkText = note.userInfo[PTStatusLinkText];
