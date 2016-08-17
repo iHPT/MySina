@@ -104,7 +104,7 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(clearCache) weakClearCache = clearCache;
     clearCache.operation = ^ {
-        PTLog(@"%@", PTSDImageCacheDirectory);
+//        PTLog(@"%@", PTSDImageCacheDirectory);
         [MBProgressHUD showMessage:@"正在清除缓存..."];
         
         // 清除缓存

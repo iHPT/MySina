@@ -40,7 +40,7 @@
     CGSize textSize = [status.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
-//    // 会员图标
+    // 会员图标
     if (user.vip) {
 	    CGFloat vipX = CGRectGetMaxX(self.nameFrame) + PTStatusCellInset * 0.5;
 	    CGFloat vipY = nameY;

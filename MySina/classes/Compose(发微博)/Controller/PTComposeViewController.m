@@ -198,11 +198,11 @@
 		// 2.发送一张图片微博微博
 		[PTStatusTool sendStatusWithParam:param image:imageView.image fileName:@"MyImages" success:^(PTStatus *status) {
 			[MBProgressHUD showSuccess:@"发表成功"];
-			PTLog(@"发送的微博---%@", status);
+//			PTLog(@"发送的微博---%@", status);
 			
 		} failure:^(NSError *error) {
 			[MBProgressHUD showError:@"发表失败"];
-    	PTLog(@"发表失败---%@", error);
+//            PTLog(@"发表失败---%@", error);
 		}];
 }
 
@@ -218,11 +218,11 @@
 		// 2.发送一条微博
 		[PTStatusTool sendStatusWithParam:param success:^(PTStatus *status) {
 			[MBProgressHUD showSuccess:@"发表成功"];
-			PTLog(@"发送的微博---%@", status);
+//			PTLog(@"发送的微博---%@", status);
 			
 		} failure:^(NSError *error) {
 			[MBProgressHUD showError:@"发表失败"];
-    	PTLog(@"发表失败---%@", error);
+//            PTLog(@"发表失败---%@", error);
 		}];
 }
 

@@ -57,6 +57,7 @@ static FMDatabase *_db;
             [self saveStatusesDataWithStatusDictArray:statusDictArray accessToken:param.access_token];
             
             if (success) {
+//                PTLog(@"responseObj===%@", responseObj);
                 PTHomeStatusesResult *result = [PTHomeStatusesResult objectWithKeyValues:responseObj];
                 success(result);
             }

@@ -90,7 +90,7 @@
 		// 应用程序图标上显示所有的未读数
         // set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
         [UIApplication sharedApplication].applicationIconBadgeNumber = result.totalCount;
-        PTLog(@"%d--", [UIApplication sharedApplication].applicationIconBadgeNumber);
+//        PTLog(@"%d--", [UIApplication sharedApplication].applicationIconBadgeNumber);
 		
 	} failure:^(NSError *error) {
 		PTLog(@"请求失败---%@", error);

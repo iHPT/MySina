@@ -1,9 +1,9 @@
 //
 //  main.m
-//  黑马微博
+//  MySina
 //
-//  Created by apple on 14-7-3.
-//  Copyright (c) 2014年 heima. All rights reserved.
+//  Created by apple on 16-4-3.
+//  Copyright (c) 2016年 heima. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -18,7 +18,7 @@
 
 @interface PTStatusDetailViewController () <UITableViewDataSource, UITableViewDelegate, PTStatusDetailTopToolbarDelegate>
 
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) PTStatusDetailTopToolbar *topToolbar;
 
@@ -48,13 +48,31 @@
     return _topToolbar;
 }
 
+- (UITableView *)tableView
+{
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] init];
+        // 设置frame
+        _tableView.width = self.view.width;
+        _tableView.height = self.view.height - PTStatusDetailBottomToolbarHeight;
+        _tableView.contentInset = UIEdgeInsetsMake(12, 0, 0, 0);
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self.view addSubview:_tableView];
+        
+        // 设置为全局背景颜色
+        _tableView.backgroundColor = PTGlobalBackgroundColor;
+        // 设置代理
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+    }
+    return _tableView;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // 创建tableView
-    [self setupTableView];
-    
+    self.navigationItem.title = @"微博正文";
     // 创建detailView
     [self setupDetailView];
     
@@ -74,7 +92,6 @@
     toolbar.y = self.view.height - PTStatusDetailBottomToolbarHeight;
     toolbar.width = self.view.width;
     toolbar.height = PTStatusDetailBottomToolbarHeight;
-    
 }
 
 /**
@@ -93,26 +110,6 @@
     
     // 微博详情控件为tableView的header
     self.tableView.tableHeaderView = detailView;
-}
-
-/**
- *  创建tableView
- */
-- (void)setupTableView
-{
-    UITableView *tableView = [[UITableView alloc] init];
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:tableView];
-    // 设置frame
-    tableView.width = self.view.width;
-    tableView.height = self.view.height - PTStatusDetailBottomToolbarHeight;
-    // 设置为全局背景颜色
-    tableView.backgroundColor = PTGlobalBackgroundColor;
-    // 设置代理
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    
-    self.tableView = tableView;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -172,7 +169,7 @@
 
 - (void)loadComments
 {
-    PTLog(@"loadComments");
+//    PTLog(@"loadComments");
     // 1.封装请求参数
     PTCommentsParam *param = [PTCommentsParam param];
     long long int idstr = [self.status.idstr longLongValue];
@@ -180,7 +177,7 @@
     PTStatus *firstStatus = self.comments.firstObject;
     param.since_id = @([firstStatus.idstr longLongValue]);
     [PTStatusTool commentsWithParam:param success:^(PTCommentsResult *result) {
-        PTLog(@"获取评论数据成功---");
+//        PTLog(@"获取评论数据成功---");
 //        [self.comments addObject:result];
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.comments.count)];
         [self.comments insertObjects:result.comments atIndexes:indexSet];

@@ -34,7 +34,7 @@
     
     
     PTCommonCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
-    PTLog(@"cell.y = %f", cell.y);
+//    PTLog(@"cell.y = %f", cell.y);
 }
 
 - (void)setupGroups
@@ -57,7 +57,7 @@
     item.operation = ^{
         
         PTCommonCheckItem *checkItem = self.checkGroup.items[self.checkGroup.checkedIndex];
-        PTLog(@"%@", checkItem.title);
+//        PTLog(@"%@", checkItem.title);
     };
     
     group.items = @[item];

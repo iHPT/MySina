@@ -61,6 +61,7 @@ static NSString *cellId = @"HomeViewCell";
 	// tableView属性设置
 	self.tableView.backgroundColor = PTGlobalBackgroundColor;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(2, 0, 0, 0);
 	
 	// 设置导航栏的内容
 	[self setupNavBar];
@@ -99,11 +100,12 @@ static NSString *cellId = @"HomeViewCell";
 {
 	// 1.封装请求参数
 	PTUserInfoParam *param = [PTUserInfoParam param];
-	param.uid = @([PTAccountTool account].uid.intValue);
+    //    param.uid = @([[PTAccountTool account].uid intValue]);
+    param.uid = [PTAccountTool account].uid; // 必须为字符串，为NSNumber会出现参数不对
 	
 	// 2.获取用户信息
     [PTUserTool userInfoWithParam:param success:^(PTUserInfoResult *result) {
-        PTLog(@"请求成功---");
+//        PTLog(@"请求成功---");
         // 设置用户名为titile
         [self.titleButton setTitle:result.name forState:UIControlStateNormal];
         
@@ -112,7 +114,7 @@ static NSString *cellId = @"HomeViewCell";
         account.name = result.name;
         [PTAccountTool save:account];
     } failure:^(NSError *error) {
-        PTLog(@"请求失败---%@", error);
+//        PTLog(@"请求失败---%@", error);
     }];
 }
 
@@ -223,10 +225,10 @@ static NSString *cellId = @"HomeViewCell";
 	
 	// 获取当前用户最新微博数据
 	[PTStatusTool homeStatusesWithParam:param success:^(PTHomeStatusesResult *result) {
-        PTLog(@"加载微博数据请求成功---");
+//        PTLog(@"加载微博数据请求成功---");
 		// 微博模型frame数组
 		NSArray *newStatusFrames = [self statusFramesWithStatuses:result.statuses];
-        PTLog(@"newStatusFrames.count==%d", newStatusFrames.count);
+//        PTLog(@"newStatusFrames.count==%d", newStatusFrames.count);
 //        for (PTStatusFrame *frame in newStatusFrames) {
 //            PTStatus *status = frame.status;
 ////            PTLog(@"%d -- %d", status.user.mbtype, status.user.mbrank);
@@ -418,11 +420,8 @@ static NSString *cellId = @"HomeViewCell";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.statusFrames.count <= 0 || self.loadMoreFooter.refreshing)
-    {
-        NSLog(@"DoNothing");
-        return;
-    }
+    if (self.statusFrames.count <= 0 || self.loadMoreFooter.refreshing) return;
+    
     // 1.tableView剩余显示在window中的高度 = tabtableView的高度 - 移出window上方的高度
     CGFloat delta = scrollView.contentSize.height - scrollView.contentOffset.y;
     // 刚好能完整看到footer的高度
@@ -430,7 +429,7 @@ static NSString *cellId = @"HomeViewCell";
     
     // 2.如果能看见整个footer
     if (delta <= (sawFooterH - 0)) { // 等于0时footer刚过在tabBar上
-        NSLog(@"看全了footer");
+//        NSLog(@"看全了footer");
         // 进入上拉刷新状态
         [self.loadMoreFooter beginRefreshing];
         

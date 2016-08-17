@@ -42,7 +42,7 @@
 		self.selectedRange = NSMakeRange(insertIndex + 1, 0);
 	}
     
-    PTLog(@"appendEmotion: %@", self.attributedText);
+//    PTLog(@"appendEmotion: %@", self.attributedText);
 }
 
 /**
@@ -52,7 +52,7 @@
 {
 	// 1.创建用来拼接所有文字的字符串
     NSMutableString *string = [NSMutableString string];
-    PTLog(@"attributedText==%@", self.attributedText);
+//    PTLog(@"attributedText==%@", self.attributedText);
 	// 2.遍历富文本里面的所有内容
 	[self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(NSDictionary *attrs, NSRange range, BOOL *stop) {
 		PTEmotionAttachment *attach = attrs[@"NSAttachment"];
@@ -65,7 +65,7 @@
 			[string appendString:substring];
 		}
 	}];
-    PTLog(@"%@", string);
+//    PTLog(@"%@", string);
 	return string;
 }
 

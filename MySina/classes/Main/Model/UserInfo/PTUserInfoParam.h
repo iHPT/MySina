@@ -12,6 +12,6 @@
 @interface PTUserInfoParam : PTBaseParam
 
 /** 	false 	int64 	需要查询的用户ID。 */
-@property (nonatomic, strong) NSNumber *uid;
+@property (nonatomic, strong) NSString *uid;
 
 @end

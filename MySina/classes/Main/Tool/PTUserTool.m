@@ -17,6 +17,7 @@
 {
     NSDictionary *params = param.keyValues;
     
+    PTLog(@"currentThread==%@", [NSThread currentThread]);
     [PTHttpTool get:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(id responseObj) {
         if (success) {
             PTUserInfoResult *result = [PTUserInfoResult objectWithKeyValues:responseObj];

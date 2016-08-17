@@ -67,7 +67,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [MBProgressHUD hideHUD];
-    PTLog(@"%@", error);
+//    PTLog(@"%@", error);
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -102,7 +102,7 @@
     } failure:^(NSError *error) {
     	// 隐藏HUD
         [MBProgressHUD hideHUD];
-        PTLog(@"请求失败---%@", error);
+//        PTLog(@"请求失败---%@", error);
     }];
 }
 

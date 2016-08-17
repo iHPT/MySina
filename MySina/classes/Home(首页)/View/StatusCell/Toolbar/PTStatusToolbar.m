@@ -60,7 +60,7 @@
 	[super layoutSubviews];
 	
 	// 设置按钮的frame
-    int count = self.dividers.count;
+    NSInteger count = self.dividers.count;
 	CGFloat firstDividerX = self.width / (count + 1);
 	CGFloat dividerH = self.height;
 //    PTLog(@"firstDividerX==%f", firstDividerX);

@@ -16,8 +16,8 @@
 - (void)setRetweetedStatus:(PTStatus *)retweetedStatus
 {
     _retweetedStatus = retweetedStatus;
-    // 去除用户模型
-    PTUser *user = retweetedStatus.user;
+    // 用户模型
+//    PTUser *user = retweetedStatus.user;
     
 //    // 昵称
 //    CGFloat nameX = PTStatusCellInset;

@@ -45,10 +45,10 @@
 	NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
 	textAttrs[NSFontAttributeName] = PTNavigationTitleFont;
-    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero]; // 默认就没有阴影，旧方法
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset = CGSizeMake(1, 1);
-    textAttrs[NSShadowAttributeName] = shadow;
+//    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero]; // 默认就没有阴影，旧方法
+//    NSShadow *shadow = [[NSShadow alloc] init];
+//    shadow.shadowOffset = CGSizeMake(1, 1);
+//    textAttrs[NSShadowAttributeName] = shadow;
     
 	[appearance setTitleTextAttributes:textAttrs];
 }
@@ -62,7 +62,7 @@
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
     textAttrs[NSFontAttributeName] = PTBarButtonTitleFont;
-    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+//    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
     [appearance setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     
     // 设置高亮状态的文字属性

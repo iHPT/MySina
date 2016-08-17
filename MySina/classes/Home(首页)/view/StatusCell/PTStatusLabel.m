@@ -30,7 +30,7 @@
 
 		// 搜索所有的链接
 		[self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(NSDictionary<NSString *, id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
-            PTLog(@"%@", attrs);
+//            PTLog(@"%@", attrs);
             NSString *linkText = attrs[PTStatusLinkText];
             if (linkText == nil) return;
 
@@ -56,7 +56,7 @@
         }];
 	}
 	return _links;
-    PTLog(@"%@", _links);
+//    PTLog(@"%@", _links);
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
